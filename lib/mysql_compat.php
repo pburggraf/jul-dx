@@ -68,7 +68,7 @@ namespace {
                     return false;
                 }
                 \Dshafik\MySQL::$last_connection = $conn;
-                $conn->hash = $hash;
+                @$conn->hash = $hash;
                 \Dshafik\MySQL::$connections[$hash] = array('refcount' => 1, 'conn' => $conn);
 
                 return $conn;

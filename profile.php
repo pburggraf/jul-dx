@@ -114,7 +114,7 @@
 	if($user['posts'] > 0) $expstatus.="<br>Gain: ".calcexpgainpost($user['posts'],(ctime()-$user['regdate'])/86400)." EXP per post, ".calcexpgaintime($user['posts'],(ctime()-$user['regdate'])/86400)." seconds to gain 1 EXP when idle";
 	$postavg=sprintf("%01.2f",$user['posts']/(ctime()-$user['regdate'])*86400);
 	$totalwidth=116;
-	$barwidth=@floor(($user['posts']/$maxposts)*$totalwidth);
+	$barwidth=$user['posts'] == 0 ? 0 : @floor(($user['posts']/$maxposts)*$totalwidth);
 	if($barwidth<0) $barwidth=0;
 	if($barwidth) $baron="<img src=images/$numdir"."bar-on.gif width=$barwidth height=8>";
 	if($barwidth<$totalwidth) $baroff="<img src=images/$numdir"."bar-off.gif width=".($totalwidth-$barwidth)." height=8>";
