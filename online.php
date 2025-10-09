@@ -103,7 +103,7 @@
 
 	print "
 		$tblend
-		$fonttag<br>Guests online in the past 5 min.:
+		$fonttag<br>Guests online in the past ". timeunits(GUEST_BROWSING_TIME) .":
 		$tblstart<tr>
 		$tccellh width=20>&nbsp</td>
 		$tccellh width=300>&nbsp</td>

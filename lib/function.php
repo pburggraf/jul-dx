@@ -32,6 +32,11 @@
 		define("CTIME_ADJUSTMENT", 0);
 	}
 
+	if (!defined("GUEST_BROWSING_TIME")) {
+		// how long to track guests browsing the forum
+		define("GUEST_BROWSING_TIME", 15 * 60);
+	}
+
 	$sql	= new mysql;
 
 
