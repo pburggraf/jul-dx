@@ -50,7 +50,7 @@
 	$lastip				= "";
 
 	if ($isadmin) {
-		$lastip			= $user['lastip'] ? " <br>with IP: <a href='ipsearch.php?ip={$user['lastip']}' style='font-style:italic;'>$user[lastip]</a>" : "";
+		$lastip			= $user['lastip'] ? ", with IP: <a href='ipsearch.php?ip={$user['lastip']}' style='font-style:italic;'>$user[lastip]</a>" : "";
 
 		$adminopts		= "<tr>$tccell1s colspan=2><a href='private.php?id={$id}' style='font-style:italic;'>View private messages</a> |"
 			." <a href='forum.php?fav=1&user={$id}' style='font-style:italic;'>View favorites</a> |"
@@ -93,38 +93,61 @@
 	$namecolor	= getnamecolor($isbirthday ? 255 : $user['sex'], $user['powerlevel'], false);
 
 	// RPG fun shit
-	$exp=calcexp($user['posts'],(ctime()-$user['regdate'])/86400);
-	$lvl=calclvl($exp);
-	$expleft=calcexpleft($exp);
-	$expstatus="Level: $lvl<br>EXP: $exp (for next level: $expleft)";
-	if($user['posts'] > 0) $expstatus.="<br>Gain: ".calcexpgainpost($user['posts'],(ctime()-$user['regdate'])/86400)." EXP per post, ".calcexpgaintime($user['posts'],(ctime()-$user['regdate'])/86400)." seconds to gain 1 EXP when idle";
-	$postavg=sprintf("%01.2f",$user['posts']/(ctime()-$user['regdate'])*86400);
-	$totalwidth=116;
-	$barwidth=$user['posts'] == 0 ? 0 : @floor(($user['posts']/$maxposts)*$totalwidth);
-	if($barwidth<0) $barwidth=0;
-	if($barwidth) $baron="<img src=images/$numdir"."bar-on.gif width=$barwidth height=8>";
-	if($barwidth<$totalwidth) $baroff="<img src=images/$numdir"."bar-off.gif width=".($totalwidth-$barwidth)." height=8>";
-	$bar="<img src=images/$numdir"."barleft.gif>$baron$baroff<img src=images/$numdir"."barright.gif><br>";
+	$exp		= calcexp($user['posts'], (ctime() - $user['regdate']) / 86400);
+	$lvl		= calclvl($exp);
+	$expleft	= calcexpleft($exp);
+
+	$expstatus	= "Level: $lvl<br>EXP: $exp (for next level: $expleft)";
+
+	if($user['posts'] > 0) {
+		$expstatus	.= "<br>Gain: ". calcexpgainpost($user['posts'], (ctime()-$user['regdate'])/86400) ." EXP per post, ". calcexpgaintime($user['posts'], (ctime()-$user['regdate'])/86400) ." seconds to gain 1 EXP when idle";
+	}
+
+	$postavg	= sprintf("%01.2f", $user['posts'] / (ctime() - $user['regdate']) * 86400);
+	$totalwidth	= 116;
+	$barwidth	= max(0, floor(($user['posts'] / $maxposts) * $totalwidth));
+	$baron		= $barwidth > 0 ? "<img src='images/$numdir"."bar-on.gif' width='$barwidth' height='8'>" : "";
+	$baroff		= $barwidth < $totalwidth ? "<img src='images/$numdir"."bar-off.gif' width='". ($totalwidth - $barwidth) ."' height='8'>" : "";
+	$bar		= "<img src='images/$numdir"."barleft.gif'>$baron$baroff<img src='images/$numdir"."barright.gif'><br>";
+
+
+	// In the future, maybe this could be redone to do like, "last 90 days' worth of posting",
+	// but uh, right now pretty much any estimate for anyone will be ... far in the future, so
+	// for now, we just, won't.
+	$projdate	= "";
+	/*
 	if(!$topposts) $topposts=5000;
 
 	if($user['posts']) $projdate=ctime()+(ctime()-$user['regdate'])*($topposts-$user['posts'])/($user['posts']);
+	var_dump($projdate, date("Y-m-d H:i:s", $projdate));
 	if(!$user['posts'] or $user['posts']>=$topposts or $projdate>2000000000 or $projdate<ctime()) $projdate="";
 	else $projdate=" -- Projected date for $topposts posts: ".date($dateformat,$projdate+$tzoff);
+	*/
 
-	if($user['minipic']) $minipic="<img src=\"". htmlspecialchars($user['minipic']) ."\" width=16 height=16 align=absmiddle> ";
-	$homepagename=$user['homepageurl'];
-	if($user['homepagename']) $homepagename="$user[homepagename]</a> - $user[homepageurl]";
-	if($user['postbg']) $postbg="<div style='background:url($user[postbg]);' height=100%>";
+	$minipic		= $user['minipic'] ? "<img src=\"". htmlspecialchars($user['minipic']) ."\" width='16' height='16' align='absmiddle'> " : "";
+
+	$homepage	= "";
+	if ($user['homepageurl']) {
+		if ($user['homepagename']) {
+			$homepage	= "<a href=\"". htmlspecialchars($user['homepageurl']) ."\">". htmlspecialchars($user['homepagename']) ."</a> - ". htmlspecialchars($user['homepageurl']);
+		} else {
+			$homepage	= "<a href=\"". htmlspecialchars($user['homepageurl']) ."\">". htmlspecialchars($user['homepageurl']) ."</a>";
+		}
+	}
+
+	// @todo: remove postbg forever
+	$postbg				= $user['postbg'] ? "<div style=\"background:url('". htmlspecialchars($user['postbg']) ."');\" height='100%'>" : "";
+
 
 	loadtlayout();
-	$user['headtext']=$user['postheader'];
-	$user['signtext']=$user['signature'];
-	$user['text'] = "Sample text. [quote=fhqwhgads]A sample quote, with a <a href=about:blank>link</a>, for testing your layout.[/quote]This is how your post will appear.";
-	$user['uid']	= $_GET['id'];
-	$user['date']	= ctime();
+	$user['headtext']	= $user['postheader'];
+	$user['signtext']	= $user['signature'];
+	$user['text']		= "Sample text. [quote=fhqwhgads]A sample quote, with a <a href=about:blank>link</a>, for testing your layout.[/quote]This is how your post will appear.";
+	$user['uid']		= $_GET['id'];
+	$user['date']		= ctime();
 
-	// so that layouts show up regardless of setting (for obvious reasons)
-	$loguser['viewsig'] = 1;
+	// force layouts on so they're always visible in profiles
+	$loguser['viewsig']	= 1;
 
 	// shop/rpg such
 	$shops=$sql->query('SELECT * FROM itemcateg ORDER BY corder');
@@ -141,7 +164,15 @@
 		";
 
 	/* extra munging for whatever reason */
-	$user['email'] = urlencode($user['email']);
+	$email		= "";
+	// $user['email'] ? ($log ? $user['email'] : "(not visible to guests") : "";
+	if ($user['email']) {
+		if ($log) {
+			$email	= "<a href=\"mailto:". htmlspecialchars($user['email']) ."\">$user[email]</a>";
+		} else {
+			$email	= "(Not visible to guest users)";
+		}
+	}
 
 	// AKA
 	if ($user['aka'] && $user['aka'] != $user['name'])
@@ -167,9 +198,9 @@ $tblstart
 $tblend
 <br>$tblstart
 	$tccellh colspan=2><center>Contact information<tr>
-	$tccell1l width=150><b>Email address</td>		$tccell2l><a href='mailto:$user[email]'>$user[email]</a>&nbsp;<tr>
-	$tccell1l width=150><b>Homepage</td>			$tccell2l><a href='$user[homepageurl]'>$homepagename</a>&nbsp;<tr>
-	$tccell1l width=150><b>ICQ number</td>			$tccell2l>$user[icq] $icqicon&nbsp;<tr>
+	$tccell1l width=150><b>Email address</td>		$tccell2l>$email</a>&nbsp;<tr>
+	$tccell1l width=150><b>Homepage</td>			$tccell2l>$homepage&nbsp;<tr>
+	$tccell1l width=150><b>ICQ number</td>			$tccell2l>$icqicon&nbsp;<tr>
 	$tccell1l width=150><b>AIM screen name</td>		$tccell2l><a href='aim:goim?screenname=$aim'>$user[aim]</a>&nbsp;<tr>
 $tblend
 <br>$tblstart
