@@ -1,7 +1,7 @@
 <?php
 	require 'lib/function.php';
 	require 'lib/rpg.php';
-
+	$u = 1;
 	if(!intval($u)) die();
 
 	$user = $sql->fetchq("SELECT name,posts,regdate,users_rpg.* FROM users,users_rpg WHERE id='$u' AND uid=id");
@@ -34,38 +34,38 @@
 	$img=imagecreate(256,224 - (8 * 0));
 	imagesavealpha($img, true);
 	imagealphablending($img, false);
-	$c['bg']=  imagecolorallocatealpha($img, 40, 40, 90, 127);
-	$c['bxb0']=imagecolorallocate($img,  0,  0,  0);
+	$c['bg']=  imagecolorallocatealphaEx($img, 40, 40, 90, 127);
+	$c['bxb0']=imagecolorallocateEx($img,  0,  0,  0);
 
-//	$c['bxb1']=imagecolorallocate($img,225,200,180);
-//	$c['bxb2']=imagecolorallocate($img,190,160,130);
-//	$c['bxb3']=imagecolorallocate($img,130,110, 90);
+//	$c['bxb1']=imagecolorallocateEx($img,225,200,180);
+//	$c['bxb2']=imagecolorallocateEx($img,190,160,130);
+//	$c['bxb3']=imagecolorallocateEx($img,130,110, 90);
 
-	$c['bxb1']=imagecolorallocate($img, 200, 180, 225);
-	$c['bxb2']=imagecolorallocate($img, 160, 130, 190);
-	$c['bxb3']=imagecolorallocate($img,  90, 110, 130);
+	$c['bxb1']=imagecolorallocateEx($img, 200, 180, 225);
+	$c['bxb2']=imagecolorallocateEx($img, 160, 130, 190);
+	$c['bxb3']=imagecolorallocateEx($img,  90, 110, 130);
 
 	for($i=0;$i<100;$i++)
-		 $c[$i]=imagecolorallocate($img,  15+$i/1.5,  8, 20+$i);
+		 $c[$i]=imagecolorallocateEx($img,  15+$i/1.5,  8, 20+$i);
 
-	$c['barE1']=imagecolorallocate($img,120,150,180);
-	$c['barE2']=imagecolorallocate($img, 30, 60, 90);
+	$c['barE1']=imagecolorallocateEx($img,120,150,180);
+	$c['barE2']=imagecolorallocateEx($img, 30, 60, 90);
 
-	$c['bar1'][ 1]	= imagecolorallocate($img, 215,  91, 129);
-	$c['bar1'][ 2]	= imagecolorallocate($img, 255, 136, 154);
-	$c['bar1'][ 3]	= imagecolorallocate($img, 255, 139,  89);
-	$c['bar1'][ 4]	= imagecolorallocate($img, 255, 251,  89);
-	$c['bar1'][ 5]	= imagecolorallocate($img,  89, 255, 139);
-	$c['bar1'][ 6]	= imagecolorallocate($img,  89, 213, 255);
-	$c['bar1'][ 7]	= imagecolorallocate($img, 196,  33,  33);
-	$c['bar1'][ 8]	= imagecolorallocate($img, 196,  66, 196);
-	$c['bar1'][ 9]	= imagecolorallocate($img, 100,   0, 155);
-	$c['bar1'][10]	= imagecolorallocate($img,  88,   0, 121);
-	$c['bar1'][11]	= imagecolorallocate($img,   0, 174, 215);
-	$c['bar1'][12]	= imagecolorallocate($img,   0,  99, 151);
-	$c['bar1'][13]	= imagecolorallocate($img, 175, 175, 175);
-	$c['bar1'][14]	= imagecolorallocate($img, 222, 222, 222);
-	$c['bar1'][15]	= imagecolorallocate($img, 255, 255, 255);
+	$c['bar1'][ 1]	= imagecolorallocateEx($img, 215,  91, 129);
+	$c['bar1'][ 2]	= imagecolorallocateEx($img, 255, 136, 154);
+	$c['bar1'][ 3]	= imagecolorallocateEx($img, 255, 139,  89);
+	$c['bar1'][ 4]	= imagecolorallocateEx($img, 255, 251,  89);
+	$c['bar1'][ 5]	= imagecolorallocateEx($img,  89, 255, 139);
+	$c['bar1'][ 6]	= imagecolorallocateEx($img,  89, 213, 255);
+	$c['bar1'][ 7]	= imagecolorallocateEx($img, 196,  33,  33);
+	$c['bar1'][ 8]	= imagecolorallocateEx($img, 196,  66, 196);
+	$c['bar1'][ 9]	= imagecolorallocateEx($img, 100,   0, 155);
+	$c['bar1'][10]	= imagecolorallocateEx($img,  88,   0, 121);
+	$c['bar1'][11]	= imagecolorallocateEx($img,   0, 174, 215);
+	$c['bar1'][12]	= imagecolorallocateEx($img,   0,  99, 151);
+	$c['bar1'][13]	= imagecolorallocateEx($img, 175, 175, 175);
+	$c['bar1'][14]	= imagecolorallocateEx($img, 222, 222, 222);
+	$c['bar1'][15]	= imagecolorallocateEx($img, 255, 255, 255);
 
 	$st['CHP'] = max($st['HP'] - $user['damage'], 0);
 	if ($st['CHP'] <= 0)
@@ -161,21 +161,21 @@ function twrite($font,$x,$y,$l,$text){
 function fontc($r1,$g1,$b1,$r2,$g2,$b2,$r3,$g3,$b3){
 	$font=imagecreatefrompng('images/rpg/font.png');
 	imagecolortransparent($font,1);
-	imagecolorset($font,6,$r1,$g1,$b1);
-	imagecolorset($font,5,($r1*2+$r2)/3,($g1*2+$g2)/3,($b1*2+$b2)/3);
-	imagecolorset($font,4,($r1+$r2*2)/3,($g1+$g2*2)/3,($b1+$b2*2)/3);
-	imagecolorset($font,3,$r2,$g2,$b2);
-	imagecolorset($font,0,$r3,$g3,$b3);
+	imagecolorsetEx($font,6,$r1,$g1,$b1);
+	imagecolorsetEx($font,5,($r1*2+$r2)/3,($g1*2+$g2)/3,($b1*2+$b2)/3);
+	imagecolorsetEx($font,4,($r1+$r2*2)/3,($g1+$g2*2)/3,($b1+$b2*2)/3);
+	imagecolorsetEx($font,3,$r2,$g2,$b2);
+	imagecolorsetEx($font,0,$r3,$g3,$b3);
 	return $font;
 }
 
 function box($x,$y,$w,$h){
 	global $img,$c;
 
-	$x*=8;
-	$y*=8;
-	$w*=8;
-	$h*=8;
+	$x	= floor($x) * 8;
+	$y	= floor($y) * 8;
+	$w	= floor($w) * 8;
+	$h	= floor($h) * 8;
 
 	imagerectangle($img,$x+0,$y+0,$x+$w-1,$y+$h-1,$c['bxb0']);
 	imagerectangle($img,$x+1,$y+1,$x+$w-2,$y+$h-2,$c['bxb3']);
@@ -184,7 +184,7 @@ function box($x,$y,$w,$h){
 	imagerectangle($img,$x+4,$y+4,$x+$w-5,$y+$h-5,$c['bxb0']);
 
 	for($i=5;$i<$h-5;$i++) {
-	  $n=(1-$i/$h)*100;
+	  $n=(int)((1-$i/$h)*100);
 	  imageline($img,$x+5,$y+$i,$x+$w-6,$y+$i,$c[$n]);
 	}
 }
@@ -196,19 +196,19 @@ function bars(){
 	if(!$sc[$s]) $sc[$s]=1;
 
 	if ($st['HP'] > 0) {
-		imagefilledrectangle($img,137,41+24,136+$st['HP']/$sc[$s],47+24,$c['bxb0']);
-		imagefilledrectangle($img,136,40+24,135+$st['HP']/$sc[$s],46+24,$c['bar1'][$s]);
+		imagefilledrectangleEx($img,137,41+24,136+$st['HP']/$sc[$s],47+24,$c['bxb0']);
+		imagefilledrectangleEx($img,136,40+24,135+$st['HP']/$sc[$s],46+24,$c['bar1'][$s]);
 		if ($user['damage'] > 0) {
 			$dmg	= max($st[HP] - $user['damage'], 0) / $sc[$s];
 			$ctemp	= imagecolorsforindex($img, $c['bar1'][$s]);
 			$df		= 0.6;
-			imagefilledrectangle($img,135 + $st['HP']/$sc[$s],40+24,135+$dmg,46+24,imagecolorallocate($img, $ctemp['red'] * $df, $ctemp['green'] * $df, $ctemp['blue'] * $df));
+			imagefilledrectangleEx($img,135 + $st['HP']/$sc[$s],40+24,135+$dmg,46+24,imagecolorallocateEx($img, $ctemp['red'] * $df, $ctemp['green'] * $df, $ctemp['blue'] * $df));
 		}
 	}
 
 	if ($st['MP'] > 0) {
-		imagefilledrectangle($img,137,49+24,136+$st['MP']/$sc[$s],55+24,$c['bxb0']);
-		imagefilledrectangle($img,136,48+24,135+$st['MP']/$sc[$s],54+24,$c['bar1'][$s]);
+		imagefilledrectangleEx($img,137,49+24,136+$st['MP']/$sc[$s],55+24,$c['bxb0']);
+		imagefilledrectangleEx($img,136,48+24,135+$st['MP']/$sc[$s],54+24,$c['bar1'][$s]);
 	}
 
 	for($i=2;$i<9;$i++) $st2[$i]=$st[$stat[$i]];
@@ -216,17 +216,17 @@ function bars(){
 	if(!$sc[$s]) $sc[$s]=1;
 	for($i=2;$i<9;$i++){
 		if (floor($st[$stat[$i]]/$sc[$s]) > 0) {
-			imagefilledrectangle($img,89,65+$i*8+24,89+$st[$stat[$i]]/$sc[$s], 71+$i*8+24,$c['bxb0']);
-			imagefilledrectangle($img,88,64+$i*8+24,88+$st[$stat[$i]]/$sc[$s], 70+$i*8+24,$c['bar1'][$s]);
+			imagefilledrectangleEx($img,89,65+$i*8+24,89+$st[$stat[$i]]/$sc[$s], 71+$i*8+24,$c['bxb0']);
+			imagefilledrectangleEx($img,88,64+$i*8+24,88+$st[$stat[$i]]/$sc[$s], 70+$i*8+24,$c['bar1'][$s]);
 		}
 	}
 
 	$e2	= 16 * 8;	// width of bar
-	$e1	= $e2 * $pct;
+	$e1	= floor($e2 * $pct);
 	$y	= 168+1+24;
-	imagefilledrectangle($img,9,$y + 1, 8 + $e2, $y + 4, $c['bxb0']);
-	imagefilledrectangle($img,8,$y    , 7 + $e2, $y + 3, $c['barE2']);
-	imagefilledrectangle($img,8,$y    , 7 + $e1, $y + 3, $c['barE1']);
+	imagefilledrectangleEx($img,9,$y + 1, 8 + $e2, $y + 4, $c['bxb0']);
+	imagefilledrectangleEx($img,8,$y    , 7 + $e2, $y + 3, $c['barE2']);
+	imagefilledrectangleEx($img,8,$y    , 7 + $e1, $y + 3, $c['barE1']);
 }
 
 function nlimiter($n) {
@@ -239,3 +239,19 @@ function nlimiter($n) {
 	return number_format(floor($n / 1000000000), 0, ".", "") ."B";
 }
 
+
+
+// "oh nooooooooooo you're losing PRECISION" who cares
+function imagecolorallocateEx($i, $r, $g, $b) {
+	return imagecolorallocate($i, (int)$r, (int)$g, (int)$b);
+}
+function imagecolorallocatealphaEx($i, $r, $g, $b, $a) {
+	return imagecolorallocatealpha($i, (int)$r, (int)$g, (int)$b, (int)$a);
+}
+function imagecolorsetEx($i, $c, $r, $g, $b, $a = 0) {
+	return imagecolorset($i, (int)$c, (int)$r, (int)$g, (int)$b, (int)$a);
+}
+
+function imagefilledrectangleEx($i, $x1, $y1, $x2, $y2, $c) {
+	return imagefilledrectangle($i, (int)$x1, (int)$y1, (int)$x2, (int)$y2, (int)$c);
+}
