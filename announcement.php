@@ -4,14 +4,14 @@
   if(!$f) $f=0;
   if(@mysql_num_rows(mysql_query("SELECT user FROM forummods WHERE forum=$f and user=$loguserid"))) $ismod=1;
   $canpost=($isadmin or ($ismod && $f>0));
-  if($_GET[action]=='edit' or $_POST[action]=='editannc'){
+  if($_GET['action']=='edit' or $_POST['action']=='editannc'){
     $annc=mysql_fetch_array(mysql_query("SELECT * FROM announcements WHERE id=$id"));
-    if($annc[forum]>0 && $ismod) $canpost=true;
+    if($annc['forum']>0 && $ismod) $canpost=true;
   }
   $smilies=readsmilies();
   if(!$action){
     loadtlayout();
-    $ppp=($log?$loguser[postsperpage]:20);
+    $ppp=($log?$loguser['postsperpage']:20);
     $min=$ppp*$page;
 	if ($loguser['id'] && $f == 0) {
 		mysql_query("UPDATE `users` SET `lastannouncement` = (SELECT MAX(`id`) FROM `announcements` WHERE `forum` = 0) WHERE `id` = '". $loguser['id'] ."'");
@@ -33,22 +33,22 @@
 	  $edit="<a href=announcement.php?id=$annc[0]&action=edit>Edit</a> | <a href=announcement.php?id=$annc[0]&action=delete&f=$f>Delete</a>";
 	  if($isadmin) $ip=" | IP: $annc[3]";
 	}
-	if($loguser[viewsig]==2){
-	  $annc[headtext]=$annc[postheader];
-	  $annc[signtext]=$annc[signature];
+	if($loguser['viewsig']==2){
+	  $annc['headtext']=$annc['postheader'];
+	  $annc['signtext']=$annc['signature'];
 	}
-	$annc[text]="<center><b>$annc[atitle]</b></center><hr>$annc[text]";
+	$annc['text']="<center><b>$annc[atitle]</b></center><hr>$annc[text]";
 	$annclist.=threadpost($annc,$bg);
     }
   }
   if($canpost){
-    if($_GET[action]=='delete'){
+    if($_GET['action']=='delete'){
 	mysql_query("DELETE FROM announcements WHERE id=$id");
 	$annclist.="
 	  $tccell1>Announcement deleted.
 	  <br>".redirect("announcement.php?f=$f",'return to the announcements',0);
     }
-    if($_GET[action]=='new'){
+    if($_GET['action']=='new'){
 	$annclist="
 	  <FORM ACTION=announcement.php NAME=REPLIER METHOD=POST>
 	  $tccellh width=150>&nbsp</td>$tccellh>&nbsp;<tr>
@@ -59,12 +59,12 @@
 	  $inps=preview VALUE=\"Preview announcement\"></td></FORM>
 	";
     }
-    if($_GET[action]=='edit'){
-	if(!$annc[headid]) $head=$annc[headtext];
+    if($_GET['action']=='edit'){
+	if(!$annc['headid']) $head=$annc['headtext'];
 	else $head=mysql_result(mysql_query("SELECT text FROM postlayouts WHERE id=$annc[headid]"),0,0);
-	if(!$annc[signid]) $sign=$annc[signtext];
+	if(!$annc['signid']) $sign=$annc['signtext'];
 	else $sign=mysql_result(mysql_query("SELECT text FROM postlayouts WHERE id=$annc[signid]"),0,0);
-	sbr(1,$annc[text]);
+	sbr(1,$annc['text']);
 	sbr(1,$head);
 	sbr(1,$sign);
 	$annclist="
@@ -83,15 +83,15 @@
 	  $inps=preview VALUE=\"Preview announcement\"></td></FORM>
 	";
     }
-    if($_POST[action]=='postannc'){
+    if($_POST['action']=='postannc'){
 	$userid = $loguserid;
 	$user   = $loguser;
 	if($userid!=-1){
-	  $sign=$user[signature];
-	  $head=$user[postheader];
-	  if($user[postbg]) $head="<div style=background:url($user[postbg]);height=100%>$head";
-	  $numposts=$user[posts];
-	  $numdays=(ctime()-$user[regdate])/86400;
+	  $sign=$user['signature'];
+	  $head=$user['postheader'];
+	  if($user['postbg']) $head="<div style=background:url($user[postbg]);height=100%>$head";
+	  $numposts=$user['posts'];
+	  $numdays=(ctime()-$user['regdate'])/86400;
 	  $message=doreplace($message,$numposts,$numdays,$user['name']);
 	  $rsign=doreplace($sign,$numposts,$numdays,$user['name']);
 	  $rhead=doreplace($head,$numposts,$numdays,$user['name']);
@@ -137,11 +137,11 @@
 	    $tccell1>Couldn't enter the announcement. You haven't entered the right username or password.
 	    ".redirect('announcement.php','return to the announcements',0);
     }
-    if($_POST[action]=='editannc'){
+    if($_POST['action']=='editannc'){
       print $tblstart;
-	$numposts=$loguser[posts];
-	$numdays=(ctime()-$loguser[regdate])/86400;
-	$message=doreplace($message,$numposts,$numdays,$loguser[name]);
+	$numposts=$loguser['posts'];
+	$numdays=(ctime()-$loguser['regdate'])/86400;
+	$message=doreplace($message,$numposts,$numdays,$loguser['name']);
 
 	$namecolor = getnamecolor($loguser['sex'], $loguser['powerlevel']);
 	$edited ="<a href=profile.php?id=$loguser[id]><font $namecolor>$loguser[name]</font></a>";

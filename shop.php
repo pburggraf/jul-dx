@@ -15,10 +15,10 @@
 	$tblend;
   }else{
     $user=mysql_fetch_array(mysql_query("SELECT posts,regdate,users_rpg.* FROM users,users_rpg WHERE id=$loguserid AND uid=id"));
-    $p=$user[posts];
-    $d=(ctime()-$user[regdate])/86400;
+    $p=$user['posts'];
+    $d=(ctime()-$user['regdate'])/86400;
     $st=getstats($user);
-    $GP=$st[GP];
+    $GP=$st['GP'];
     switch($action){
 	case '':
 	  $shops=mysql_query('SELECT * FROM itemcateg ORDER BY corder');
