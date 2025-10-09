@@ -150,22 +150,25 @@
 	$loguser['viewsig']	= 1;
 
 	// shop/rpg such
-	$shops=$sql->query('SELECT * FROM itemcateg ORDER BY corder');
-	$eq=$sql->fetchq("SELECT * FROM users_rpg WHERE uid=$id");
-	$itemids=array_unique(array($eq['eq1'], $eq['eq2'], $eq['eq3'], $eq['eq4'], $eq['eq5'], $eq['eq6'], $eq['eq7']));
-	$itemids=implode(',', $itemids);
-	$eqitems=$sql->query("SELECT * FROM items WHERE id IN ({$itemids})");
-	while($item=$sql->fetch($eqitems)) $items[$item['id']]=$item;
-	while($shop=$sql->fetch($shops))
-		$shoplist.="
+	$shops			= $sql->getarray("SELECT * FROM `itemcateg` ORDER BY `corder`");
+	$eq				= $sql->fetchq("SELECT * FROM `users_rpg` WHERE `uid` = '$id'");
+	$itemids		= array($eq['eq1'], $eq['eq2'], $eq['eq3'], $eq['eq4'], $eq['eq5'], $eq['eq6'], $eq['eq7']);
+	$itemids		= implode(',', $itemids);
+	$eqitems		= $sql->query("SELECT * FROM items WHERE id IN ({$itemids})");
+
+	while ($item = $sql->fetch($eqitems)) $items[$item['id']] = $item;
+	$shoplist		= "";
+	foreach($shops as $shop) {
+		$shoplist	.= "
 			<tr>
 			$tccell1s>$shop[name]</td>
-			$tccell2s width=100%>".$items[$eq['eq'.$shop['id']]]['name']."&nbsp;</td>
+			$tccell2s width=100%>". ($items[$eq['eq'.$shop['id']]]['name'] ?? "") ."&nbsp;</td>
 		";
+	}
 
-	/* extra munging for whatever reason */
+
+
 	$email		= "";
-	// $user['email'] ? ($log ? $user['email'] : "(not visible to guests") : "";
 	if ($user['email']) {
 		if ($log) {
 			$email	= "<a href=\"mailto:". htmlspecialchars($user['email']) ."\">$user[email]</a>";
@@ -173,6 +176,7 @@
 			$email	= "(Not visible to guest users)";
 		}
 	}
+
 
 	// AKA
 	if ($user['aka'] && $user['aka'] != $user['name'])
@@ -191,7 +195,6 @@ $tblstart
 	$tccell1l width=150><b>Total posts</td>			$tccell2l>$user[posts] ($postavg per day) $projdate<br>$bar<tr>
 	$tccell1l width=150><b>Total threads</td>		$tccell2l>$threadsposted<tr>
 	$tccell1l width=150><b>EXP</td>					$tccell2l>$expstatus<tr>
-". (false ? "	$tccell1l width=150><b>User rating</td>			$tccell2l>$ratingstatus<tr>" : "") ."
 	$tccell1l width=150><b>Registered on</td>		$tccell2l>".@date($dateformat,$user['regdate']+$tzoff)." (".floor((ctime()-$user['regdate'])/86400)." days ago)<tr>
 	$tccell1l width=150><b>Last post</td>			$tccell2l>$lastpostdate$lastpostlink<tr>
 	$tccell1l width=150><b>Last activity</td>		$tccell2l>".date($dateformat,$user['lastactivity']+$tzoff)."$lastip<tr>
@@ -237,7 +240,6 @@ $tblend
 	<a href=thread.php?user=$id>Show posts</a> |
 	<a href=forum.php?user=$id>View threads by this user</a>
 	$sendpmsg
-  $ratelink
   $moodavatar
   <tr>
 	$tccell2s colspan=2>
@@ -248,5 +250,4 @@ $tblend
 	$tblend$footer
   ";
 
-  printtimedif($startingtime);
-?>
+	printtimedif($startingtime);
