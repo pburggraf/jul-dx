@@ -1,6 +1,6 @@
 <?php
 
-	if ($_POST['action'] == "Register" && $_POST['homepage']) {
+	if (($_POST['action'] ?? null) === "Register" && ($_POST['homepage'] ?? "") !== "") {
 		// If someone submits the form with the fake homepage field filled,
 		// just do nothing and send them off elsewhere to spam
 		header("Location: http://127.0.0.1");
@@ -12,9 +12,9 @@
 
 	print $header;
 
-	if ($adminconfig['registrationdisable']) {
-		die("$tblstart<br>$tccell2>Registration is disabled. Please contact an admin if you have any questions.$tblend$footer");
-	}
+	// if ($adminconfig['registrationdisable']) { // this is never defined anywhere
+	// 	die("$tblstart<br>$tccell2>Registration is disabled. Please contact an admin if you have any questions.$tblend$footer");
+	// }
 
 
 	// Errors for display in the registration form
@@ -30,8 +30,8 @@
 	$registered = false;
 
 	$name = trim($_POST['name'] ?? "");
-	$pass = $_POST['pass'] ?? null;
-	$email = $_POST['email'] ?? null;
+	$pass = trim($_POST['pass'] ?? "");
+	$email = trim($_POST['email'] ?? "");
 
 	if ($_POST['action'] == 'Register') {
 
@@ -40,13 +40,19 @@
 			$errors['name']	= "Required";
 		}
 
-		if ($pass === null) {
+		if ($pass === "") {
 			$error = "No password given.";
 			$errors['pass']	= "Required";
+		} elseif (strlen($pass) < 8) {
+			$error = "Password must be at least 8 letters.";
+			$errors['pass']	= "Too short";
+		} elseif (strlen($pass) > 32) {
+			$error = "Password cannot be longer than 32 characters.";
+			$errors['pass']	= "Too long";
 		}
 
 		// If e-mail address is given, make sure it is an actual e-mail address
-		if ($email !== null && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		if ($email !== "" && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 			$error = "Invalid e-mail address.";
 			$errors['email']	= "Invalid";
 		}
@@ -141,13 +147,17 @@
 					INSERT INTO `users`
 					SET
 						`name` = '". mysql_real_escape_string($name) ."',
-						". ($email !== null ? "`email` = '". mysql_real_escape_string($email) ."'," : "") ."
+						". ($email !== "" ? "`email` = '". mysql_real_escape_string($email) ."'," : "") ."
 						`powerlevel` = '". ($admin ? 3 : 0) ."',
 						`postsperpage` = '20',
 						`threadsperpage` = '50',
 						`lastip` = '". mysql_real_escape_string($ipaddr) ."',
 						`layout` = '1',
 						`scheme` = '0',
+						`pagestyle` = '0',
+						`pollstyle` = '0',
+						`lastexp` = '0',
+						`lastannouncement` = '0',
 						`lastactivity` = '$currenttime',
 						`regdate` = '$currenttime'
 						");
@@ -158,7 +168,22 @@
 				$ircout['id']		= $newuserid;
 				xk_ircout("user", $ircout['name'], $ircout);
 
-				$sql->query("INSERT INTO `users_rpg` (`uid`) VALUES ('". $newuserid ."')") or print mysql_error();
+				$sql->query("
+					INSERT INTO `users_rpg`
+					SET
+						`uid`		= '". $newuserid ."',
+						`class`		= 0,
+						`damage`	= 0,
+						`spent`		= 0,
+						`gcoins`	= 0,
+						`eq1`		= 0,
+						`eq2`		= 0,
+						`eq3`		= 0,
+						`eq4`		= 0,
+						`eq5`		= 0,
+						`eq6`		= 0,
+						`eq7`		= 0
+					") or print mysql_error();
 
 				print "<br>$tblstart$tccell1>Your new account, $name, has been registered.<br>".redirect('login.php', 'log in',0);
 				$registered = true;
@@ -166,7 +191,7 @@
 			} else {
 
 				if ($userid !== false) {
-					$error = "The username '". htmlspecialchars($name) ."' is already <a href='profile.php?id=$userid'>in use</a>.";
+					$error = "The username '". htmlspecialchars($name) ."' is <a href='profile.php?id=$userid'>already in use</a>.";
 					$errors['name'] = "In use";
 
 				} elseif ($nomultis) {
@@ -214,7 +239,7 @@ HTML;
 			$tccell1><b>User name:</b>$descbr The name you want to use on the board.</td>
 			$tccell2l width=50%>$inpt=name size="25" maxlength="25" id="name" value="$namev"> {$errors['name']}
 			<tr>
-			$tccell1><b>Password:</b>$descbr Enter any password up to 32 characters in length. It can later be changed by editing your profile.</td>
+			$tccell1><b>Password:</b>$descbr Enter any password. Must be between 8 and 32 characters long (inclusive)</td>
 			$tccell2l width=50%>$inpp=pass size="25" maxlength="64"> {$errors['pass']}
 			<tr>
 			$tccell1><b>E-mail address:</b>$descbr Your e-mail address. This will only be used for recovering your account. (optional)</td>

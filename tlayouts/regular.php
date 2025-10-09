@@ -13,7 +13,7 @@
 		$lvl		= calclvl($exp);
 		$expleft	= calcexpleft($exp);
 		$set['userpic'] = $set['userpic'] ?? ""; // please stop being undefined
-
+		$post['num']	= $post['num'] ?? null;
 
 		if ($tlayout == 1) {
 			$level		= "Level: $lvl";
@@ -54,7 +54,8 @@
 		if(!$post['num']){
 			$postnum	= '';
 
-			if($postlayout==1) $posttotal="<img src=numgfx.php?n=$post[posts]&f=$numfil&l=4 height=8>";
+			// ????
+			// if($postlayout==1) $posttotal="<img src=numgfx.php?n=$post[posts]&f=$numfil&l=4 height=8>";
 		}
 
 

@@ -475,7 +475,7 @@
 
 	if($ref && substr($ref,7,7)!="jul.rus") $sql->query("INSERT INTO referer (time,url,ref,ip) VALUES (". ctime() .", '".addslashes($url)."', '".addslashes($ref)."', '". $_SERVER['REMOTE_ADDR'] ."')");
 
-	$sql->query("DELETE FROM guests WHERE ip='$userip' OR date<".(ctime()-300));
+	$sql->query("DELETE FROM guests WHERE ip='$userip' OR date<".(ctime()-GUEST_BROWSING_TIME));
 
 	if($log) {
 		/*

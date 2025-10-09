@@ -11,7 +11,7 @@
 		$userlink = getuserlink($post, array('id'=>'uid'), $linkclass);
 		unset($postuser);
 
-		$set['userrank'] = getrank($post['useranks'],str_replace("<div", "<<z>idiot", $post['title']),$post['posts'],$post['powerlevel']);
+		$set['userrank'] = getrank($post['useranks'],str_replace("<div", "<<z>idiot", $post['title'] ?? ""),$post['posts'],$post['powerlevel']);
 		$set['userlink'] = "<a name={$p}></a>{$userlink}";
 		$set['date']  = date($dateformat,$post['date']+$tzoff);
 
@@ -23,7 +23,7 @@
 			$set['userpic']   = "<img class='avatar' src=\"{$post['picture']}\">";
 			$set['picture']   = $post['picture'];
 
-			if ($post['moodid'] && $post['moodurl']) {
+			if (($post['moodid'] ?? false) && ($post['moodurl'] ?? false)) {
 				$set['userpic'] = "<img class='avatar' src=\"". str_replace(array('$', '>', '"'), array($post['moodid'], '%3E', '%22'), $post['moodurl']) ."\">";
 				$set['picture'] = str_replace(array('$', '>', '"'), array($post['moodid'], '%3E', '%22'), $post['moodurl']);
 			}
@@ -37,7 +37,7 @@
 			$set['threadlink'] = "<a href=thread.php?id={$pthread['id']}>{$pthread['title']}</a>";
 		}
 
-		$post['text']=doreplace2($post['text'], $post['options'], $post['moodid']);
+		$post['text']=doreplace2($post['text'], $post['options'] ?? "0|0", $post['moodid'] ?? 0);
 
 		if (filter_int($post['editdate'])) {
 			$post['edited'] = " (last edited by {$post['edited']} at ".date($dateformat,$post['editdate']+$tzoff).")";
@@ -98,8 +98,8 @@
 			$post['headtext']=doreplace($post['headtext'],$post['num'],($post['date']-$post['regdate'])/86400,$post['name']);
 			$post['signtext']=doreplace($post['signtext'],$post['num'],($post['date']-$post['regdate'])/86400,$post['name']);
 		}
-		$post['headtext']=doreplace2($post['headtext'], null, $post['moodid']);
-		$post['signtext']=doreplace2($post['signtext'], null, $post['moodid']);
+		$post['headtext']=doreplace2($post['headtext'], null, $post['moodid'] ?? 0);
+		$post['signtext']=doreplace2($post['signtext'], null, $post['moodid'] ?? 0);
 		//	$post['text']=doreplace2($post['text'], $post['options']);
 		return $post;
 	}

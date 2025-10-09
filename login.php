@@ -107,7 +107,7 @@ MSG;
 		$tccellh width=40%>&nbsp;</td>
 	</tr><tr>
 		$tccell1><b>User name:</b></td>
-		$tccell2l>$inpt=username maxlength=25 style='width:280px;' ". (!$username ? "autofocus='1' " : "") ."tabindex='1' value=\"". htmlspecialchars($username) ."\"></td>
+		$tccell2l>$inpt=username maxlength=25 style='width:280px;' ". (!$username ? "autofocus='1' " : "") ."tabindex='1' value=\"". htmlspecialchars($username ?? "") ."\"></td>
 		$tccell1 rowspan=2><b>IP Verification:</b></td> $tccell2l rowspan=2>
 			<select name='verify' tabindex=4>
 				<option selected value=0>Don't use</option>

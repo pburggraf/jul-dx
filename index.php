@@ -63,12 +63,13 @@
 			$blist.= "$userurl ($y)";
 		}
 
-		$onlinetime=ctime()-300;
-		$onusers=$sql->query("SELECT id,name,powerlevel,lastactivity,sex,minipic,aka,birthday FROM users WHERE lastactivity>$onlinetime OR lastposttime>$onlinetime ORDER BY name");
-		$numonline=mysql_num_rows($onusers);
+		$onlinetime = ctime()-300;
+		$onusers = $sql->query("SELECT id,name,powerlevel,lastactivity,sex,minipic,aka,birthday FROM users WHERE lastactivity > $onlinetime OR lastposttime > $onlinetime ORDER BY name");
+		$numonline = mysql_num_rows($onusers);
 
-		$numguests=$sql->resultq("SELECT count(*) FROM guests WHERE date>$onlinetime",0,0);
-		if ($numguests) $guestcount=" | <nobr>$numguests guest".($numguests>1?"s":"");
+		$numguests = $sql->resultq("SELECT count(*) FROM guests WHERE date>$onlinetime",0,0);
+		$guestcount = "";
+		if ($numguests) $guestcount = " | <nobr>$numguests guest".($numguests>1?"s":"");
 		$onlineusersa	= array();
 		for ($numon=0; $onuser = $sql->fetch($onusers);$numon++) {
 
@@ -149,7 +150,8 @@
 			$pms = $sql->getresultsbykey("SELECT msgread, COUNT(*) num FROM pmsgs WHERE userto=$loguserid GROUP BY msgread", 'msgread', 'num');
 			$pms[0]		= intval($pms[0] ?? 0);		// unread
 			$pms[1]		= intval($pms[1] ?? 0);		// read
-			$totalpms = $pms[0] + $pms[1];
+			$totalpms	= $pms[0] + $pms[1];
+			$lastmsg	= "";
 
 			if ($totalpms) {
 				if ($pms[0]) $new = $statusicons['new'];
@@ -250,7 +252,7 @@
   // Quicker (?) new posts calculation that's hopefully accurate v.v
   if ($log) {
 	  $qadd = array();
-	  foreach ($forums as $forum) $qadd[] = "(lastpostdate > '{$postread[$forum['id']]}' AND forum = '{$forum['id']}')\r\n";
+	  foreach ($forums as $forum) $qadd[] = "(lastpostdate > '". ($postread[$forum['id']] ?? 0) ."' AND forum = '{$forum['id']}')\r\n";
 	  $qadd = implode(' OR ', $qadd);
 
 		$forumnew = $sql->getresultsbykey("SELECT forum, COUNT(*) AS unread FROM threads t LEFT JOIN threadsread tr ON (tr.tid = t.id AND tr.uid = $loguser[id])
