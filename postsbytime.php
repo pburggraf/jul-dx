@@ -41,6 +41,10 @@
 		if (($postshour[$h['hour']] = $h['cnt']) > $max)
 			$max = $h['cnt'];
 
+	if (!$max) {
+		$max = 1;
+	}
+
 	for($i=0;$i<24;$i++) {
 		$time = sprintf('%1$02d:00 - %1$02d:59', $i);
 		$bar  = "<img src=images/$numdir".'bar-on.gif width='.(@floor($postshour[$i]/$max*10000)/100).'% height=8>';

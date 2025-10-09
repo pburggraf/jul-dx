@@ -50,7 +50,7 @@
 		</select>";
 
 	// Remove those already added
-	if (count($idlist))
+	if ($idlist && count($idlist))
 		$qwhere = "AND id NOT IN (". implode(",", $idlist).")";
 	else $qwhere = '';
 
