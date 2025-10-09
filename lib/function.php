@@ -26,6 +26,12 @@
 		date_default_timezone_set($board_timezone);
 	}
 
+	if (!defined("CTIME_ADJUSTMENT")) {
+		// manual adjustment for the ctime() function,
+		// which should never be needed, but Time Zones
+		define("CTIME_ADJUSTMENT", 0);
+	}
+
 	$sql	= new mysql;
 
 
@@ -606,8 +612,8 @@ function doforumlist($id){
 	return $forumlinks;
 }
 
-function ctime(){return time() - 3*3600; } // +3*3600;}
-function cmicrotime(){return microtime(true) - 3*3600; } // +3*3600;}
+function ctime(){return time() + CTIME_ADJUSTMENT; }
+function cmicrotime(){return microtime(true) + CTIME_ADJUSTMENT; }
 
 function getrank($rankset,$title,$posts,$powl){
 	global $hacks, $sql;
