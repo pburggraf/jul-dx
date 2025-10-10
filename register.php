@@ -32,8 +32,9 @@
 	$name = trim($_POST['name'] ?? "");
 	$pass = trim($_POST['pass'] ?? "");
 	$email = trim($_POST['email'] ?? "");
+	$action = trim($_POST['action'] ?? "");
 
-	if ($_POST['action'] == 'Register') {
+	if ($action == 'Register') {
 
 		if ($name === "") {
 			$error = "No username given.";
