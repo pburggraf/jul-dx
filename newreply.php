@@ -137,7 +137,7 @@
 						else $stickq = "`sticky` = '0',";
 				}
 
-				$sql->query("INSERT INTO posts (thread,user,date,ip,num,headid,signid,moodid) VALUES ($id,$userid,$currenttime,'$userip',$numposts,$headid,$signid,'". $_POST['moodid'] ."')");
+				$sql->query("INSERT INTO posts (thread,user,date,ip,num,headid,signid,moodid,noob) VALUES ($id,$userid,$currenttime,'$userip',$numposts,$headid,$signid,'". $_POST['moodid'] ."',0)");
 				$pid=mysql_insert_id();
 
 				$options = filter_int($nosmilies) . "|" . filter_int($nohtml);
