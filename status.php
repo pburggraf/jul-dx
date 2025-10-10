@@ -28,6 +28,7 @@
 	if($st['lvl'] > 0) $pct = 1 - calcexpleft($st['exp'])/totallvlexp($st['lvl']);
 
 	if (!$class) {
+		$class			= [];
 		$class['name']	= "None";
 	}
 
