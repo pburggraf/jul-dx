@@ -6,9 +6,11 @@
 	if($loguser['profile_locked'] == 1) {
 		errorpage("You are not allowed to edit your profile.");
 	}
-  if($loguser['posts']>=500 or ($loguser['posts']>=250 && (ctime()-$loguser['regdate'])>=100*86400)) $postreq=1;
+  $postreq = false;
+  $titleopt=false;
+  if($loguser['posts']>=500 or ($loguser['posts']>=250 && (ctime()-$loguser['regdate'])>=100*86400)) $postreq=true;
   if($loguser['titleoption']==0 || $banned) $titleopt=0;
-  if($loguser['titleoption']==1 && ($postreq or $power>0 or $loguser[title])) $titleopt=1;
+  if($loguser['titleoption']==1 && ($postreq or $power>0 or $loguser['title'])) $titleopt=1;
   if($loguser['titleoption']==2) $titleopt=1;
   if(!$action){
     $birthday=getdate($loguser['birthday']);
