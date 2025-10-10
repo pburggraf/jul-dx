@@ -217,7 +217,7 @@
 				mysql_query("INSERT INTO `threads` (`forum`, `user`, `views`, `closed`, `title`, `icon`, `replies`, `firstpostdate`, `lastpostdate`, `lastposter`) ".
 							"VALUES ('$id', '$userid', '0', '0', '$subject', '$posticon', '0', '$currenttime', '$currenttime', '$userid')");
 				$t = mysql_insert_id();
-				mysql_query("INSERT INTO `posts` (`thread`, `user`, `date`, `ip`, `num`, `headid`, `signid`, `moodid`) VALUES ('$t', '$userid', '$currenttime', '$userip', '$postnum', '$headid', '$signid','". $_POST['moodid'] ."')");
+				mysql_query("INSERT INTO `posts` (`thread`, `user`, `date`, `ip`, `num`, `headid`, `signid`, `moodid`, `noob`) VALUES ('$t', '$userid', '$currenttime', '$userip', '$postnum', '$headid', '$signid','". $_POST['moodid'] ."', 0)");
 				$pid=mysql_insert_id();
 				$options = intval($nosmilies) . "|" . intval($nohtml);
 				if($pid) mysql_query("INSERT INTO `posts_text` (`pid`, `text`, `tagval`, `options`) VALUES ('$pid', '$msg', '$tagval', '$options')");
