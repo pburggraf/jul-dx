@@ -3,7 +3,7 @@
 
 
 	function report($type, $msg) {
-		if (!function_exists('get_discord_webhook')) return;
+		if (!defined("BOARD_REPORTING_URL") || !function_exists('get_discord_webhook')) return;
 
 		$wh_url = get_discord_webhook($type, null);
 
@@ -37,14 +37,14 @@
 				$extradiscord	= " (**Password matches**: " . $in['pmatch'] . ")";
 			}
 
-			$out	= "1|New user: #". xk(12) . $in['id'] . xk(11) ." $user ". xk() ."(IP: ". xk(12) . $in['ip'] . xk() .")$extra: https://jul.rustedlogic.net/?u=". $in['id'];
-			$outdiscord = "New user: **#" . $in['id'] . "** ". $user . " (IP: " . $in['ip'] . ")$extra: <https://jul.rustedlogic.net/?u=" . $in['id'] . ">";
+			$out	= "1|New user: #". xk(12) . $in['id'] . xk(11) ." $user ". xk() ."(IP: ". xk(12) . $in['ip'] . xk() .")$extra: ". BOARD_REPORTING_URL ."?u=". $in['id'];
+			$outdiscord = "New user: **#" . $in['id'] . "** ". $user . " (IP: " . $in['ip'] . ")$extra: <". BOARD_REPORTING_URL ."?u=" . $in['id'] . ">";
 
 		} else {
 //			global $sql;
 //			$res	= $sql -> resultq("SELECT COUNT(`id`) FROM `posts`");
-			$out	= "$dest|New $type by ". xk(11) . $user . xk() ." (". xk(12) . $in['forum'] .": ". xk(11) . $in['thread'] . xk() ."): https://jul.rustedlogic.net/?p=". $in['pid'];
-			$outdiscord = "New $type by **" . $user . "** (" . $in['forum'] . ": **" . $in['thread'] . "**): <https://jul.rustedlogic.net/?p=". $in['pid'] . ">";
+			$out	= "$dest|New $type by ". xk(11) . $user . xk() ." (". xk(12) . $in['forum'] .": ". xk(11) . $in['thread'] . xk() ."): ". BOARD_REPORTING_URL ."?p=". $in['pid'];
+			$outdiscord = "New $type by **" . $user . "** (" . $in['forum'] . ": **" . $in['thread'] . "**): <". BOARD_REPORTING_URL ."?p=". $in['pid'] . ">";
 
 		}
 
