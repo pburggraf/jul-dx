@@ -1,10 +1,13 @@
 <?php
 	require 'lib/function.php';
 	require 'lib/rpg.php';
-	$u = 1;
-	if(!intval($u)) die();
+
+	$u	= intval($_GET['u'] ?? 0);
+	if(!$u) die("Invalid user.");
 
 	$user = $sql->fetchq("SELECT name,posts,regdate,users_rpg.* FROM users,users_rpg WHERE id='$u' AND uid=id");
+	if (!$user) die("Invalid user.");
+
 	$p = $user['posts'];
 	$d = (ctime()-$user['regdate'])/86400;
 
