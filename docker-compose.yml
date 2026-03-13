@@ -1,0 +1,29 @@
+services:
+    jul-dx-nginx:
+        container_name: jul-dx-nginx
+        depends_on:
+            - jul-dx-fpm
+        build:
+            context: .
+            dockerfile: docker/nginx/Dockerfile
+        volumes:
+            - .:/var/www/application/
+        networks:
+            - jul-dx-network
+
+    jul-dx-fpm:
+        user: "${DOCKER_UID:-82}:${DOCKER_GID:-82}"
+        container_name: jul-dx-fpm
+        image: pburggraf/php:8.5-fpm-dev
+        volumes:
+            - .:/var/www/application/
+        working_dir: /var/www/application
+        environment:
+            HOME: /var/www/application
+            PHP_IDE_CONFIG: $PHP_IDE_CONFIG
+        networks:
+            - jul-dx-network
+
+networks:
+    jul-dx-network:
+        external: true
