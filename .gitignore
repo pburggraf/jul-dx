@@ -10,3 +10,9 @@ lib/firewall.php
 favicon.gif
 robots.txt
 google*.html
+
+/.idea/
+/vendor/
+/.composer/
+.php-cs-fixer.cache
+.ash_history
