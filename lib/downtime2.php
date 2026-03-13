@@ -1,6 +1,6 @@
 <?php
 
-	http_response_code(500);
+http_response_code(500);
 
 ?><html><head><title>Jul is offline for now</title>
 	<link rel="shortcut icon" href="/images/favicons/favicon3.ico" type="image/x-icon">
@@ -91,6 +91,6 @@
 </body></html>
 <?php
 
-	die();
+    exit;
 
 ?>

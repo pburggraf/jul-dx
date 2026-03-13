@@ -1,27 +1,31 @@
 <?php
-	require 'lib/function.php';
-	require 'lib/layout.php';
 
-	$misc   = $sql->fetchq('SELECT * FROM misc');
-	$tstats = $sql->query('SHOW TABLE STATUS');
-	while ($t = $sql->fetch($tstats)) $tbl[$t['Name']]=$t;
+declare(strict_types=1);
+require 'lib/function.php';
+require 'lib/layout.php';
+
+$misc = $sql->fetchq('SELECT * FROM misc');
+$tstats = $sql->query('SHOW TABLE STATUS');
+while ($t = $sql->fetch($tstats)) {
+    $tbl[$t['Name']] = $t;
+}
 
 /*
-	$sch_info = "";
-	$schemes = $sql->query('
-		SELECT COUNT(u.id) as schemecount, u.scheme, schemes.name
-		FROM users AS u
-		LEFT JOIN schemes ON (u.scheme = schemes.id)
-		WHERE (schemes.ord >= 0)
-		GROUP BY u.scheme
-		ORDER BY schemecount DESC
-	');
+    $sch_info = "";
+    $schemes = $sql->query('
+        SELECT COUNT(u.id) as schemecount, u.scheme, schemes.name
+        FROM users AS u
+        LEFT JOIN schemes ON (u.scheme = schemes.id)
+        WHERE (schemes.ord >= 0)
+        GROUP BY u.scheme
+        ORDER BY schemecount DESC
+    ');
 
-	while ($row = $sql->fetch($schemes)) {
-		$sch_info .= "<tr>$tccell1>$row[name]</td>$tccell1>$row[schemecount]</tr>";
-	} */
+    while ($row = $sql->fetch($schemes)) {
+        $sch_info .= "<tr>$tccell1>$row[name]</td>$tccell1>$row[schemecount]</tr>";
+    } */
 
-	print "
+echo "
 	$header
 	<br>$tblstart
 	<tr>$tccellh>Interesting statistics</td></tr>
@@ -47,20 +51,20 @@
 	<br>$tblstart
 	$tccellh width='200'>Records$tccellh>&nbsp<tr>
 	$tccell1s><b>Most posts within 24 hours:</td>
-	$tccell2ls>$misc[maxpostsday], on ".date($dateformat,$misc['maxpostsdaydate'])."<tr>
+	$tccell2ls>$misc[maxpostsday], on ".date($dateformat, $misc['maxpostsdaydate'])."<tr>
 	$tccell1s><b>Most posts within 1 hour:</td>
-	$tccell2ls>$misc[maxpostshour], on ".date($dateformat,$misc['maxpostshourdate'])."<tr>
+	$tccell2ls>$misc[maxpostshour], on ".date($dateformat, $misc['maxpostshourdate'])."<tr>
 	$tccell1s><b>Most users online:</td>
-	$tccell2ls>$misc[maxusers], on ".date($dateformat,$misc['maxusersdate'])."$misc[maxuserstext]
+	$tccell2ls>$misc[maxusers], on ".date($dateformat, $misc['maxusersdate'])."$misc[maxuserstext]
 	$tblend<br>".
 /*
-	// This is kind of in Edit Profile already.
-	"$tblstart<tr>$tccellh colspan='2'>Scheme Usage Breakdown</td></tr>
-	<tr>$tccellh>Scheme Name</td>$tccellh>Users</td></tr>
-	$sch_info
-	$tblend<br>".
+// This is kind of in Edit Profile already.
+"$tblstart<tr>$tccellh colspan='2'>Scheme Usage Breakdown</td></tr>
+<tr>$tccellh>Scheme Name</td>$tccellh>Users</td></tr>
+$sch_info
+$tblend<br>".
 */
-	"$tblstart<tr>
+"$tblstart<tr>
 	$tccellh>Table name</td>
 	$tccellh>Rows</td>
 	$tccellh>Avg. data/row</td>
@@ -68,44 +72,46 @@
 	$tccellh>Index size</td>
 	$tccellh>Overhead</td>
 	$tccellh>Total size</td></tr>"
-	.tblinfo('posts_text')
-	.tblinfo('posts')
-	.tblinfo('pmsgs_text')
-	.tblinfo('pmsgs')
-	.tblinfo('postlayouts')
-	.tblinfo('threads')
-	.tblinfo('users')
-	.tblinfo('forumread')
-	.tblinfo('threadsread')
-	.tblinfo('postradar')
-	.tblinfo('ipbans')
-	.tblinfo('defines')
-	.tblinfo('dailystats')
-	.tblinfo('rendertimes')
-	."$tblend
+.tblinfo('posts_text')
+.tblinfo('posts')
+.tblinfo('pmsgs_text')
+.tblinfo('pmsgs')
+.tblinfo('postlayouts')
+.tblinfo('threads')
+.tblinfo('users')
+.tblinfo('forumread')
+.tblinfo('threadsread')
+.tblinfo('postradar')
+.tblinfo('ipbans')
+.tblinfo('defines')
+.tblinfo('dailystats')
+.tblinfo('rendertimes')
+."$tblend
 ";
 
-	print $footer;
-	printtimedif($startingtime);
+echo $footer;
+printtimedif($startingtime);
 
+function sp($sz)
+{
+    //    $b="$sz B";
+    //    if($sz>1023) $b=sprintf('%01.2f',$sz/1024).' kB';
+    //    if($sz>10239) $b=sprintf('%01.1f',$sz/1024).' kB';
+    //    if($sz>102399) $b=sprintf('%01.0f',$sz/1024).' kB';
+    //    if($sz>1048575) $b=sprintf('%01.2f',$sz/1048576).' MB';
+    //    if($sz>10485759) $b=sprintf('%01.1f',$sz/1048576).' MB';
+    //    if($sz>104857599) $b=sprintf('%01.0f',$sz/1048576).' MB';
+    $b = number_format($sz, 0, '.', ',');
 
+    return $b;
+}
 
-	function sp($sz) {
-//    $b="$sz B";
-//    if($sz>1023) $b=sprintf('%01.2f',$sz/1024).' kB';
-//    if($sz>10239) $b=sprintf('%01.1f',$sz/1024).' kB';
-//    if($sz>102399) $b=sprintf('%01.0f',$sz/1024).' kB';
-//    if($sz>1048575) $b=sprintf('%01.2f',$sz/1048576).' MB';
-//    if($sz>10485759) $b=sprintf('%01.1f',$sz/1048576).' MB';
-//    if($sz>104857599) $b=sprintf('%01.0f',$sz/1048576).' MB';
-		$b=number_format($sz,0,'.',',');
-		return $b;
-	}
+function tblinfo($n)
+{
+    global $tbl,$tccell2,$tccell2l;
+    $t = $tbl[$n];
 
-	function tblinfo($n) {
-		global $tbl,$tccell2,$tccell2l;
-		$t=$tbl[$n];
-		return "
+    return "
 		<tr align=right>
 		$tccell2>$t[Name]</td>
 		$tccell2l>".sp($t['Rows']) ."</td>
@@ -113,5 +119,5 @@
 		$tccell2l>".sp($t['Data_length'])."</td>
 		$tccell2l>".sp($t['Index_length'])."</td>
 		$tccell2l>".sp($t['Data_free'])."</td>
-		$tccell2l>".sp($t['Data_length']+$t['Index_length'])."</td></tr>";
-	}
+		$tccell2l>".sp($t['Data_length'] + $t['Index_length']).'</td></tr>';
+}

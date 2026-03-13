@@ -1,28 +1,28 @@
 <?php
 
-	require 'lib/function.php';
-	$windowtitle	= "Admin Cruft -- $boardname";
-	require 'lib/layout.php';
+declare(strict_types=1);
 
-	print "$header<br>";
-	
-	if (!$isadmin) {
+require 'lib/function.php';
+$windowtitle = "Admin Cruft -- $boardname";
+require 'lib/layout.php';
 
-		print "  
+echo "$header<br>";
+
+if (!$isadmin) {
+    echo "  
 			$tblstart
 				$tccell1>Uh oh, you are not the admin go away.</td>
 			$tblend
 
 		$footer
 		";
-		printtimedif($startingtime);
-		die();
-	}
+    printtimedif($startingtime);
+    exit;
+}
 
-	
-	$misc	= $sql -> fetchq("SELECT * FROM `misc`");
+    $misc = $sql->fetchq('SELECT * FROM `misc`');
 
-	print adminlinkbar("admin.php") ."
+echo adminlinkbar('admin.php') ."
 		$tblstart
 			<tr>$tccellh><b>Panel de Admin<br></td></tr>
 			<tr>$tccell1>&nbsp;
@@ -78,13 +78,13 @@
 			<tr>$tccellc colspan=2><img src=\"images/ihateglennbeckbutistillthinkthisimagefitsquitenicelyundertheadminpanelmoneycounter.jpg\" title=\"longest file name ever\"><br>Monetary settings</td></tr>
 
 			<tr>$tccell1 width='200'><b>Donations</b></td>
-				$tccell2l>	$inpt='donations' value='". sprintf("%01.2f", $misc['donations']) ."' class='right'>$
-							$inph='donations' value='". sprintf("%01.2f", $misc['donations']) ."'>
+				$tccell2l>	$inpt='donations' value='". sprintf('%01.2f', $misc['donations']) ."' class='right'>$
+							$inph='donations' value='". sprintf('%01.2f', $misc['donations']) ."'>
 				</td></tr>
 
 			<tr>$tccell1 width='200'><b>$$$ Ads $$$</b></td>
-				$tccell2l>	$inpt='ads' value='". sprintf("%01.2f", $misc['ads']) ."' class='right'>$
-							$inph='ads' value='". sprintf("%01.2f", $misc['ads']) ."'>
+				$tccell2l>	$inpt='ads' value='". sprintf('%01.2f', $misc['ads']) ."' class='right'>$
+							$inph='ads' value='". sprintf('%01.2f', $misc['ads']) ."'>
 				</td></tr>
 
 
@@ -101,22 +101,10 @@
 
 	";
 
+echo "$footer";
+printtimedif($startingtime);
 
-
-	print "$footer";  
-	printtimedif($startingtime);
-
-
-	// returns several field names with hours/date/time all set up and that jazz etc blah blah blah
-	function timetofields($fname, $time) {
-	
-		
-
-		return;
-	}
-
-
-
-
-
-?>
+// returns several field names with hours/date/time all set up and that jazz etc blah blah blah
+function timetofields($fname, $time)
+{
+    }

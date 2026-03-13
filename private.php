@@ -1,68 +1,75 @@
 <?php
-	require 'lib/function.php';
-	$windowtitle = "$boardname -- Private Messages";
-	require 'lib/layout.php';
 
-	if (!$log)
-		errorpage("You need to be logged in to read your private messages.", 'log in (then try again)', 'login.php');
+declare(strict_types=1);
+require 'lib/function.php';
+$windowtitle = "$boardname -- Private Messages";
+require 'lib/layout.php';
 
-	// Viewing someone else?
-	$u = $loguserid;
-	if ($isadmin && $id) {
-		$u = $id;
-		$idparam = "id=$id&";
-	}
+if (!$log) {
+    errorpage('You need to be logged in to read your private messages.', 'log in (then try again)', 'login.php');
+}
 
-	// Viewing sent messages?
-	$to   = 'to';
-	$from = 'from';
-	if ($view == 'sent') {
-		$to   = 'from';
-		$from = 'to';
-		$viewparam = 'view=sent&';
-	}
+// Viewing someone else?
+$u = $loguserid;
+if ($isadmin && $id) {
+    $u = $id;
+    $idparam = "id=$id&";
+}
 
-	if(!$ppp)
-		$ppp=50;
-	if(!$page)
-		$page=1;
+// Viewing sent messages?
+$to = 'to';
+$from = 'from';
+if ($view == 'sent') {
+    $to = 'from';
+    $from = 'to';
+    $viewparam = 'view=sent&';
+}
 
-	$pmin=($page-1)*$ppp;
-	$msgtotal=$sql->resultq("SELECT count(*) FROM pmsgs WHERE user$to=$u");
-	$pagelinks='Pages:';
-	$p=0;
-	for($i=0; $i<$msgtotal; $i+=$ppp) {
-		$p++;
-		if($p==$page)
-			$pagelinks.=" $p";
-		else
-			$pagelinks.=" <a href=private.php?{$idparam}{$viewparam}page={$p}>{$p}</a>";
-	}
+if (!$ppp) {
+    $ppp = 50;
+}
+if (!$page) {
+    $page = 1;
+}
 
-	// 1252378129
-	$pmsgs   = $sql->query("SELECT p.id,user$from uid,date,t.title,msgread,name,sex,powerlevel,aka
+$pmin = ($page - 1) * $ppp;
+$msgtotal = $sql->resultq("SELECT count(*) FROM pmsgs WHERE user$to=$u");
+$pagelinks = 'Pages:';
+$p = 0;
+for ($i = 0; $i < $msgtotal; $i += $ppp) {
+    ++$p;
+    if ($p == $page) {
+        $pagelinks .= " $p";
+    } else {
+        $pagelinks .= " <a href=private.php?{$idparam}{$viewparam}page={$p}>{$p}</a>";
+    }
+}
+
+// 1252378129
+$pmsgs = $sql->query("SELECT p.id,user$from uid,date,t.title,msgread,name,sex,powerlevel,aka
 		FROM pmsgs p,pmsgs_text t,users u
 		WHERE user$to=$u
 		AND p.id=pid
 		AND user$from=u.id "
-		.($loguser['id'] == 175 ? "AND p.id > 8387 " : "")
-		."ORDER BY " .($loguser['id'] == 175 ? "user$from DESC, " : "msgread ASC, ")
-		."p.id DESC
+    .($loguser['id'] == 175 ? 'AND p.id > 8387 ' : '')
+    .'ORDER BY ' .($loguser['id'] == 175 ? "user$from DESC, " : 'msgread ASC, ')
+    ."p.id DESC
 		LIMIT $pmin,$ppp
 	");
 
-	$from[0] = strtoupper($from[0]);
+$from[0] = strtoupper($from[0]);
 
-	if(!$view)
-		$viewlink="<a href=private.php?{$idparam}view=sent>View sent messages</a>";
-	else
-		$viewlink="<a href=private.php?{$idparam}>View received messages</a>";
+if (!$view) {
+    $viewlink = "<a href=private.php?{$idparam}view=sent>View sent messages</a>";
+} else {
+    $viewlink = "<a href=private.php?{$idparam}>View received messages</a>";
+}
 
-	print "$header
+echo "$header
 		<table width=100%><td>$fonttag<a href=index.php>$boardname</a> - "
-			.(($u != $loguserid) ? $sql->resultq("SELECT `name` FROM `users` WHERE `id` = '$u'")."'s private messages" : "Private messages")
-			." - "
-			.((!$view) ? 'Inbox' : 'Outbox').": $msgtotal</td>
+        .(($u != $loguserid) ? $sql->resultq("SELECT `name` FROM `users` WHERE `id` = '$u'")."'s private messages" : 'Private messages')
+        .' - '
+        .((!$view) ? 'Inbox' : 'Outbox').": $msgtotal</td>
 		<td align=right>$smallfont$viewlink | <a href=sendprivate.php>Send new message</a></table>
 		$tblstart<tr>
 		$tccellh width=50>&nbsp</td>
@@ -71,19 +78,18 @@
 		$tccellh width=180>Sent on</td></tr>
 	";
 
-	while($pmsg = $sql->fetch($pmsgs)) {
-		$new       = ($pmsg['msgread']?'&nbsp;':$statusicons['new']);
-		$namecolor = getuserlink($pmsg, array('id'=>'uid'));
-		print "
+while ($pmsg = $sql->fetch($pmsgs)) {
+    $new = ($pmsg['msgread'] ? '&nbsp;' : $statusicons['new']);
+    $namecolor = getuserlink($pmsg, ['id' => 'uid']);
+    echo "
 			<tr style='height:20px;'>
 			$tccell1>$new</td>
 			$tccell2l><a href=showprivate.php?id=$pmsg[id]>$pmsg[title]</td>
 			$tccell2>$namecolor</td>
-			$tccell2>".date($dateformat,$pmsg['date']+$tzoff)."
+			$tccell2>".date($dateformat, $pmsg['date'] + $tzoff).'
 			</tr>
-		";
-	}
+		';
+}
 
-	print "$tblend$smallfont$pagelinks$footer";
-	printtimedif($startingtime);
-?>
+echo "$tblend$smallfont$pagelinks$footer";
+printtimedif($startingtime);

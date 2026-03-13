@@ -81,6 +81,6 @@
 </body></html>
 <?php
 
-	die();
+    exit;
 
 ?>

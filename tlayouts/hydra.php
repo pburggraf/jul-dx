@@ -1,31 +1,39 @@
 <?php
-	function userfields(){return 'posts,sex,powerlevel,birthday,aka,picture,title,useranks,location,lastposttime,lastactivity';}
 
-	function postcode($post,$set){
-		global $tzoff, $smallfont, $ip, $quote, $edit, $dateshort, $dateformat, $tlayout, $textcolor, $numdir, $numfil, $tblstart, $hacks, $x_hacks, $loguser;
+declare(strict_types=1);
+function userfields()
+{
+    return 'posts,sex,powerlevel,birthday,aka,picture,title,useranks,location,lastposttime,lastactivity';
+}
 
-		$tblend  = "</table>";
-		$exp     = calcexp($post[posts],(ctime()-$post[regdate])/86400);
-		$lvl     = calclvl($exp);
-		$expleft = calcexpleft($exp);
+function postcode($post, $set)
+{
+    global $tzoff, $smallfont, $ip, $quote, $edit, $dateshort, $dateformat, $tlayout, $textcolor, $numdir, $numfil, $tblstart, $hacks, $x_hacks, $loguser;
 
-		$reinf=syndrome($post[act]);
+    $tblend = '</table>';
+    $exp = calcexp($post[posts], (ctime() - $post[regdate]) / 86400);
+    $lvl = calclvl($exp);
+    $expleft = calcexpleft($exp);
 
-		$sincelastpost = "";
-		$lastactivity = "";
-		$since='Since: '.@date($dateshort,$post[regdate]+$tzoff);
+    $reinf = syndrome($post[act]);
 
-		$postdate  =  date($dateformat,$post[date]+$tzoff);
+    $sincelastpost = '';
+    $lastactivity = '';
+    $since = 'Since: '.@date($dateshort, $post[regdate] + $tzoff);
 
-		if($set[threadlink]) { $threadlink=", in $set[threadlink]"; }
+    $postdate = date($dateformat, $post[date] + $tzoff);
 
-		/* if($post[edited]){
-			$set[edited].="<hr>$smallfont$post[edited]";
-		}*/
+    if ($set[threadlink]) {
+        $threadlink = ", in $set[threadlink]";
+    }
 
-		$sidebars	= array(1, 16, 18, 19, 387);
+    /* if($post[edited]){
+        $set[edited].="<hr>$smallfont$post[edited]";
+    }*/
 
-		return "
+    $sidebars = [1, 16, 18, 19, 387];
+
+    return "
 		$tblstart
 		$set[tdbg] style='width: 20% !important;' rowspan='2'>
 			$set[userlink]$smallfont<br>
@@ -44,10 +52,11 @@
 		$tblend
 		<br>";
 
-		if (!$set['picture']) $set['picture']	= "images/_.gif";
+    if (!$set['picture']) {
+        $set['picture'] = 'images/_.gif';
+    }
 
-		if ($_GET['z']) {
-			print_r($st['eq']);
-		}
-	}
-?>
+    if ($_GET['z']) {
+        print_r($st['eq']);
+    }
+}

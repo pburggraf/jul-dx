@@ -1,6 +1,8 @@
 <?php
-	require 'ajaxen.php';
-	chdir("../");
-	require 'lib/function.php';
 
-	print '{test: "test"}';
+declare(strict_types=1);
+require 'ajaxen.php';
+chdir('../');
+require 'lib/function.php';
+
+echo '{test: "test"}';

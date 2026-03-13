@@ -1,8 +1,10 @@
 <?php
-	require 'lib/function.php';
-	require 'lib/layout.php';
 
-	print "$body
+declare(strict_types=1);
+require 'lib/function.php';
+require 'lib/layout.php';
+
+echo "$body
 		<title>Hexadecimal color chart</title>
 		$css
 		<script language=javascript>
@@ -20,18 +22,20 @@
 		<form name=hexchart>
 		<map name=colmap>";
 
-	for($g=0;$g<6;$g++)
-		for($r=0;$r<6;$r++)
-			for($b=0;$b<6;$b++) {
-				$x1=$b*8+$r*48+1;
-				$y1=$g*11+1;
-				$x2=$x1+8;
-				$y2=$y1+11;
-				$c=substr(dechex(16777216+$r*51*65536+(5-$g)*51*256+$b*51),-6);
-				print "<area shape=rect coords=$x1,$y1,$x2,$y2 href=javascript:hex('$c')>";
-			}
+for ($g = 0; $g < 6; ++$g) {
+    for ($r = 0; $r < 6; ++$r) {
+        for ($b = 0; $b < 6; ++$b) {
+            $x1 = $b * 8 + $r * 48 + 1;
+            $y1 = $g * 11 + 1;
+            $x2 = $x1 + 8;
+            $y2 = $y1 + 11;
+            $c = substr(dechex(16777216 + $r * 51 * 65536 + (5 - $g) * 51 * 256 + $b * 51), -6);
+            echo "<area shape=rect coords=$x1,$y1,$x2,$y2 href=javascript:hex('$c')>";
+        }
+    }
+}
 
-	print "</map>
+echo "</map>
 		<table height=100% valign=middle align='center'><td>
 		$tblstart
 		$tccell1>

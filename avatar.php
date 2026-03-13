@@ -1,8 +1,10 @@
 <?php
+
+declare(strict_types=1);
 require 'lib/function.php';
 require 'lib/layout.php';
 
-$a	= array(1 => "neutral", "angry", "tired/upset", "playful", "doom", "delight", "guru", "hope", "puzzled", "whatever", "hyperactive", "sadness", "bleh", "embarrassed", "amused", "afraid");
+$a = [1 => 'neutral', 'angry', 'tired/upset', 'playful', 'doom', 'delight', 'guru', 'hope', 'puzzled', 'whatever', 'hyperactive', 'sadness', 'bleh', 'embarrassed', 'amused', 'afraid'];
 
 $me = false;
 $form = '<b>Preview mood avatar for user...</b><br>
@@ -11,19 +13,19 @@ $form = '<b>Preview mood avatar for user...</b><br>
 
 $users = $sql->query("SELECT id, name, moodurl FROM users WHERE moodurl != '' ORDER BY id ASC");
 while ($u = $sql->fetch($users)) {
-  $selected = $fails = '';
-  if ($u['id'] == $id) {
-    $me = $u;
-    $selected = ' selected';
-  }
-  //if (strpos($u['moodurl'], '$') === FALSE)
-  //  $fails = " (improper URL)";
-  $form .= "\r\n  <option value='avatar.php?id=$u[id]'$selected>$u[id]: $u[name]$fails</option>";
+    $selected = $fails = '';
+    if ($u['id'] == $id) {
+        $me = $u;
+        $selected = ' selected';
+    }
+    // if (strpos($u['moodurl'], '$') === FALSE)
+    //  $fails = " (improper URL)";
+    $form .= "\r\n  <option value='avatar.php?id=$u[id]'$selected>$u[id]: $u[name]$fails</option>";
 }
 $form .= "\r\n  </select></form>";
 
 if ($me) {
-	$script = '
+    $script = '
 	<script type="text/javascript">
 		function avatarpreview(uid,pic) {
 			if (pic > 0) {
@@ -37,26 +39,24 @@ if ($me) {
 	</script>
 	';
 
-  $ret = "<tr>$tccellh colspan=2>$me[name]: <i>".htmlspecialchars($me['moodurl'])."</i></td></tr>";
-	$ret .= "<tr height=400px>$tccell1l width=200px><b>Mood avatar list:</b><br>";
+    $ret = "<tr>$tccellh colspan=2>$me[name]: <i>".htmlspecialchars($me['moodurl']).'</i></td></tr>';
+    $ret .= "<tr height=400px>$tccell1l width=200px><b>Mood avatar list:</b><br>";
 
-	foreach($a as $num => $name) {
-		$jsclick = "onclick='avatarpreview($me[id],$num)'";
-		$selected = (($num == 1) ? ' checked' : '');
-		$ret .= "<input type='radio' name='moodid' value='$num' id='mood$num' tabindex='". (9000 + $num) ."' style=\"height: 12px;\" $jsclick $selected>
+    foreach ($a as $num => $name) {
+        $jsclick = "onclick='avatarpreview($me[id],$num)'";
+        $selected = (($num == 1) ? ' checked' : '');
+        $ret .= "<input type='radio' name='moodid' value='$num' id='mood$num' tabindex='". (9000 + $num) ."' style=\"height: 12px;\" $jsclick $selected>
              <label for='mood$num' style=\"font-size: 12px;\">&nbsp;$num:&nbsp;$name</label><br>\r\n";
-	}
+    }
 
-	$startimg = htmlspecialchars(str_replace('$', '1', $me['moodurl']));
+    $startimg = htmlspecialchars(str_replace('$', '1', $me['moodurl']));
 
-  $ret .= "</td>$tccell2 width=400px><img src=\"$startimg\" id=prev></td></tr>";
-
+    $ret .= "</td>$tccell2 width=400px><img src=\"$startimg\" id=prev></td></tr>";
+} else {
+    $script = '';
+    $ret = '';
 }
-else {
-	$script = '';
-	$ret = '';
-}
-  print "
+echo "
 <html><head><title>Mood Avatar Preview</title></head>
 $body
 $css
@@ -69,4 +69,3 @@ $script
   $tblend
  </td><tr></table></body></html>
 ";
-?>

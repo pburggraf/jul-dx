@@ -1,5 +1,6 @@
 <?php
-	/* null scheme */
-	$formcss=0;
-	$nullscheme=1;
-?>
+
+declare(strict_types=1);
+/* null scheme */
+$formcss = 0;
+$nullscheme = 1;

@@ -1,154 +1,149 @@
 <?php
 
-	if (($_POST['action'] ?? null) === "Register" && ($_POST['homepage'] ?? "") !== "") {
-		// If someone submits the form with the fake homepage field filled,
-		// just do nothing and send them off elsewhere to spam
-		header("Location: http://127.0.0.1");
-		die();
-	}
+declare(strict_types=1);
 
-	require 'lib/function.php';
-	require 'lib/layout.php';
+if (($_POST['action'] ?? null) === 'Register' && ($_POST['homepage'] ?? '') !== '') {
+    // If someone submits the form with the fake homepage field filled,
+    // just do nothing and send them off elsewhere to spam
+    header('Location: http://127.0.0.1');
+    exit;
+}
 
-	print $header;
+require 'lib/function.php';
+require 'lib/layout.php';
 
-	// if ($adminconfig['registrationdisable']) { // this is never defined anywhere
-	// 	die("$tblstart<br>$tccell2>Registration is disabled. Please contact an admin if you have any questions.$tblend$footer");
-	// }
+echo $header;
 
+// if ($adminconfig['registrationdisable']) { // this is never defined anywhere
+// 	die("$tblstart<br>$tccell2>Registration is disabled. Please contact an admin if you have any questions.$tblend$footer");
+// }
 
-	// Errors for display in the registration form
-	$error = false;
-	$errors = [
-		'name' => "",
-		'pass' => "",
-		'email' => "",
-		];
+// Errors for display in the registration form
+$error = false;
+$errors = [
+    'name' => '',
+    'pass' => '',
+    'email' => '',
+];
 
-	// If true, won't show the form again on error
-	$fatal = false;
-	$registered = false;
+// If true, won't show the form again on error
+$fatal = false;
+$registered = false;
 
-	$name = trim($_POST['name'] ?? "");
-	$pass = trim($_POST['pass'] ?? "");
-	$email = trim($_POST['email'] ?? "");
-	$action = trim($_POST['action'] ?? "");
+$name = trim($_POST['name'] ?? '');
+$pass = trim($_POST['pass'] ?? '');
+$email = trim($_POST['email'] ?? '');
+$action = trim($_POST['action'] ?? '');
 
-	if ($action == 'Register') {
+if ($action == 'Register') {
+    if ($name === '') {
+        $error = 'No username given.';
+        $errors['name'] = 'Required';
+    }
 
-		if ($name === "") {
-			$error = "No username given.";
-			$errors['name']	= "Required";
-		}
+    if ($pass === '') {
+        $error = 'No password given.';
+        $errors['pass'] = 'Required';
+    } elseif (strlen($pass) < 8) {
+        $error = 'Password must be at least 8 letters.';
+        $errors['pass'] = 'Too short';
+    } elseif (strlen($pass) > 32) {
+        $error = 'Password cannot be longer than 32 characters.';
+        $errors['pass'] = 'Too long';
+    }
 
-		if ($pass === "") {
-			$error = "No password given.";
-			$errors['pass']	= "Required";
-		} elseif (strlen($pass) < 8) {
-			$error = "Password must be at least 8 letters.";
-			$errors['pass']	= "Too short";
-		} elseif (strlen($pass) > 32) {
-			$error = "Password cannot be longer than 32 characters.";
-			$errors['pass']	= "Too long";
-		}
+    // If e-mail address is given, make sure it is an actual e-mail address
+    if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = 'Invalid e-mail address.';
+        $errors['email'] = 'Invalid';
+    }
 
-		// If e-mail address is given, make sure it is an actual e-mail address
-		if ($email !== "" && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			$error = "Invalid e-mail address.";
-			$errors['email']	= "Invalid";
-		}
+    // Only do any of this if we don't have an issue already
+    if (!$error) {
+        // Simple check if the person in question is using some trash proxy
+        // or other service to get around bans ...
+        // Do a simple cURL request to their IP address and see if it responds.
+        // If it does, and contains one of the usual words, throw them out the window
 
+        // This used to be a surprisingly good way of catching shitters,
+        // and it might even still work to this day
 
-		// Only do any of this if we don't have an issue already
-		if (!$error) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'http://'. $_SERVER['REMOTE_ADDR']);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        $file_contents = curl_exec($ch);
+        curl_close($ch);
 
-			// Simple check if the person in question is using some trash proxy
-			// or other service to get around bans ...
-			// Do a simple cURL request to their IP address and see if it responds.
-			// If it does, and contains one of the usual words, throw them out the window
+        if (
+            stristr($file_contents, 'proxy')
+            || stristr($file_contents, 'forbidden')
+            || stristr($file_contents, 'it works')
+            || stristr($file_contents, 'anonymous')
+            || stristr($file_contents, 'filter')
+            || stristr($file_contents, 'panel')
+            || stristr($file_contents, 'apache')
+            || stristr($file_contents, 'nginx')
+        ) {
+            // $sql -> query("INSERT INTO `ipbans` SET `ip` = '". $_SERVER['REMOTE_ADDR'] ."', `date` = '". ctime() ."', `reason` = 'Reregistering fuckwit'");
+            // @xk_ircsend("1|". xk(7) ."Auto-IP banned proxy-abusing $adjectives[0] with IP ". xk(8) . $_SERVER['REMOTE_ADDR'] . xk(7) ." on registration. (Tried to register with username $name)");
 
-			// This used to be a surprisingly good way of catching shitters,
-			// and it might even still work to this day
+            // Rather than IP banning them on principle, though, give them a message
+            // about why they're not allowed to register, just in case
 
-			$ch = curl_init();
-			curl_setopt ($ch,CURLOPT_URL, "http://". $_SERVER['REMOTE_ADDR']);
-			curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 3);
-			curl_setopt ($ch, CURLOPT_TIMEOUT, 5);
-			$file_contents = curl_exec($ch);
-			curl_close($ch);
-
-			if (
-				stristr($file_contents, "proxy")
-				|| stristr($file_contents, "forbidden")
-				|| stristr($file_contents, "it works")
-				|| stristr($file_contents, "anonymous")
-				|| stristr($file_contents, "filter")
-				|| stristr($file_contents, "panel")
-				|| stristr($file_contents, "apache")
-				|| stristr($file_contents, "nginx")
-				) {
-
-				// $sql -> query("INSERT INTO `ipbans` SET `ip` = '". $_SERVER['REMOTE_ADDR'] ."', `date` = '". ctime() ."', `reason` = 'Reregistering fuckwit'");
-				// @xk_ircsend("1|". xk(7) ."Auto-IP banned proxy-abusing $adjectives[0] with IP ". xk(8) . $_SERVER['REMOTE_ADDR'] . xk(7) ." on registration. (Tried to register with username $name)");
-
-				// Rather than IP banning them on principle, though, give them a message
-				// about why they're not allowed to register, just in case
-
-				$error = "It appears you're trying to register through some proxy service or other anonymizing tool.
+            $error = "It appears you're trying to register through some proxy service or other anonymizing tool.
 				<br>These have often been abused to get around bans, so we don't allow registering using these.
 				<br>Try disabling it and registering again, or contact an administrator for help.";
-				$fatal = true;
+            $fatal = true;
 
-				// die("$tccell1>Thank you, $name, for registering your account.<br>".redirect('index.php', 'the board',0).$footer);
-			}
-		}
+            // die("$tccell1>Thank you, $name, for registering your account.<br>".redirect('index.php', 'the board',0).$footer);
+        }
+    }
 
-		// Only do this if we have no other errors already, like the proxy check
-		if (!$error) {
+    // Only do this if we have no other errors already, like the proxy check
+    if (!$error) {
+        // Check if the username is available
+        // FIrst, remove all spaces and other nonsense from it
+        // @TODO This is really bad and should be fixed
+        $username = substr(trim($name), 0, 25);
+        $username2 = str_replace(' ', '', $username);
+        $username2 = str_replace(' ', '', $username2);
+        $username2 = preg_replace("'&nbsp;?'si", '', $username2);
+        $username2 = stripslashes($username2);
+        $userid = false;
 
-			// Check if the username is available
-			// FIrst, remove all spaces and other nonsense from it
-			// @TODO This is really bad and should be fixed
-			$username = substr(trim($name), 0, 25);
-			$username2 = str_replace(' ', '', $username);
-			$username2 = str_replace(' ', '', $username2);
-			$username2 = preg_replace("'&nbsp;?'si", '', $username2);
-			$username2 = stripslashes($username2);
-			$userid = false;
+        // If 1, user will be registered as an admin.
+        // This is done so the first user on the board registers as an admin
+        $admin = 1;
 
-			// If 1, user will be registered as an admin.
-			// This is done so the first user on the board registers as an admin
-			$admin = 1;
+        $users = $sql->query('SELECT id, name FROM users');
+        while ($user = $sql->fetch($users)) {
+            // We found a user, so no admin for this user
+            $admin = 0;
+            $user['name'] = str_replace(' ', '', $user['name']);
+            $user['name'] = str_replace(' ', '', $user['name']);
+            if (strcasecmp($user['name'], $username2) == 0) {
+                $userid = $user['id'];
+                break;
+            }
+        }
 
-			$users = $sql->query('SELECT id, name FROM users');
-			while ($user = $sql->fetch($users)) {
-				// We found a user, so no admin for this user
-				$admin = 0;
-				$user['name'] = str_replace(' ', '', $user['name']);
-				$user['name'] = str_replace(' ', '', $user['name']);
-				if (strcasecmp($user['name'], $username2) == 0) {
-					$userid = $user['id'];
-					break;
-				}
-			}
+        // Does anyone else have this IP address? If so, abort (unless they're an admin)
+        $nomultis = $sql->fetchq("SELECT * FROM `users` WHERE `lastip` = '". mysql_real_escape_string($_SERVER['REMOTE_ADDR']) ."'");
 
-			// Does anyone else have this IP address? If so, abort (unless they're an admin)
-			$nomultis = $sql->fetchq("SELECT * FROM `users` WHERE `lastip` = '". mysql_real_escape_string($_SERVER['REMOTE_ADDR']) ."'");
+        if ($userid === false && $name && $pass && (!$nomultis || $isadmin)) {
+            $currenttime = ctime();
+            $ipaddr = $_SERVER['REMOTE_ADDR'];
 
-			if ($userid === false && $name && $pass && (!$nomultis || $isadmin)) {
+            $ircout['name'] = stripslashes($name);
+            $ircout['ip'] = $ipaddr;
 
-				$currenttime = ctime();
-				$ipaddr = $_SERVER['REMOTE_ADDR'];
-
-				$ircout['name']		= stripslashes($name);
-				$ircout['ip']		= $ipaddr;
-
-				$succ = $sql->query("
+            $succ = $sql->query("
 					INSERT INTO `users`
 					SET
 						`name` = '". mysql_real_escape_string($name) ."',
-						". ($email !== "" ? "`email` = '". mysql_real_escape_string($email) ."'," : "") ."
+						". ($email !== '' ? "`email` = '". mysql_real_escape_string($email) ."'," : '') ."
 						`powerlevel` = '". ($admin ? 3 : 0) ."',
 						`postsperpage` = '20',
 						`threadsperpage` = '50',
@@ -163,13 +158,13 @@
 						`regdate` = '$currenttime'
 						");
 
-				$newuserid			= mysql_insert_id();
-				$sql->query("UPDATE users SET `password` = '".getpwhash($pass, $newuserid)."' WHERE `id` = '$newuserid'");
+            $newuserid = mysql_insert_id();
+            $sql->query("UPDATE users SET `password` = '".getpwhash($pass, $newuserid)."' WHERE `id` = '$newuserid'");
 
-				$ircout['id']		= $newuserid;
-				xk_ircout("user", $ircout['name'], $ircout);
+            $ircout['id'] = $newuserid;
+            xk_ircout('user', $ircout['name'], $ircout);
 
-				$sql->query("
+            $sql->query("
 					INSERT INTO `users_rpg`
 					SET
 						`uid`		= '". $newuserid ."',
@@ -186,50 +181,43 @@
 						`eq7`		= 0
 					") or print mysql_error();
 
-				print "<br>$tblstart$tccell1>Your new account, $name, has been registered.<br>".redirect('login.php', 'log in',0);
-				$registered = true;
+            echo "<br>$tblstart$tccell1>Your new account, $name, has been registered.<br>".redirect('login.php', 'log in', 0);
+            $registered = true;
+        } else {
+            if ($userid !== false) {
+                $error = "The username '". htmlspecialchars($name) ."' is <a href='profile.php?id=$userid'>already in use</a>.";
+                $errors['name'] = 'In use';
+            } elseif ($nomultis) {
+                $error = "You may have an account already as '<a href=profile.php?id=$nomultis[id]>$nomultis[name]</a>'.<br>If this is incorrect, please contact an administrator.";
+                $fatal = true;
+            } else {
+                $error = 'Unknown reason. Please contact an administrator.';
+                $fatal = true;
+            }
+        }
 
-			} else {
+        echo $tblend;
+    }
+}
 
-				if ($userid !== false) {
-					$error = "The username '". htmlspecialchars($name) ."' is <a href='profile.php?id=$userid'>already in use</a>.";
-					$errors['name'] = "In use";
-
-				} elseif ($nomultis) {
-					$error = "You may have an account already as '<a href=profile.php?id=$nomultis[id]>$nomultis[name]</a>'.<br>If this is incorrect, please contact an administrator.";
-					$fatal = true;
-
-				} else {
-					$error = "Unknown reason. Please contact an administrator.";
-					$fatal = true;
-				}
-
-			}
-
-			print $tblend;
-
-		}
-	}
-
-	if ($error) {
-		print <<<HTML
+if ($error) {
+    echo <<<HTML
 		<br>
 		$tblstart
 		<tr>$tccellh>Error registering account</td>
 		<tr>$tccell1>$error
 		$tblend
 HTML;
-	}
+}
 
+// If we didn't register and/or we don't have a fatal error, show the form
+if (!$registered && !$fatal) {
+    $descbr = "</b>$smallfont<br></center>&nbsp";
 
-	// If we didn't register and/or we don't have a fatal error, show the form
-	if (!$registered && !$fatal) {
-		$descbr="</b>$smallfont<br></center>&nbsp";
+    $namev = htmlspecialchars($name);
+    $emailv = htmlspecialchars($email);
 
-		$namev = htmlspecialchars($name);
-		$emailv = htmlspecialchars($email);
-
-		print <<<HTML
+    echo <<<HTML
 
 		<form action="register.php" method="post">
 		<br>
@@ -261,8 +249,7 @@ HTML;
 		</script>
 
 HTML;
+}
 
-	}
-
-	print $footer;
-	printtimedif($startingtime);
+echo $footer;
+printtimedif($startingtime);

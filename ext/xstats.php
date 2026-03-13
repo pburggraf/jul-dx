@@ -1,60 +1,63 @@
 <?php
 
-	chdir("../");
-	require "lib/function.php";
+declare(strict_types=1);
 
-	$img	= imagecreate(45, 37);
-	$bg		= imagecolorallocate($img, 100, 100, 100);
-	$num	= imagecreatefrompng("images/digitstiny.png");
+chdir('../');
+require 'lib/function.php';
 
-	$xk		= $sql -> fetchq("SELECT * FROM `users` WHERE `id` = '1'");
-	$thread	= $sql -> resultq("SELECT COUNT(`id`) FROM `threads` WHERE `user` = '1'");
+$img = imagecreate(45, 37);
+$bg = imagecolorallocate($img, 100, 100, 100);
+$num = imagecreatefrompng('images/digitstiny.png');
 
-	$exp	= calcexp($xk['posts'], (ctime() - $xk['regdate']) / 86400);
-	$level	= calclvl($exp);
-	$expt	= totallvlexp($level);
-	$expl	= $expt - calcexpleft($exp);
+$xk = $sql->fetchq("SELECT * FROM `users` WHERE `id` = '1'");
+$thread = $sql->resultq("SELECT COUNT(`id`) FROM `threads` WHERE `user` = '1'");
 
-	drawnum($img, $num,  0,  0 + ( 0 * 6), $thread       ,  9);
-	drawnum($img, $num,  0,  0 + ( 1 * 6), $xk['posts']  ,  9);
-	drawnum($img, $num,  0,  1 + ( 2 * 6), $level        ,  9);
-	drawnum($img, $num,  0,  1 + ( 3 * 6), $expl         ,  9);
-	drawnum($img, $num,  0,  1 + ( 4 * 6), "/". $expt    ,  9);
-	drawnum($img, $num,  0,  1 + ( 5 * 6), $exp          ,  9);
+$exp = calcexp($xk['posts'], (ctime() - $xk['regdate']) / 86400);
+$level = calclvl($exp);
+$expt = totallvlexp($level);
+$expl = $expt - calcexpleft($exp);
 
+drawnum($img, $num, 0, 0 + (0 * 6), $thread, 9);
+drawnum($img, $num, 0, 0 + (1 * 6), $xk['posts'], 9);
+drawnum($img, $num, 0, 1 + (2 * 6), $level, 9);
+drawnum($img, $num, 0, 1 + (3 * 6), $expl, 9);
+drawnum($img, $num, 0, 1 + (4 * 6), '/'. $expt, 9);
+drawnum($img, $num, 0, 1 + (5 * 6), $exp, 9);
 
+imagecolortransparent($img, $bg);
+header('Content-type: image/png');
+imagepng($img);
+imagedestroy($img);
+imagedestroy($num);
 
-	imagecolortransparent($img, $bg);
-	header("Content-type: image/png");
-	imagepng($img);
-	imagedestroy($img);
-	imagedestroy($num);
+function drawnum($img, $num, $x, $y, $n, $l = 0, $z = false, $dx = 5, $dy = 6)
+{
+    $p = 0;
 
+    if ($z) {
+        $n = str_pad($n, $l, '0', STR_PAD_LEFT);
+    }
 
-	function drawnum($img, $num, $x, $y, $n, $l = 0, $z = false, $dx = 5, $dy = 6) {
+    if (strlen($n) > $l) {
+        $l = strlen($n);
+    } elseif (strlen($n) < $l) {
+        $p = $l - strlen($n);
+    }
 
-		$p	= 0;
+    $o = $p;
 
-		if ($z) {
-			$n	= str_pad($n, $l, "0", STR_PAD_LEFT);
-		}
+    $na = str_split($n);
+    foreach ($na as $digit) {
+        $xd = intval($digit);
+        if ($digit == '/') {
+            $xd = 10;
+        }
+        if ($digit == ' ') {
+            ++$o;
+            continue;
+        }
 
-		if (strlen($n) > $l) $l = strlen($n);
-		elseif (strlen($n) < $l) $p = $l - strlen($n);
-
-		$o		= $p;
-
-		$na		= str_split($n);
-		foreach ($na as $digit) {
-			$xd	= intval($digit);
-			if ($digit == "/") $xd	= 10;
-			if ($digit == " ") {
-				$o++;
-				continue;
-			}
-
-			imagecopy($img, $num, $x + $o * $dx, $y, $xd * $dx, 0, $dx, $dy);
-			$o++;
-		}
-
-	}
+        imagecopy($img, $num, $x + $o * $dx, $y, $xd * $dx, 0, $dx, $dy);
+        ++$o;
+    }
+}

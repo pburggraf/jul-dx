@@ -1,43 +1,45 @@
 <?php
-    $formcss        = 0;        # formcss makes forms black with tableborder borders; using cssextra below is easier
-    $numcols        = 100;        # same thing, more or less
 
-    $bgimage        = 'images/pinstripe/bluebg.png';
+declare(strict_types=1);
+$formcss = 0;        // formcss makes forms black with tableborder borders; using cssextra below is easier
+$numcols = 100;        // same thing, more or less
 
-    $bgcolor        = '1d2b4e';   
-    $textcolor        = 'e1eef7';   
+$bgimage = 'images/pinstripe/bluebg.png';
 
-    $linkcolor        = '87a9ff';    # Link
-    $linkcolor2        = 'aabae2'; # visited
-    $linkcolor3        = 'aabae2'; # active
-    $linkcolor4        = 'aabae2'; # hover
+$bgcolor = '1d2b4e';
+$textcolor = 'e1eef7';
 
-    $tableborder    = '000000'; 
-    $tableheadtext    = 'e1eef7';   
-    $tableheadbg    = '324a82;background:rgba(255,255,255,0.2)';   
-    $categorybg        = '1d2b4e;background:rgba(255,255,255,0.1)';   
-    $tablebg1        = '18243f;background:rgba(0,0,0,0.4)';   
-    $tablebg2        = '131c33;background:rgba(0,0,0,0.6)';   
+$linkcolor = '87a9ff';    // Link
+$linkcolor2 = 'aabae2'; // visited
+$linkcolor3 = 'aabae2'; // active
+$linkcolor4 = 'aabae2'; // hover
 
-    # Scrollbar colors...
-    $scr1            = '263863';    # top-left outer highlight
-    $scr2            = '1d2b4e'; # top-left inner highlight
-    $scr3            = '1a2644'; # middle face
-    $scr4            = '111a2d'; # bottom-right inner shadow
-    $scr5            = '000000'; # bottom-right outer shadow
-    $scr6            = 'ffffff'; # button arrows
-    $scr7            = '213359';
+$tableborder = '000000';
+$tableheadtext = 'e1eef7';
+$tableheadbg = '324a82;background:rgba(255,255,255,0.2)';
+$categorybg = '1d2b4e;background:rgba(255,255,255,0.1)';
+$tablebg1 = '18243f;background:rgba(0,0,0,0.4)';
+$tablebg2 = '131c33;background:rgba(0,0,0,0.6)';
 
-    $newthreadpic    = '<img src="images/newthread.png" align="absmiddle">';
-    $newreplypic    = '<img src="images/newreply.png" align="absmiddle">';
-    $newpollpic        = '<img src="images/newpoll.png" align="absmiddle">';
-    $closedpic        = '<img src="images/threadclosed.png" align="absmiddle">';
+// Scrollbar colors...
+$scr1 = '263863';    // top-left outer highlight
+$scr2 = '1d2b4e'; // top-left inner highlight
+$scr3 = '1a2644'; // middle face
+$scr4 = '111a2d'; // bottom-right inner shadow
+$scr5 = '000000'; // bottom-right outer shadow
+$scr6 = 'ffffff'; // button arrows
+$scr7 = '213359';
 
-    $numdir            = 'jul/';                                                                # /numgfx/<dir>/ for number images
-#    $numfil            = 'numpurple';                                                            # numgfx graphic set
+$newthreadpic = '<img src="images/newthread.png" align="absmiddle">';
+$newreplypic = '<img src="images/newreply.png" align="absmiddle">';
+$newpollpic = '<img src="images/newpoll.png" align="absmiddle">';
+$closedpic = '<img src="images/threadclosed.png" align="absmiddle">';
 
-    # Extra CSS included at the bottom of a page
-    $css_extra        = "
+$numdir = 'jul/';                                                                // /numgfx/<dir>/ for number images
+//    $numfil            = 'numpurple';                                                            # numgfx graphic set
+
+// Extra CSS included at the bottom of a page
+$css_extra = "
 center > table.table td { padding: 4px; }
 
 center > table.table td.tdbg2 a { font-size: 11px; }

@@ -1,12 +1,14 @@
 <?php
 
-	header("Content-type: text/plain");
-	$userid	= intval($_GET['u']);
+declare(strict_types=1);
 
-	if (!$userid) die("No userid specified.");
-	chdir("..");
-	require 'lib/function.php';
+header('Content-type: text/plain');
+$userid = intval($_GET['u']);
 
-	print $sql -> resultq("SELECT `posts` FROM `users` WHERE `id` = '$userid'");
+if (!$userid) {
+    exit('No userid specified.');
+}
+chdir('..');
+require 'lib/function.php';
 
-
+echo $sql->resultq("SELECT `posts` FROM `users` WHERE `id` = '$userid'");

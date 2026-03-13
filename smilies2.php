@@ -1,7 +1,9 @@
 <?php
-  require 'lib/function.php';
-  require 'lib/layout.php';
-  print "
+
+declare(strict_types=1);
+require 'lib/function.php';
+require 'lib/layout.php';
+echo "
 $body
 <title>Smilies</title>
 $css
@@ -107,4 +109,3 @@ $css
   $tblend
  </td></table>
 ";
-?>

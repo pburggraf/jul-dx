@@ -1,28 +1,30 @@
 <?php
-    $boardtitle='<img src="http://i.imgur.com/gVDZW7x.png">';
 
-    $formcss=0;
-    $inputborder='000000';
+declare(strict_types=1);
+$boardtitle = '<img src="http://i.imgur.com/gVDZW7x.png">';
 
-    $bgimage='';
-    $bgcolor='bbbbbb';
-    $textcolor='000000';
+$formcss = 0;
+$inputborder = '000000';
 
-    $linkcolor ='660000';
-    $linkcolor2='553333';
-    $linkcolor3='990033';
-    $linkcolor4='990033';
+$bgimage = '';
+$bgcolor = 'bbbbbb';
+$textcolor = '000000';
 
-    $tablebg1='aaaaaa';
-    $tablebg2='999999';
-    $categorybg='005020';
-    $tableheadtext='ece6da;';
-    $tableheadbg='4b3617';
-    //$tableheadbg='b07f36';
-    $tableborder='000000';
+$linkcolor = '660000';
+$linkcolor2 = '553333';
+$linkcolor3 = '990033';
+$linkcolor4 = '990033';
 
-    # Extra CSS included at the bottom of a page
-	$css_extra		= "
+$tablebg1 = 'aaaaaa';
+$tablebg2 = '999999';
+$categorybg = '005020';
+$tableheadtext = 'ece6da;';
+$tableheadbg = '4b3617';
+// $tableheadbg='b07f36';
+$tableborder = '000000';
+
+// Extra CSS included at the bottom of a page
+$css_extra = "
 		textarea,input,select{
 		  border:		1px solid #a89;
 		  background:	#fff;

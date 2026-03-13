@@ -1,5 +1,5 @@
 <?php
-	header("HTTP/1.1 503 Service Unavailable");
+header('HTTP/1.1 503 Service Unavailable');
 ?><html><head><title>Jul -- Temporarily down</title>
 	<link rel="shortcut icon" href="/images/favicons/favicon3.ico" type="image/x-icon">
 		<style>
@@ -93,5 +93,5 @@
 	</body>
 </body></html>
 <?php
-	die();
+    exit;
 ?>

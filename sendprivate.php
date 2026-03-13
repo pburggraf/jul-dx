@@ -1,76 +1,79 @@
 <?php
-	require 'lib/function.php';
-	require 'lib/layout.php';
 
-	$meta['noindex'] = true; // Never index
+declare(strict_types=1);
+require 'lib/function.php';
+require 'lib/layout.php';
 
-	$smilies=readsmilies();
-	
-	if(!$log) {
-		print "
+$meta['noindex'] = true; // Never index
+
+$smilies = readsmilies();
+
+if (!$log) {
+    echo "
 			$header$tblstart
 			$tccell1>Can't send a private message, because you are not logged in.
-			<br>".redirect("index.php", 'return to the index page', 0)."
+			<br>".redirect('index.php', 'return to the index page', 0)."
 			$tblend$footer
 		";
-		printtimedif($startingtime);
-		die();
-	}
+    printtimedif($startingtime);
+    exit;
+}
 
-	if($loguser['powerlevel'] <= -2) {
-		print "
+if ($loguser['powerlevel'] <= -2) {
+    echo "
 			$header$tblstart
 			$tccell1>You are permabanned and cannot send private messages.
-			<br>".redirect('private.php','your private message box',0)."
+			<br>".redirect('private.php', 'your private message box', 0)."
 			$tblend$footer
 		";
-		printtimedif($startingtime);
-		die();
-	}
-	
-	if($id) {
-		$msg = $sql->fetchq("SELECT * FROM pmsgs,pmsgs_text WHERE id=$id AND id=pid");
+    printtimedif($startingtime);
+    exit;
+}
 
-		if ($loguserid != $msg['userto']) {
-			print "
+if ($id) {
+    $msg = $sql->fetchq("SELECT * FROM pmsgs,pmsgs_text WHERE id=$id AND id=pid");
+
+    if ($loguserid != $msg['userto']) {
+        echo "
 				$header$tblstart
 				$tccell1>Can't reply to this private message, because it was not sent to you.
-				<br>".redirect('private.php','your private message box',0)."
+				<br>".redirect('private.php', 'your private message box', 0)."
 				$tblend$footer
 			";
-			printtimedif($startingtime);
-			die();
-		}
-	}
+        printtimedif($startingtime);
+        exit;
+    }
+}
 
-	print "$header$fonttag<a href=index.php>$boardname</a> - <a href=private.php>Private messages</a>$tblstart";
+echo "$header$fonttag<a href=index.php>$boardname</a> - <a href=private.php>Private messages</a>$tblstart";
 
-	if (!$action) {
-		print '<body onload=window.document.REPLIER.message.focus()><FORM ACTION=sendprivate.php NAME=REPLIER METHOD=POST>';
+if (!$action) {
+    echo '<body onload=window.document.REPLIER.message.focus()><FORM ACTION=sendprivate.php NAME=REPLIER METHOD=POST>';
 
-		if ($log && $id) {
-			$user = loaduser($msg['userfrom'],1);
-			$quotemsg = "[quote=$user[name]]$msg[text][/quote]\r\n";
-			$subject="Re: $msg[title]";
+    if ($log && $id) {
+        $user = loaduser($msg['userfrom'], 1);
+        $quotemsg = "[quote=$user[name]]$msg[text][/quote]\r\n";
+        $subject = "Re: $msg[title]";
 
-			$tcellbg="$tccell1l valign=top";
-			$postlist="
+        $tcellbg = "$tccell1l valign=top";
+        $postlist = "
 				$tccellh width=150>User</td>
 				$tccellh>Message<tr>
-				$tcellbg><a href=profile.php?id=$user[id] style='color: ". getnamecolor($user['sex'],$user['powerlevel'], false) .";'>$user[name]</a>$smallfont<br>
+				$tcellbg><a href=profile.php?id=$user[id] style='color: ". getnamecolor($user['sex'], $user['powerlevel'], false) .";'>$user[name]</a>$smallfont<br>
 				Posts: $postnum$user[posts]</td>
-				$tcellbg>".doreplace2($msg[text])."<tr>
-			";
-		}
-		else
-			$postlist='';
+				$tcellbg>".doreplace2($msg[text]).'<tr>
+			';
+    } else {
+        $postlist = '';
+    }
 
-		if ($userid)
-			$user=loaduser($userid,1);
-		$user['name']=htmlspecialchars($user['name']);
-		$subject=htmlspecialchars($subject);
+    if ($userid) {
+        $user = loaduser($userid, 1);
+    }
+    $user['name'] = htmlspecialchars($user['name']);
+    $subject = htmlspecialchars($subject);
 
-		print "
+    echo "
 			$tccellh width=150>&nbsp</td>
 			$tccellh>&nbsp<tr>
 			$tccell1><b>Send to:</td>	 $tccell2l>$inpt=username value=\"$user[name]\" size=25 maxlength=25><tr>
@@ -86,61 +89,63 @@
 			<br>$tblstart$postlist$tblend
 			$fonttag<a href=index.php>$boardname</a> - <a href=private.php>Private messages</a>
 		";
-	}
-	if($action=='sendmsg') {
-		$username	= stripslashes($_POST['username']);
-		$userid=checkusername($username);
+}
+if ($action == 'sendmsg') {
+    $username = stripslashes($_POST['username']);
+    $userid = checkusername($username);
 
-		if ($userid == -1)
-			print "$tccell1>Couldn't send the message. You didn't enter an existing username to send the message to.
-				<br>".redirect('private.php','your private message box',2);
-		elseif (!$subject)
-			print "$tccell1>Couldn't send the message. You didn't enter a subject.
-				<br>".redirect('private.php','your private message box',2);
-		else {
-			$subject=str_replace('<','&lt;',$subject);
+    if ($userid == -1) {
+        echo "$tccell1>Couldn't send the message. You didn't enter an existing username to send the message to.
+				<br>".redirect('private.php', 'your private message box', 2);
+    } elseif (!$subject) {
+        echo "$tccell1>Couldn't send the message. You didn't enter a subject.
+				<br>".redirect('private.php', 'your private message box', 2);
+    } else {
+        $subject = str_replace('<', '&lt;', $subject);
 
-			$sign=$loguser['signature'];
-			$head=$loguser['postheader'];
-			if($user['postbg'])
-				$head="<div style=background:url($user[postbg]);height=100%>$head";
+        $sign = $loguser['signature'];
+        $head = $loguser['postheader'];
+        if ($user['postbg']) {
+            $head = "<div style=background:url($user[postbg]);height=100%>$head";
+        }
 
-			$numdays=(ctime()-$loguser['regdate'])/86400;
-			$message=doreplace($message,$loguser['posts'],$numdays,$loguser['name']);
-			$rsign=doreplace($sign,$loguser['posts'],$numdays,$loguser['name']);
-			$rhead=doreplace($head,$loguser['posts'],$numdays,$loguser['name']);
-			$currenttime=ctime();
+        $numdays = (ctime() - $loguser['regdate']) / 86400;
+        $message = doreplace($message, $loguser['posts'], $numdays, $loguser['name']);
+        $rsign = doreplace($sign, $loguser['posts'], $numdays, $loguser['name']);
+        $rhead = doreplace($head, $loguser['posts'], $numdays, $loguser['name']);
+        $currenttime = ctime();
 
-			if($submit) {
-				$headid = getpostlayoutid($head);
-				$signid = getpostlayoutid($sign);
+        if ($submit) {
+            $headid = getpostlayoutid($head);
+            $signid = getpostlayoutid($sign);
 
-				$sql->query("INSERT INTO pmsgs (id,userto,userfrom,date,ip,msgread,headid,signid) VALUES (NULL,$userid,$loguserid,$currenttime,'$userip',0,$headid,$signid)");
-				$sql->query("INSERT INTO pmsgs_text (pid,title,text,tagval) VALUES (".mysql_insert_id().",'$subject','$message','$tagval')");
+            $sql->query("INSERT INTO pmsgs (id,userto,userfrom,date,ip,msgread,headid,signid) VALUES (NULL,$userid,$loguserid,$currenttime,'$userip',0,$headid,$signid)");
+            $sql->query('INSERT INTO pmsgs_text (pid,title,text,tagval) VALUES ('.mysql_insert_id().",'$subject','$message','$tagval')");
 
-				print "$tccell1>Private message to $username sent successfully!
-					<br>".redirect('private.php','your private message box',0).$tblend;
-			}
-			else {
-				loadtlayout();
-				$ppost=$loguser;
-				$message = stripslashes($message);
-				$username = stripslashes($username);
-				$subject = stripslashes($subject);
-				$ppost['uid']=$loguserid;
-				$ppost['date']=$currenttime;
-				$ppost['headtext']=$rhead;
-				$ppost['signtext']=$rsign;
-				$ppost['text']=$message;
-				if($isadmin) $ip=$userip;
-				print "
+            echo "$tccell1>Private message to $username sent successfully!
+					<br>".redirect('private.php', 'your private message box', 0).$tblend;
+        } else {
+            loadtlayout();
+            $ppost = $loguser;
+            $message = stripslashes($message);
+            $username = stripslashes($username);
+            $subject = stripslashes($subject);
+            $ppost['uid'] = $loguserid;
+            $ppost['date'] = $currenttime;
+            $ppost['headtext'] = $rhead;
+            $ppost['signtext'] = $rsign;
+            $ppost['text'] = $message;
+            if ($isadmin) {
+                $ip = $userip;
+            }
+            echo "
 					<body onload=window.document.REPLIER.message.focus()>
 					$tccellh>Message preview
 					$tblend$tblstart
 					$pollpreview
 					$tccell2l><b>". stripslashes($subject) ."</b>
 					$tblend$tblstart
-					".threadpost($ppost,1)."
+					".threadpost($ppost, 1)."
 					$tblend<br>$tblstart
 					<FORM ACTION=sendprivate.php NAME=REPLIER METHOD=POST>
 					$tccellh width=150>&nbsp</td>$tccellh>&nbsp<tr>
@@ -154,9 +159,9 @@
 					$inps=preview VALUE='Preview message'>
 					</td></FORM>
 				";
-			}
-		}
-  }
+        }
+    }
+}
 /*if($action=='delete' and $msg[userto]==$loguserid){
     mysql_query("DELETE FROM pmsgs WHERE id=$id");
     mysql_query("DELETE FROM pmsgs_text WHERE pid=$id");
@@ -164,6 +169,5 @@
       $tccell1>Thank you, $loguser[name], for deleting the message.
       <br>".redirect('private.php','return to the private message box',0).$tblend;
   } */
-  print $footer;
-  printtimedif($startingtime);
-?>
+echo $footer;
+printtimedif($startingtime);

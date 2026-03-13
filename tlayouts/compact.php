@@ -1,14 +1,21 @@
 <?php
- // function userfields(){return 'posts,sex,powerlevel,birthday,aka';}
-  function userfields(){
-      return 'posts,sex,powerlevel,picture,aka';
-  }
 
-  function postcode($post,$set){
+declare(strict_types=1);
+// function userfields(){return 'posts,sex,powerlevel,birthday,aka';}
+function userfields()
+{
+    return 'posts,sex,powerlevel,picture,aka';
+}
+
+function postcode($post, $set)
+{
     global $smallfont,$ip,$quote,$edit, $tblstart;
 
-    $postnum=($post[num]?"$post[num]/":'').$post[posts];
-    if($set[threadlink]) $threadlink=", in $set[threadlink]";
+    $postnum = ($post[num] ? "$post[num]/" : '').$post[posts];
+    if ($set[threadlink]) {
+        $threadlink = ", in $set[threadlink]";
+    }
+
     return "$tblstart
 	$set[tdbg]><div class='mobile-avatar'>$set[userpic]</div>
 	  $set[userlink]<br>
@@ -20,5 +27,4 @@
 	  <tr>
 	$set[tdbg] height=60 colspan=2 id=\"post". $post['id'] ."\">$post[headtext]$post[text]$post[signtext]$set[edited]</td></table><br>
     ";
-  }
-?>
+}

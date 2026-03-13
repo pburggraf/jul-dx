@@ -1,59 +1,75 @@
 <?php
-  require 'lib/function.php';
-  require 'lib/layout.php';
-  if(!$log) errorpage('You must be logged in to edit your profile.');
-  if($banned) errorpage('Sorry, but banned users aren\'t allowed to edit their profile.');
-	if($loguser['profile_locked'] == 1) {
-		errorpage("You are not allowed to edit your profile.");
-	}
-  $postreq = false;
-  $titleopt=false;
-  if($loguser['posts']>=500 or ($loguser['posts']>=250 && (ctime()-$loguser['regdate'])>=100*86400)) $postreq=true;
-  if($loguser['titleoption']==0 || $banned) $titleopt=0;
-  if($loguser['titleoption']==1 && ($postreq or $power>0 or $loguser['title'])) $titleopt=1;
-  if($loguser['titleoption']==2) $titleopt=1;
-  if(!$action){
-    $birthday=getdate($loguser['birthday']);
-    if($loguser['birthday']){
-			$month=$birthday['mon'];
-			$day=$birthday['mday'];
-			$year=$birthday['year'];
+
+declare(strict_types=1);
+require 'lib/function.php';
+require 'lib/layout.php';
+if (!$log) {
+    errorpage('You must be logged in to edit your profile.');
+}
+if ($banned) {
+    errorpage('Sorry, but banned users aren\'t allowed to edit their profile.');
+}
+if ($loguser['profile_locked'] == 1) {
+    errorpage('You are not allowed to edit your profile.');
+}
+$postreq = false;
+$titleopt = false;
+if ($loguser['posts'] >= 500 or ($loguser['posts'] >= 250 && (ctime() - $loguser['regdate']) >= 100 * 86400)) {
+    $postreq = true;
+}
+if ($loguser['titleoption'] == 0 || $banned) {
+    $titleopt = 0;
+}
+if ($loguser['titleoption'] == 1 && ($postreq or $power > 0 or $loguser['title'])) {
+    $titleopt = 1;
+}
+if ($loguser['titleoption'] == 2) {
+    $titleopt = 1;
+}
+if (!$action) {
+    $birthday = getdate($loguser['birthday']);
+    if ($loguser['birthday']) {
+        $month = $birthday['mon'];
+        $day = $birthday['mday'];
+        $year = $birthday['year'];
     }
 
-		if ($loguser['sex'] == 255)
-			$loguser['sex'] = $loguser['oldsex'];
+    if ($loguser['sex'] == 255) {
+        $loguser['sex'] = $loguser['oldsex'];
+    }
 
-    $descbr="</b>$smallfont<br>";
-    $checked1[$loguser['sex']]='checked=1';
-    $checked2[$loguser['viewsig']]='checked=1';
-//    $checked3[$loguser['posttool']]='checked=1';
-    $checked4[$loguser['useranks']]='checked=1';
-    $checked5[$loguser['pagestyle']]='checked=1';
-    $checked6[$loguser['pollstyle']]='checked=1';
-    $sexlist="
+    $descbr = "</b>$smallfont<br>";
+    $checked1[$loguser['sex']] = 'checked=1';
+    $checked2[$loguser['viewsig']] = 'checked=1';
+    //    $checked3[$loguser['posttool']]='checked=1';
+    $checked4[$loguser['useranks']] = 'checked=1';
+    $checked5[$loguser['pagestyle']] = 'checked=1';
+    $checked6[$loguser['pollstyle']] = 'checked=1';
+    $sexlist = "
 	$radio=sex value=0 $checked1[0]> <strong style='color: #". getnamecolor(0, $loguser['powerlevel'], false) ."'>Male</strong> &nbsp;&nbsp;
 	$radio=sex value=1 $checked1[1]> <strong style='color: #". getnamecolor(1, $loguser['powerlevel'], false) ."'>Female</strong> &nbsp;&nbsp;
 	$radio=sex value=2 $checked1[2]> <strong style='color: #". getnamecolor(2, $loguser['powerlevel'], false) ."'>Other / N/A</strong>";
-	if ($loguser['sex'] > 2)
-		$sexlist .= "$radio=sex value=$loguser[sex] checked style=\"display:none;\">";
+    if ($loguser['sex'] > 2) {
+        $sexlist .= "$radio=sex value=$loguser[sex] checked style=\"display:none;\">";
+    }
 
-    $vsig="
+    $vsig = "
 	$radio=viewsig value=0 $checked2[0]> Disabled &nbsp;&nbsp;
 	$radio=viewsig value=1 $checked2[1]> Enabled &nbsp;&nbsp;
 	$radio=viewsig value=2 $checked2[2]> Auto-updating";
-//    $vtool="
-//	$radio=posttool value=0 $checked3[0]> Disabled &nbsp;&nbsp;
-//	$radio=posttool value=1 $checked3[1]> Enabled";
-    $pagestyle="
+    //    $vtool="
+    //	$radio=posttool value=0 $checked3[0]> Disabled &nbsp;&nbsp;
+    //	$radio=posttool value=1 $checked3[1]> Enabled";
+    $pagestyle = "
 	$radio=pagestyle value=0 $checked5[0]> Inline &nbsp;&nbsp;
 	$radio=pagestyle value=1 $checked5[1]> Seperate line";
-    $pollstyle="
+    $pollstyle = "
 	$radio=pollstyle value=0 $checked6[0]> Normal &nbsp;&nbsp;
 	$radio=pollstyle value=1 $checked6[1]> Influence";
-    if($titleopt){
-		// this went after this block, which makes it COMPLETELY USELESS
-	    squot(0,$loguser['title']);
-		$titleoption="
+    if ($titleopt) {
+        // this went after this block, which makes it COMPLETELY USELESS
+        squot(0, $loguser['title']);
+        $titleoption = "
 	    $tccell1><b>Custom title:$descbr This title will be shown below your rank.</td>
 	    $tccell2l>$inpt=title VALUE=\"$loguser[title]\" SIZE=60 MAXLENGTH=255><tr>
 		";
@@ -61,47 +77,47 @@
     $loguser['minipic'] = htmlspecialchars($loguser['minipic'], ENT_QUOTES);
     $loguser['picture'] = htmlspecialchars($loguser['picture'], ENT_QUOTES);
     $loguser['moodurl'] = htmlspecialchars($loguser['moodurl'], ENT_QUOTES);
-    squot(0,$loguser['realname']);
-//    squot(0,$loguser['aka']);
-    squot(0,$loguser['location']);
-//    squot(1,$loguser['aim']);
-//    squot(1,$loguser['imood']);
-    squot(0,$loguser['email']);
-//    squot(1,$loguser['homepageurl']);
-    squot(0,$loguser['homepagename']);
-    sbr(1,$loguser['postheader']);
-    sbr(1,$loguser['signature']);
-    sbr(1,$loguser['bio']);
+    squot(0, $loguser['realname']);
+    //    squot(0,$loguser['aka']);
+    squot(0, $loguser['location']);
+    //    squot(1,$loguser['aim']);
+    //    squot(1,$loguser['imood']);
+    squot(0, $loguser['email']);
+    //    squot(1,$loguser['homepageurl']);
+    squot(0, $loguser['homepagename']);
+    sbr(1, $loguser['postheader']);
+    sbr(1, $loguser['signature']);
+    sbr(1, $loguser['bio']);
 
-    $schemes=$sql->query('SELECT s.id as id, s.name, COUNT(u.scheme) as used FROM schemes s LEFT JOIN users u ON (u.scheme = s.id) WHERE ord > 0 GROUP BY u.scheme ORDER BY s.ord');
-    while($sch=$sql->fetch($schemes)){
-			$sel=($sch['id']==$loguser['scheme']?' selected':'');
-			$schlist.="<option value=$sch[id]$sel>$sch[name] ($sch[used])";
+    $schemes = $sql->query('SELECT s.id as id, s.name, COUNT(u.scheme) as used FROM schemes s LEFT JOIN users u ON (u.scheme = s.id) WHERE ord > 0 GROUP BY u.scheme ORDER BY s.ord');
+    while ($sch = $sql->fetch($schemes)) {
+        $sel = ($sch['id'] == $loguser['scheme'] ? ' selected' : '');
+        $schlist .= "<option value=$sch[id]$sel>$sch[name] ($sch[used])";
     }
-    $schlist="<select name=sscheme>$schlist</select>";
+    $schlist = "<select name=sscheme>$schlist</select>";
 
-    $tlayouts=$sql->query('SELECT tl.id as id, tl.name, COUNT(u.layout) as used FROM tlayouts tl LEFT JOIN users u ON (u.layout = tl.id) GROUP BY u.layout ORDER BY tl.ord');
-    while($lay=$sql->fetch($tlayouts)){
-			$sel=($lay['id']==$loguser['layout']?' selected':'');
-			$laylist.="<option value=$lay[id]$sel>$lay[name] ($lay[used])";
+    $tlayouts = $sql->query('SELECT tl.id as id, tl.name, COUNT(u.layout) as used FROM tlayouts tl LEFT JOIN users u ON (u.layout = tl.id) GROUP BY u.layout ORDER BY tl.ord');
+    while ($lay = $sql->fetch($tlayouts)) {
+        $sel = ($lay['id'] == $loguser['layout'] ? ' selected' : '');
+        $laylist .= "<option value=$lay[id]$sel>$lay[name] ($lay[used])";
     }
-    $laylist="<select name=tlayout>$laylist</select>";
+    $laylist = "<select name=tlayout>$laylist</select>";
 
     $used = $sql->getresultsbykey('SELECT signsep, count(*) as cnt FROM users GROUP BY signsep', 'signsep', 'cnt');
-    for($i=0;$sepn[$i];$i++){
-			$sel=($i==$loguser['signsep']?' selected':'');
-			$seplist.="<option value=$i$sel>$sepn[$i] ($used[$i])";
+    for ($i = 0; $sepn[$i]; ++$i) {
+        $sel = ($i == $loguser['signsep'] ? ' selected' : '');
+        $seplist .= "<option value=$i$sel>$sepn[$i] ($used[$i])";
     }
-    $seplist="<select name=signsep>$seplist</select>";
+    $seplist = "<select name=signsep>$seplist</select>";
 
     $rsets = $sql->query('SELECT rs.id as id, rs.name, COUNT(u.useranks) as used FROM ranksets rs LEFT JOIN users u ON (u.useranks = rs.id) GROUP BY u.useranks ORDER BY rs.id');
-    while($set=$sql->fetch($rsets)){
-			$sel=($set['id']==$loguser['useranks']?' selected':'');
-			$rsetlist.="<option value=$set[id]$sel>$set[name] ($set[used])";
+    while ($set = $sql->fetch($rsets)) {
+        $sel = ($set['id'] == $loguser['useranks'] ? ' selected' : '');
+        $rsetlist .= "<option value=$set[id]$sel>$set[name] ($set[used])";
     }
-    $rsetlist="<select name=useranks>$rsetlist</select>";
+    $rsetlist = "<select name=useranks>$rsetlist</select>";
 
-    print "
+    echo "
 	$header<br>
     <FORM ACTION=editprofile.php NAME=REPLIER METHOD=POST autocomplete=off>
     $tblstart
@@ -122,7 +138,7 @@
 	 $tccell2l>$inpt=minipic VALUE=\"$loguser[minipic]\" SIZE=60 MAXLENGTH=100><tr>
 	 ". ($loguser['postbg'] ? "$tccell1><b>Post background:$descbr The full URL of a picture showing up in the background of your posts. Leave it blank for no background. Please make sure your text is readable on the background!</td>
 	 $tccell2l>$inpt=postbg VALUE=\"$loguser[postbg]\" SIZE=60 MAXLENGTH=250><tr>
-     " : "") ."
+     " : '') ."
 	 $tccell1><b>Post header:$descbr HTML added here will come before your post.</td>
 	 $tccell2l>$txta=postheader ROWS=8 COLS=60 style='width: 100%;'>". htmlspecialchars($loguser['postheader']) ."</TEXTAREA><tr>
 	 $tccell1><b>Footer/Signature:$descbr HTML and text added here will be added to the end of your post.</td>
@@ -163,7 +179,7 @@
 	 $tccell2l>$inpt=eddateformat value=\"$dateformat\" size=16 maxlength=32><tr>
 	 $tccell1><b>Custom short date format:$descbr Change how abbreviated dates are displayed. Uses the same formatting. Leave blank to reset.</td>
 	 $tccell2l>$inpt=eddateshort value=\"$dateshort\" size=8 maxlength=16><tr>
-	 $tccell1><b>Timezone offset:$descbr How many hours you're offset from the time on the board (".date($dateformat,ctime()).").</td>
+	 $tccell1><b>Timezone offset:$descbr How many hours you're offset from the time on the board (".date($dateformat, ctime()).").</td>
 	 $tccell2l>$inpt=timezone VALUE=$loguser[timezone] SIZE=5 MAXLENGTH=5><tr>
 	 $tccell1><b>Posts per page:$descbr The maximum number of posts you want to be shown in a page in threads.</td>
 	 $tccell2l>$inpt=postsperpage SIZE=4 MAXLENGTH=4 VALUE=$loguser[postsperpage]><tr>
@@ -171,7 +187,7 @@
 	 $tccell2l>$inpt=threadsperpage SIZE=4 MAXLENGTH=4 VALUE=$loguser[threadsperpage]><tr>".
 //	 $tccell1><b>Use textbox toolbar when posting:$descbr You can disable it here, preventing potential slowdowns or other minor problems when posting.</td>
 //	 $tccell2l>$vtool<tr>
-	"$tccell1><b>Post layouts:$descbr You can disable them here, which can make thread pages smaller and load faster.</td>
+    "$tccell1><b>Post layouts:$descbr You can disable them here, which can make thread pages smaller and load faster.</td>
 	 $tccell2l>$vsig<tr>
 
 	 $tccell1><b>Forum page list style:$descbr Inline (Title - Pages ...) or Seperate Line (shows more pages)</td>
@@ -195,70 +211,82 @@
 	 $inps=submit VALUE=\"Edit profile\"></td></FORM>
 	$tblend
     ";
-  }
-  if($action=='saveprofile'){
+}
+if ($action == 'saveprofile') {
+    if (stripos($_POST['pronouns'], 'helicopter') !== false) {
+        // A wise guy, ey?
+        // Real original, asshole.
+        header('Location: https://www.youtube.com/embed/0WrFZAf6EEE?autoplay=1');
+        exit;
+    }
 
-      if (stripos($_POST['pronouns'], "helicopter") !== false) {
-          // A wise guy, ey?
-          // Real original, asshole.
-          header("Location: https://www.youtube.com/embed/0WrFZAf6EEE?autoplay=1");
-          die();
-      }
+    if ($eddateformat == $defaultdateformat) {
+        $eddateformat = '';
+    }
+    if ($eddateshort == $defaultdateshort) {
+        $eddateshort = '';
+    }
 
-    if ($eddateformat == $defaultdateformat) $eddateformat = '';
-    if ($eddateshort  == $defaultdateshort)  $eddateshort  = '';
+    sbr(0, $postheader);
+    sbr(0, $signature);
+    sbr(0, $bio);
+    if (!isset($title) or !$titleopt) {
+        $title = $loguser['title'];
+    }
+    if ($sex > 2 && $sex != $loguser['sex'] && $sex != $loguser['oldsex']) {
+        $sex = 2;
+    }
 
-    sbr(0,$postheader);
-    sbr(0,$signature);
-    sbr(0,$bio);
-    if(!isset($title) or !$titleopt) $title=$loguser['title'];
-    if($sex>2 && $sex != $loguser['sex'] && $sex != $loguser['oldsex'])
-      $sex=2;
+    $oldtitle = '';
+    $title = stripslashes($title);
+    while ($oldtitle != $title) {
+        $oldtitle = $title;
+        $title = preg_replace("'<(b|i|u|s|small|br)>'si", '[\\1]', $title);
+        $title = preg_replace("'</(b|i|u|s|small|font)>'si", '[/\\1]', $title);
+        $title = preg_replace("'<img ([^>].*?)>'si", '[img \\1]', $title);
+        $title = preg_replace("'<font ([^>].*?)>'si", '[font \\1]', $title);
+        /*    $title=preg_replace("'<[\/\!]*?[^<>]*?>'si", '&lt;\\1&gt;', $title); */
+        $title = strip_tags($title);
+        /*    $title=preg_replace("'<[\/\!]*?[^<>]*?>'si", '&lt;\\1&gt;', $title); */
+        $title = preg_replace("'\[font ([^>].*?)\]'si", '<font \\1>', $title);
+        $title = preg_replace("'\[img ([^>].*?)\]'si", '<img \\1>', $title);
+        $title = preg_replace("'\[(b|i|u|s|small|br)\]'si", '<\\1>', $title);
+        $title = preg_replace("'\[/(b|i|u|s|small|font)\]'si", '</\\1>', $title);
+        $title = preg_replace("'(face|style|class|size|id)=\"([^ ].*?)\"'si", '', $title);
+        $title = preg_replace("'(face|style|class|size|id)=\'([^ ].*?)\''si", '', $title);
+        $title = preg_replace("'(face|style|class|size|id)=([^ ].*?)'si", '', $title);
+    }
+    $title = addslashes($title);
 
-	$oldtitle	= "";
-	$title = stripslashes($title);
-	while ($oldtitle != $title) {
-		$oldtitle = $title;
-		$title=preg_replace("'<(b|i|u|s|small|br)>'si", '[\\1]', $title);
-		$title=preg_replace("'</(b|i|u|s|small|font)>'si", '[/\\1]', $title);
-		$title=preg_replace("'<img ([^>].*?)>'si", '[img \\1]', $title);
-		$title=preg_replace("'<font ([^>].*?)>'si", '[font \\1]', $title);
-	/*    $title=preg_replace("'<[\/\!]*?[^<>]*?>'si", '&lt;\\1&gt;', $title); */
-		$title=strip_tags($title);
-	/*    $title=preg_replace("'<[\/\!]*?[^<>]*?>'si", '&lt;\\1&gt;', $title); */
-		$title=preg_replace("'\[font ([^>].*?)\]'si", '<font \\1>', $title);
-		$title=preg_replace("'\[img ([^>].*?)\]'si", '<img \\1>', $title);
-		$title=preg_replace("'\[(b|i|u|s|small|br)\]'si", '<\\1>', $title);
-		$title=preg_replace("'\[/(b|i|u|s|small|font)\]'si", '</\\1>', $title);
-		$title=preg_replace("'(face|style|class|size|id)=\"([^ ].*?)\"'si", '', $title);
-		$title=preg_replace("'(face|style|class|size|id)=\'([^ ].*?)\''si", '', $title);
-		$title=preg_replace("'(face|style|class|size|id)=([^ ].*?)'si", '', $title);
-	}
-	$title = addslashes($title);
+    $bio = preg_replace("'<iframe'si", '&lt;iframe', $bio);
+    $bio = preg_replace("'<script'si", '&lt;script', $bio);
+    $bio = preg_replace("'onload'si", 'o<z>nload', $bio);
+    $bio = preg_replace("'onfail'si", 'o<z>nfail', $bio);
+    $bio = preg_replace("'onhover'si", 'o<z>nhover', $bio);
+    $bio = preg_replace("'javascript'si", 'java<z>script', $bio);
+    $birthday = @mktime(12, 0, 0, $bmonth, $bday, $byear);
+    if (!$bmonth && !$bday && !$byear) {
+        $birthday = 0;
+    }
+    if (!$icq) {
+        $icq = 0;
+    }
+    if (!isset($useranks)) {
+        $useranks = $loguser['useranks'];
+    }
 
-	$bio=preg_replace("'<iframe'si", '&lt;iframe', $bio);
-    $bio=preg_replace("'<script'si", '&lt;script', $bio);
-    $bio=preg_replace("'onload'si", 'o<z>nload', $bio);
-    $bio=preg_replace("'onfail'si", 'o<z>nfail', $bio);
-    $bio=preg_replace("'onhover'si", 'o<z>nhover', $bio);
-    $bio=preg_replace("'javascript'si", 'java<z>script', $bio);
-    $birthday=@mktime(12,0,0,$bmonth,$bday,$byear);
-    if(!$bmonth && !$bday && !$byear) $birthday=0;
-    if(!$icq) $icq=0;
-    if(!isset($useranks)) $useranks=$loguser['useranks'];
+    if ($_POST['password']) {
+        $hash = getpwhash($_POST['password'], $loguserid);
+        $passwordenc = "`password` = '$hash', ";
 
-		if ($_POST['password']) {
-			$hash = getpwhash($_POST['password'], $loguserid);
-			$passwordenc = "`password` = '$hash', ";
-
-			if ($loguser['id'] == $loguserid) {
-				$verifyid = intval(substr($_COOKIE['logverify'], 0, 1));
-				$verify = create_verification_hash($verifyid, $hash);
-				setcookie('logverify',$verify,2147483647, "/", $_SERVER['SERVER_NAME'], false, true);
-			}
-		}
-		else // Sneaky!  But no.
-			$passwordenc = '';
+        if ($loguser['id'] == $loguserid) {
+            $verifyid = intval(substr($_COOKIE['logverify'], 0, 1));
+            $verify = create_verification_hash($verifyid, $hash);
+            setcookie('logverify', $verify, 2147483647, '/', $_SERVER['SERVER_NAME'], false, true);
+        }
+    } else { // Sneaky!  But no.
+        $passwordenc = '';
+    }
 
     $sql->query("UPDATE users
       SET		$passwordenc
@@ -284,7 +312,7 @@
       `postbg` = '$postbg',
       `postheader` = '$postheader',
       `birthday` = '$birthday',
-      `fontsize` = ". (($_POST['fontsize'] || $_POST['fontsize'] == 100) ? intval($_POST['fontsize']) : "NULL") .",
+      `fontsize` = ". (($_POST['fontsize'] || $_POST['fontsize'] == 100) ? intval($_POST['fontsize']) : 'NULL') .",
       `scheme` = '$sscheme',
       `threadsperpage` = '$threadsperpage',
       `viewsig` = '$viewsig',
@@ -295,10 +323,10 @@
       `signsep` = '$signsep',
       `pagestyle` = '$pagestyle',
       `pollstyle` = '$pollstyle'
-    WHERE `id` = '$loguserid'") OR print mysql_error();
+    WHERE `id` = '$loguserid'") or print mysql_error();
 
-    print "$header<br>$tblstart$tccell1>Thank you, $loguser[name], for editing your profile.<br>".redirect("profile.php?id=$loguserid",'view your profile',0).$tblend;
-  }
+    echo "$header<br>$tblstart$tccell1>Thank you, $loguser[name], for editing your profile.<br>".redirect("profile.php?id=$loguserid", 'view your profile', 0).$tblend;
+}
 
-  print $footer;
-  printtimedif($startingtime);
+echo $footer;
+printtimedif($startingtime);
