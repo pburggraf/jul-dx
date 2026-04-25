@@ -49,7 +49,7 @@ if ($_POST['deluser'] and $isadmin) { // ($loguserid==1 or $loguserid==2)){
     $deltext = "$tblstart
 	<tr><td class='tbl tdbgc font center' colspan=2><b>$delusercnt user(s) deleted.</b></td></tr>$delusertext
 	$tblend<br>";
-    }
+}
 
 if (!$_POST['sortpowerlevel']) {
     $_POST['sortpowerlevel'] = 'ab';

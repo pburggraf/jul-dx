@@ -71,7 +71,7 @@ function coins($p, $d)
         return 0;
     }
 
-    return floor(pow($p,1.3) * pow($d,0.4) + $p * 10);
+    return floor(pow($p, 1.3) * pow($d, 0.4) + $p * 10);
 }
 
 /*

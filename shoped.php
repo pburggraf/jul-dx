@@ -287,7 +287,7 @@ echo "<tr>
 			<tr>$tccellc colspan=\"16\">&lt; <a href=\"?cat=$cat&id=-1\">New Item</a> &gt;</td></tr>
 			</table>";
 
-    echo $footer;
+echo $footer;
 printtimedif($startingtime);
 
 function linkbar($links, $sel = 1, $type = 0, $name = 'cat')

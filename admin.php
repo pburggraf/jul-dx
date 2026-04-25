@@ -20,7 +20,7 @@ if (!$isadmin) {
     exit;
 }
 
-    $misc = $sql->fetchq('SELECT * FROM `misc`');
+$misc = $sql->fetchq('SELECT * FROM `misc`');
 
 echo adminlinkbar('admin.php') ."
 		$tblstart
@@ -107,4 +107,4 @@ printtimedif($startingtime);
 // returns several field names with hours/date/time all set up and that jazz etc blah blah blah
 function timetofields($fname, $time)
 {
-    }
+}
