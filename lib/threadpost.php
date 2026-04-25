@@ -130,6 +130,8 @@ function syndrome($num, $double = false, $bar = true)
     $bar = false;
     $a = '>Affected by';
     $syn = '';
+    $last = 0;
+    $next = 0;
     if ($num >= 75) {
         $syn = "83F3A3$a 'Reinfors Syndrome'";
         $last = 75;

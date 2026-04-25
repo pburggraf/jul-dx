@@ -15,8 +15,9 @@ if (filter_int($_GET['lpt'])) {
     $gotopost = $sql->resultq("SELECT MAX(`id`) FROM `posts` WHERE `thread` = '{$id}'");
 }
 if ($gotopost) {
-	header("Location: ?pid={$gotopost}#{$gotopost}");
-	return;
+    header("Location: ?pid={$gotopost}#{$gotopost}");
+
+    return;
 }
 
 // Poll votes
@@ -26,8 +27,9 @@ if ($id && (filter_int($_GET['addvote']) || filter_int($_GET['delvote']))) {
 
     $pollid = $sql->resultq("SELECT poll FROM threads WHERE id='{$id}'");
     if (!$pollid) {
-		header("Location: ?id={$id}#{$id}");
-		return;
+        header("Location: ?id={$id}#{$id}");
+
+        return;
     }
 
     $poll = $sql->fetchq("SELECT * FROM poll WHERE id='$pollid'");
@@ -47,8 +49,9 @@ if ($id && (filter_int($_GET['addvote']) || filter_int($_GET['delvote']))) {
         }
     }
 
-	header("Location: ?id={$id}#{$id}");
-	return;
+    header("Location: ?id={$id}#{$id}");
+
+    return;
 }
 
 $ppp = filter_int($_GET['ppp']) ? $_GET['ppp'] : ($log ? $loguser['postsperpage'] : 20);

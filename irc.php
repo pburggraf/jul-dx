@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 require 'lib/function.php';
 $windowtitle = "$boardname - IRC Chat";
 require 'lib/layout.php';

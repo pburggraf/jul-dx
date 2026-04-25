@@ -57,26 +57,26 @@ $sql->connect($sqlhost, $sqluser, $sqlpass)
 			');
 $sql->selectdb($dbname) or exit('Another stupid MySQL error happened, panic<br><small>'. mysql_error() .'</small>');
 
-//if (file_exists('lib/firewall.php') && !filter_bool($disable_firewall)) {
+// if (file_exists('lib/firewall.php') && !filter_bool($disable_firewall)) {
 //    require 'lib/firewall.php';
-//} else {
-    // Bad Design Decisions 2001.
-    // :(
-    if (true) {	// simulateds magic quotes gpc. if you don't know what that is: congrats!
-        $_GET = addslashes_array($_GET);
-        $_POST = addslashes_array($_POST);
-        $_COOKIE = addslashes_array($_COOKIE);
-    }
-    if (!ini_get('register_globals')) {
-        $supers = ['_ENV', '_SERVER', '_GET', '_POST', '_COOKIE'];
-        foreach ($supers as $__s) {
-            if (isset($$__s) && is_array($$__s)) {
-                extract($$__s, EXTR_SKIP);
-            }
+// } else {
+// Bad Design Decisions 2001.
+// :(
+if (true) {	// simulateds magic quotes gpc. if you don't know what that is: congrats!
+    $_GET = addslashes_array($_GET);
+    $_POST = addslashes_array($_POST);
+    $_COOKIE = addslashes_array($_COOKIE);
+}
+if (!ini_get('register_globals')) {
+    $supers = ['_ENV', '_SERVER', '_GET', '_POST', '_COOKIE'];
+    foreach ($supers as $__s) {
+        if (isset($$__s) && is_array($$__s)) {
+            extract($$__s, EXTR_SKIP);
         }
-        unset($supers);
     }
-//}
+    unset($supers);
+}
+// }
 
 if (filter_int($die) || filter_int($_GET['sec'])) {
     if ($die) {
@@ -193,8 +193,9 @@ if ($loguser) {
     }
 
     if ($loguser['viewsig'] >= 3) {
-		header('Location: /?sec=1');
-		return;
+        header('Location: /?sec=1');
+
+        return;
     }
 } else {
     // Guest settings
@@ -342,7 +343,7 @@ function readsmilies()
 function numsmilies()
 {
     $fpnt = fopen('smilies.dat', 'r');
-    for ($i = 0; fgetcsv($fpnt, 300, '', ',', '"', '\\'); ++$i) {
+    for ($i = 0; fgetcsv($fpnt, 300, ',', '"', '\\'); ++$i) {
     }
     $r = fclose($fpnt);
 
@@ -672,6 +673,7 @@ function doforumlist($id)
 	";
 
     $cats = $sql->query("SELECT id,name,minpower FROM categories WHERE (minpower<=$power OR minpower<=0) ORDER BY id ASC");
+    $fjump = [];
     while ($cat = $sql->fetch($cats)) {
         $fjump[$cat['id']] = '<optgroup label="'. $cat['name'] .'">';
     }
@@ -768,7 +770,7 @@ function updategb()
     $c = mysql_num_rows($hranks);
 
     for ($i = 1; ($hrank = $sql->fetch($hranks)) && $i <= $c * 0.7; ++$i) {
-        $n = $hrank[posts];
+        $n = $hrank['posts'];
         if ($i == floor($c * 0.001)) {
             $sql->query("UPDATE ranks SET num=$n WHERE rset=3 AND text LIKE '%=3%'");
         } elseif ($i == floor($c * 0.01)) {
@@ -845,6 +847,8 @@ function create_verification_hash($n, $pw)
 function shenc($str)
 {
     $l = strlen($str);
+    $e = [];
+    $s = '';
     for ($i = 0; $i < $l; ++$i) {
         $n = (308 - ord($str[$i])) % 256;
         $e[($i + 5983) % $l] += floor($n / 16);
@@ -860,6 +864,8 @@ function shdec($str)
 {
     $l = strlen($str);
     $o = 10000 - 10000 % $l;
+    $e = [];
+    $s = '';
     for ($i = 0; $i < $l; ++$i) {
         $n = ord($str[$i]);
         $e[($i + $o - 5984) % $l] += floor($n / 16);
@@ -875,15 +881,19 @@ function shdec($str)
 function fadec($c1, $c2, $pct)
 {
     $pct2 = 1 - $pct;
-    $cx1[r] = hexdec(substr($c1, 0, 2));
-    $cx1[g] = hexdec(substr($c1, 2, 2));
-    $cx1[b] = hexdec(substr($c1, 4, 2));
-    $cx2[r] = hexdec(substr($c2, 0, 2));
-    $cx2[g] = hexdec(substr($c2, 2, 2));
-    $cx2[b] = hexdec(substr($c2, 4, 2));
-    $ret = floor($cx1[r] * $pct2 + $cx2[r] * $pct) * 65536 +
-       floor($cx1[g] * $pct2 + $cx2[g] * $pct) * 256 +
-       floor($cx1[b] * $pct2 + $cx2[b] * $pct);
+    $cx1 = [
+        'r' => hexdec(substr($c1, 0, 2)),
+        'g' => hexdec(substr($c1, 2, 2)),
+        'b' => hexdec(substr($c1, 4, 2)),
+    ];
+    $cx2 = [
+        'r' => hexdec(substr($c2, 0, 2)),
+        'g' => hexdec(substr($c2, 2, 2)),
+        'b' => hexdec(substr($c2, 4, 2)),
+    ];
+    $ret = floor($cx1['r'] * $pct2 + $cx2['r'] * $pct) * 65536 +
+       floor($cx1['g'] * $pct2 + $cx2['g'] * $pct) * 256 +
+       floor($cx1['b'] * $pct2 + $cx2['b'] * $pct);
     $ret = dechex($ret);
 
     return $ret;
@@ -1152,21 +1162,21 @@ function redirect($url, $msg, $delay = 1)
 
 function cu($a, $b)
 {
-	global $hacks;
+    global $hacks;
 
-	$dif = $a - $b['posts'];
-	if ($dif < 0) {
-		$t = (!$hacks['noposts'] ? -$dif : '') .' behind';
-	} elseif ($dif > 0) {
-		$t = (!$hacks['noposts'] ? $dif : '') .' ahead of';
-	} else {
-		$t = ' tied with';
-	}
+    $dif = $a - $b['posts'];
+    if ($dif < 0) {
+        $t = (!$hacks['noposts'] ? -$dif : '') .' behind';
+    } elseif ($dif > 0) {
+        $t = (!$hacks['noposts'] ? $dif : '') .' ahead of';
+    } else {
+        $t = ' tied with';
+    }
 
-	$namelink = getuserlink($b);
-	$t .= " {$namelink}" . (!$hacks['noposts'] ? " ($b[posts])" : '');
+    $namelink = getuserlink($b);
+    $t .= " {$namelink}" . (!$hacks['noposts'] ? " ($b[posts])" : '');
 
-	return "<nobr>{$t}</nobr>";
+    return "<nobr>{$t}</nobr>";
 }
 
 function postradar($userid)
@@ -1207,6 +1217,7 @@ function postradar($userid)
 function loaduser($id, $type)
 {
     global $sql;
+    $fields = '*';
     if ($type == 1) {
         $fields = 'id,name,sex,powerlevel,posts';
     }
@@ -1235,7 +1246,7 @@ function squot($t, &$src)
             break;
         case 2: $src = str_replace('&quot;', '"', $src);
             break;
-        case 3: $src = urldecode('%22', '"', $src);
+        case 3: $src = urldecode($src);
             break;
     }
     /*  switch($t){
@@ -1551,15 +1562,15 @@ function replytoolbar()
 
 function addslashes_array($data)
 {
-	if (is_array($data)) {
-		foreach ($data as $key => $value) {
-			$data[$key] = addslashes_array($value);
-		}
+    if (is_array($data)) {
+        foreach ($data as $key => $value) {
+            $data[$key] = addslashes_array($value);
+        }
 
-		return $data;
-	}elseif (is_int($data)) {
-		return $data;
-	}elseif (is_null($data)) {
+        return $data;
+    } elseif (is_int($data)) {
+        return $data;
+    } elseif (is_null($data)) {
         return '';
     }
 
@@ -1711,5 +1722,5 @@ function printtimedif($timestart)
 
 function getpwhash($pass, $id)
 {
-	return sha1(md5($id) . $pass);
+    return sha1(md5($id) . $pass);
 }

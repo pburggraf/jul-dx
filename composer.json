@@ -9,7 +9,7 @@
     },
     "scripts": {
         "test": "phpunit --configuration phpunit.xml.dist",
-        "test:index": "phpunit --configuration phpunit.xml.dist --filter IndexSmokeTest"
+        "test:index": "phpunit --configuration phpunit.xml.dist --filter Index"
     },
     "minimum-stability": "dev",
 	"require": {

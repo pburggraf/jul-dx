@@ -32,6 +32,9 @@ function xk_ircout($type, $user, $in)
     }
 
     global $x_hacks;
+    $extra = '';
+    $extradiscord = '';
+    $reportingUrl = defined('BOARD_REPORTING_URL') ? BOARD_REPORTING_URL : '';
 
     if ($type == 'user') {
         if ($in['pmatch']) {
@@ -45,13 +48,13 @@ function xk_ircout($type, $user, $in)
             $extradiscord = ' (**Password matches**: ' . $in['pmatch'] . ')';
         }
 
-        $out = '1|New user: #'. xk(12) . $in['id'] . xk(11) ." $user ". xk() .'(IP: '. xk(12) . $in['ip'] . xk() .")$extra: ". BOARD_REPORTING_URL .'?u='. $in['id'];
-        $outdiscord = 'New user: **#' . $in['id'] . '** '. $user . ' (IP: ' . $in['ip'] . ")$extra: <". BOARD_REPORTING_URL .'?u=' . $in['id'] . '>';
+        $out = '1|New user: #'. xk(12) . $in['id'] . xk(11) ." $user ". xk() .'(IP: '. xk(12) . $in['ip'] . xk() .")$extra: ". $reportingUrl .'?u='. $in['id'];
+        $outdiscord = 'New user: **#' . $in['id'] . '** '. $user . ' (IP: ' . $in['ip'] . ")$extradiscord: <". $reportingUrl .'?u=' . $in['id'] . '>';
     } else {
         //			global $sql;
         //			$res	= $sql -> resultq("SELECT COUNT(`id`) FROM `posts`");
-        $out = "$dest|New $type by ". xk(11) . $user . xk() .' ('. xk(12) . $in['forum'] .': '. xk(11) . $in['thread'] . xk() .'): '. BOARD_REPORTING_URL .'?p='. $in['pid'];
-        $outdiscord = "New $type by **" . $user . '** (' . $in['forum'] . ': **' . $in['thread'] . '**): <'. BOARD_REPORTING_URL .'?p='. $in['pid'] . '>';
+        $out = "$dest|New $type by ". xk(11) . $user . xk() .' ('. xk(12) . $in['forum'] .': '. xk(11) . $in['thread'] . xk() .'): '. $reportingUrl .'?p='. $in['pid'];
+        $outdiscord = "New $type by **" . $user . '** (' . $in['forum'] . ': **' . $in['thread'] . '**): <'. $reportingUrl .'?p='. $in['pid'] . '>';
     }
 
     xk_ircsend($out);

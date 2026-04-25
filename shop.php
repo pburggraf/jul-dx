@@ -3,8 +3,9 @@
 declare(strict_types=1);
 
 if ($_GET['action'] == 'buy' && $_GET['id'] == 286) {
-	header('Location: shoph.php');
-	return;
+    header('Location: shoph.php');
+
+    return;
 }
 
 require 'lib/function.php';

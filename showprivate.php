@@ -3,8 +3,9 @@
 declare(strict_types=1);
 require 'lib/function.php';
 if (!$id) {
-	header('Location: private.php');
-	return;
+    header('Location: private.php');
+
+    return;
 }
 $windowtitle = "$boardname -- Private Messages";
 $meta['noindex'] = true;

@@ -1,0 +1,7933 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Constant cnt not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$d might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: acs.php
+
+		-
+			message: '#^Variable \$dailypoints might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: acs.php
+
+		-
+			message: '#^Variable \$dailyposts might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: acs.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: acs.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$m might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: acs.php
+
+		-
+			message: '#^Variable \$n might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: acs.php
+
+		-
+			message: '#^Variable \$ndailypoints might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$ndailyposts might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$numdir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$r might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: acs.php
+
+		-
+			message: '#^Variable \$radio might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: acs.php
+
+		-
+			message: '#^Variable \$rp might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$rr might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: acs.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: acs.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: acs.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: acs.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: acs.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: acs.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: acs.php
+
+		-
+			message: '#^Variable \$tend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: acs.php
+
+		-
+			message: '#^Variable \$tie might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$u might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$v might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$view might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: acs.php
+
+		-
+			message: '#^Variable \$y might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: acs.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$oldcnt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$rank might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$tid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$type might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activeusers.php
+
+		-
+			message: '#^Variable \$p might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activity.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activity.php
+
+		-
+			message: '#^Variable \$resp might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activity2.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: activity2.php
+
+		-
+			message: '#^Variable \$p might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activity3.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activity3.php
+
+		-
+			message: '#^Variable \$xdata might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activity3.php
+
+		-
+			message: '#^Variable \$xdata2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activity3.php
+
+		-
+			message: '#^Variable \$y might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activity3.php
+
+		-
+			message: '#^Constant bar not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: activity3u.php
+
+		-
+			message: '#^Constant bg not found\.$#'
+			identifier: constant.notFound
+			count: 8
+			path: activity3u.php
+
+		-
+			message: '#^Constant bg1 not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: activity3u.php
+
+		-
+			message: '#^Constant bg2 not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: activity3u.php
+
+		-
+			message: '#^Constant bg3 not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: activity3u.php
+
+		-
+			message: '#^Constant bg4 not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: activity3u.php
+
+		-
+			message: '#^Constant mk1 not found\.$#'
+			identifier: constant.notFound
+			count: 4
+			path: activity3u.php
+
+		-
+			message: '#^Constant mk2 not found\.$#'
+			identifier: constant.notFound
+			count: 5
+			path: activity3u.php
+
+		-
+			message: '#^Constant pt not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: activity3u.php
+
+		-
+			message: '#^Variable \$p might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activity3u.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activity3u.php
+
+		-
+			message: '#^Variable \$xdata might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: activity3u.php
+
+		-
+			message: '#^Variable \$xdata2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activity3u.php
+
+		-
+			message: '#^Variable \$y might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: activity3u.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$category might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$catid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$description might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$edspecialscheme might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$forder might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$forumlastuser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$forumtitle might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$hideforum might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$idtxt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$idtxt2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$minpower might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$minpowerreply might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$minpowerthread might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$modlist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$numposts might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$numthreads might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$pollstyle might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$prevtext might not be defined\.$#'
+			identifier: variable.undefined
+			count: 10
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$pwlnames might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 22
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$statusicons might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 12
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 21
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$tccellhl might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$txta might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$values might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editforums.php
+
+		-
+			message: '#^Variable \$action might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$addmodforum might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$addmoduser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$removemod might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 11
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$userip might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-editmods.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-slammer.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-slammer.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 12
+			path: admin-slammer.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: admin-threads.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin-threads2.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin.php
+
+		-
+			message: '#^Variable \$inpc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 10
+			path: admin.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 10
+			path: admin.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin.php
+
+		-
+			message: '#^Variable \$statusicons might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: admin.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: admin.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: admin.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 11
+			path: admin.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: admin.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: admin.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: admin.php
+
+		-
+			message: '#^Variable \$bonusm might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: adnonsense.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: adnonsense.php
+
+		-
+			message: '#^Constant date not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: announcement.php
+
+		-
+			message: '#^Constant headtext not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Constant name not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Constant signtext not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Constant tagval not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Constant text not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Constant uid not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Constant user not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$action might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$annc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: announcement.php
+
+		-
+			message: '#^Variable \$annccount might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$annclist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: announcement.php
+
+		-
+			message: '#^Variable \$bg might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$f might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$head might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: announcement.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: announcement.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 11
+			path: announcement.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: announcement.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: announcement.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: announcement.php
+
+		-
+			message: '#^Variable \$ismod might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: announcement.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 13
+			path: announcement.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: announcement.php
+
+		-
+			message: '#^Variable \$message might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: announcement.php
+
+		-
+			message: '#^Variable \$numcols might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: announcement.php
+
+		-
+			message: '#^Variable \$page might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: announcement.php
+
+		-
+			message: '#^Variable \$pagelinks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: announcement.php
+
+		-
+			message: '#^Variable \$postnew might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$sign might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: announcement.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: announcement.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$subject might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: announcement.php
+
+		-
+			message: '#^Variable \$submit might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: announcement.php
+
+		-
+			message: '#^Variable \$tagval might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: announcement.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: announcement.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: announcement.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 20
+			path: announcement.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 16
+			path: announcement.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 12
+			path: announcement.php
+
+		-
+			message: '#^Variable \$txta might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: announcement.php
+
+		-
+			message: '#^Variable \$userip might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: announcement.php
+
+		-
+			message: '#^Variable \$body might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: avatar.php
+
+		-
+			message: '#^Variable \$css might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: avatar.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: avatar.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: avatar.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: avatar.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: avatar.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: avatar.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: avatar.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: avatar.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$oldcnt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$rank might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$tccell1r might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$tccell2r might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: biggestposters.php
+
+		-
+			message: '#^Variable \$bdaytext might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: calendar.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: calendar.php
+
+		-
+			message: '#^Variable \$d might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: calendar.php
+
+		-
+			message: '#^Variable \$day might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: calendar.php
+
+		-
+			message: '#^Variable \$event might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$eventtext might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: calendar.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$m might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: calendar.php
+
+		-
+			message: '#^Variable \$monthlinks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: calendar.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: calendar.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$tccellcl might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: calendar.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: calendar.php
+
+		-
+			message: '#^Variable \$y might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: calendar.php
+
+		-
+			message: '#^Variable \$yearlinks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: calendar.php
+
+		-
+			message: '#^Variable \$p might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: cruft/newyear.php
+
+		-
+			message: '#^Constant name not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: del.php
+
+		-
+			message: '#^Constant powerlevel not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: del.php
+
+		-
+			message: '#^Constant sex not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: del.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: del.php
+
+		-
+			message: '#^Variable \$dateshort might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: del.php
+
+		-
+			message: '#^Variable \$deltext might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: del.php
+
+		-
+			message: '#^Variable \$delusercnt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: del.php
+
+		-
+			message: '#^Variable \$delusertext might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: del.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: del.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: del.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: del.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: del.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: del.php
+
+		-
+			message: '#^Variable \$radio might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: del.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: del.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: del.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: del.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 12
+			path: del.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: del.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: del.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: del.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: del.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: del.php
+
+		-
+			message: '#^Variable \$x_hacks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: del.php
+
+		-
+			message: '#^Variable \$color might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: doomcounter.php
+
+		-
+			message: '#^Constant user not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: editpost.php
+
+		-
+			message: '#^Variable \$action might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editpost.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: editpost.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: editpost.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editpost.php
+
+		-
+			message: '#^Variable \$head might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: editpost.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editpost.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 17
+			path: editpost.php
+
+		-
+			message: '#^Variable \$inpc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: editpost.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: editpost.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: editpost.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editpost.php
+
+		-
+			message: '#^Variable \$ismod might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: editpost.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editpost.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: editpost.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: editpost.php
+
+		-
+			message: '#^Variable \$message might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editpost.php
+
+		-
+			message: '#^Variable \$nohtml might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editpost.php
+
+		-
+			message: '#^Variable \$nosmilies might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editpost.php
+
+		-
+			message: '#^Variable \$numcols might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: editpost.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editpost.php
+
+		-
+			message: '#^Variable \$sign might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: editpost.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 18
+			path: editpost.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editpost.php
+
+		-
+			message: '#^Variable \$submit might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editpost.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: editpost.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: editpost.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 14
+			path: editpost.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 12
+			path: editpost.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: editpost.php
+
+		-
+			message: '#^Variable \$txta might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: editpost.php
+
+		-
+			message: '#^Variable \$action might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$aim might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$banned might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$bday might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$bmonth might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$byear might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$dateshort might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$day might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$defaultdateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$defaultdateshort might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$eddateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$eddateshort might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$email might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$homepage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$icq might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$imood might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$inpp might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 24
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$laylist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$location might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 29
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$minipic might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$month might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$pagename might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$pagestyle might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$picture might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$pollstyle might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$postbg might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$postsperpage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$radio might not be defined\.$#'
+			identifier: variable.undefined
+			count: 11
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$realname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$rsetlist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$schlist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$seplist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$sepn might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$sex might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$signsep might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$sscheme might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 37
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 36
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$threadsperpage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$timezone might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$titleoption might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$tlayout might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$txta might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$userid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$viewsig might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$year might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editprofile.php
+
+		-
+			message: '#^Variable \$br might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editthread.php
+
+		-
+			message: '#^Variable \$checked might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editthread.php
+
+		-
+			message: '#^Variable \$closed might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editthread.php
+
+		-
+			message: '#^Variable \$custposticon might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editthread.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editthread.php
+
+		-
+			message: '#^Variable \$forummove might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: editthread.php
+
+		-
+			message: '#^Variable \$forummovelist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editthread.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editthread.php
+
+		-
+			message: '#^Variable \$iconid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: editthread.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 12
+			path: editthread.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editthread.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editthread.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editthread.php
+
+		-
+			message: '#^Variable \$ismod might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editthread.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editthread.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editthread.php
+
+		-
+			message: '#^Variable \$posticonlist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editthread.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editthread.php
+
+		-
+			message: '#^Variable \$radio might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: editthread.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 16
+			path: editthread.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editthread.php
+
+		-
+			message: '#^Variable \$sticky might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editthread.php
+
+		-
+			message: '#^Variable \$subject might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: editthread.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editthread.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editthread.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: editthread.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: editthread.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: editthread.php
+
+		-
+			message: '#^Variable \$aim might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$aka might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$avatar might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$bday might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$bmonth might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$byear might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$day might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$defaultdateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$defaultdateshort might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$eddateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$eddateshort might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$editing_locked might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$email might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$homepage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$icq might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$inpp might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 27
+			path: edituser.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$laylist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$levellist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$location might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$minipic might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$month might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$moodurl might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$numposts might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$pagename might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$passedit might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$password might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$picture might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$postbg might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$postsperpage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$powerlevel might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$profile_locked might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$pronouns might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$pwlnames might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$radio might not be defined\.$#'
+			identifier: variable.undefined
+			count: 14
+			path: edituser.php
+
+		-
+			message: '#^Variable \$realname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$regtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$rsetlist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$schlist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$sex might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$sexn might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 11
+			path: edituser.php
+
+		-
+			message: '#^Variable \$sscheme might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: edituser.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$threadsperpage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$timezone might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$titleoption might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$tlayout might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$txta might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: edituser.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$useranks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$userid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: edituser.php
+
+		-
+			message: '#^Variable \$username might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: edituser.php
+
+		-
+			message: '#^Variable \$usertitle might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$viewsig might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$year might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: edituser.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/hydra.php
+
+		-
+			message: '#^Variable \$getdoom might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/mmdoom.php
+
+		-
+			message: '#^Variable \$dbname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/ninesitter.php
+
+		-
+			message: '#^Variable \$sqlhost might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/ninesitter.php
+
+		-
+			message: '#^Variable \$sqlpass might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/ninesitter.php
+
+		-
+			message: '#^Variable \$sqluser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/ninesitter.php
+
+		-
+			message: '#^Variable \$classt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/ppdgauge.php
+
+		-
+			message: '#^Variable \$size might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/ppdgauge.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/ppdgauge.php
+
+		-
+			message: '#^Variable \$dateold might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rendertime.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: ext/rendertime.php
+
+		-
+			message: '#^Variable \$averages2f might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rendertime2.php
+
+		-
+			message: '#^Variable \$avgpos might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rendertime2.php
+
+		-
+			message: '#^Variable \$avgpos2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rendertime2.php
+
+		-
+			message: '#^Variable \$linedata might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: ext/rendertime2.php
+
+		-
+			message: '#^Variable \$overtop might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: ext/rendertime2.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: ext/rendertime2.php
+
+		-
+			message: '#^Variable \$averages2f might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rendertime3.php
+
+		-
+			message: '#^Variable \$avgpos might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rendertime3.php
+
+		-
+			message: '#^Variable \$avgpos2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rendertime3.php
+
+		-
+			message: '#^Variable \$linedata might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: ext/rendertime3.php
+
+		-
+			message: '#^Variable \$overtop might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: ext/rendertime3.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: ext/rendertime3.php
+
+		-
+			message: '#^Constant GP not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Constant coins not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Constant exp not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Constant id not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Constant lvl not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Constant posts not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Constant regdate not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Variable \$GPdif might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Variable \$class might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Variable \$ct might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Variable \$it might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Variable \$items might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Variable \$ne might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Variable \$u might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: ext/rpgstats.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: ext/xstats.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: faq.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: faq.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: faq.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: faq.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: faq.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: faq.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: faq.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: faq.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: forum.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: forum.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$forum might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: forum.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$header1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$header2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$headlinks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: forum.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: forum.php
+
+		-
+			message: '#^Variable \$newpic might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$newpollpic might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$newthreadpic might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$postread might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: forum.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: forum.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 18
+			path: forum.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$statusicons might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: forum.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: forum.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: forum.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: forum.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: forum.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: forum.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$tccell2s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: forum.php
+
+		-
+			message: '#^Variable \$tccellhs might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$threadcount might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: forum.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: forum.php
+
+		-
+			message: '#^Variable \$user1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: forum.php
+
+		-
+			message: '#^Variable \$body might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: hex.php
+
+		-
+			message: '#^Variable \$css might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: hex.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: hex.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: hex.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: hex.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: hex.php
+
+		-
+			message: '#^Variable \$code might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: images/inu/7sd.php
+
+		-
+			message: '#^Variable \$raw might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: images/inu/7sd.php
+
+		-
+			message: '#^Variable \$string might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: images/inu/7sd.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: index.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: index.php
+
+		-
+			message: '#^Variable \$forumid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: index.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: index.php
+
+		-
+			message: '#^Variable \$header1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: index.php
+
+		-
+			message: '#^Variable \$header2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: index.php
+
+		-
+			message: '#^Variable \$headlinks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: index.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: index.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: index.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: index.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: index.php
+
+		-
+			message: '#^Variable \$privatebox might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: index.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: index.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 31
+			path: index.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: index.php
+
+		-
+			message: '#^Variable \$statusicons might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: index.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: index.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: index.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: index.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: index.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: index.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: index.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: index.php
+
+		-
+			message: '#^Variable \$tccell2s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: index.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: index.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: index.php
+
+		-
+			message: '#^Variable \$tccellhs might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: index.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: index.php
+
+		-
+			message: '#^Variable \$d might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$ip might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$mgroup might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$msort might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$pgroup might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$psort might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$radio might not be defined\.$#'
+			identifier: variable.undefined
+			count: 14
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$sm might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$sp might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$su might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 18
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 18
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: ipsearch.php
+
+		-
+			message: '#^Variable \$usort might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ipsearch.php
+
+		-
+			message: '#^Constant name not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: irc.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: irc.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: irc.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: irc.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: irc.php
+
+		-
+			message: '#^Variable \$server might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: irc.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: irc.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: irc.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: irc.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: irc.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: irc.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: irc.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: irc.php
+
+		-
+			message: '#^Constant IS_AJAX_REQUEST not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$forumread might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$header1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$header2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$headlinks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$jscripts might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$outarray might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$statusicons might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: latestposts.php
+
+		-
+			message: '#^Variable \$boardtitle might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/colors.php
+
+		-
+			message: '#^Variable \$inputborder might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/colors.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/colors.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/colors.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/colors.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/colors.php
+
+		-
+			message: '#^Variable \$tableborder might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/colors.php
+
+		-
+			message: '#^Variable \$banflags might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/function.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/function.php
+
+		-
+			message: '#^Variable \$dbname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/function.php
+
+		-
+			message: '#^Variable \$defaultdateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/function.php
+
+		-
+			message: '#^Variable \$defaultdateshort might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/function.php
+
+		-
+			message: '#^Variable \$newid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/function.php
+
+		-
+			message: '#^Variable \$sqlhost might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/function.php
+
+		-
+			message: '#^Variable \$sqlpass might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/function.php
+
+		-
+			message: '#^Variable \$sqluser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/function.php
+
+		-
+			message: '#^Variable \$PHP_SELF might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$bgcolor might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$boardtitle might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$categorybg might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$font might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$font2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$font3 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$formcss might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$inputborder might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$linkcolor might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$linkcolor2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$linkcolor3 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$linkcolor4 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 13
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$newpic might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$schemefile might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$sitename might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$siteurl might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$specialscheme might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 18
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$ssss might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$tablebg1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$tablebg2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$tableborder might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$tableheadbg might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$tableheadtext might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$textcolor might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$url might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$x_hacks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: lib/layout.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: login.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: login.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: login.php
+
+		-
+			message: '#^Variable \$inpp might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: login.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: login.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: login.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: login.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: login.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: login.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: login.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: login.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: login.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: login.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$stat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$tccell1r might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$tccell2s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 14
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$users might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$users1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: memberlist.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: milestones.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: milestones.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: milestones.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: milestones.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: milestones.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: milestones.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: milestones.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: milestones.php
+
+		-
+			message: '#^Variable \$statusicons might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: milestones.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: milestones.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: milestones.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 16
+			path: milestones.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: milestones.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: milestones.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 13
+			path: milestones.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: milestones.php
+
+		-
+			message: '#^Variable \$banned might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newreply.php
+
+		-
+			message: '#^Variable \$br might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newreply.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$header1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$header2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$headlinks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 13
+			path: newreply.php
+
+		-
+			message: '#^Variable \$inpc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: newreply.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newreply.php
+
+		-
+			message: '#^Variable \$inpp might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newreply.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$ismod might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newreply.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newreply.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newreply.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 16
+			path: newreply.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$tablebg1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: newreply.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newreply.php
+
+		-
+			message: '#^Variable \$tblstartf might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: newreply.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: newreply.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: newreply.php
+
+		-
+			message: '#^Variable \$txta might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$user might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Variable \$userip might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newreply.php
+
+		-
+			message: '#^Constant title not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Function replytoolbar invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 4
+			path: newthread.php
+
+		-
+			message: '#^Variable \$banned might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newthread.php
+
+		-
+			message: '#^Variable \$briefing might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newthread.php
+
+		-
+			message: '#^Variable \$chcolor might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newthread.php
+
+		-
+			message: '#^Variable \$checked might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$checked0 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$checked1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$choices might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$chtext might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: newthread.php
+
+		-
+			message: '#^Variable \$custposticon might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newthread.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$forums might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$hchoices might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$header1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$header2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$headlinks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$iconid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: newthread.php
+
+		-
+			message: '#^Variable \$inpc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: newthread.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: newthread.php
+
+		-
+			message: '#^Variable \$inpp might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: newthread.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 10
+			path: newthread.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newthread.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$message might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: newthread.php
+
+		-
+			message: '#^Variable \$mltvote might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$moodid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$nohtml might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$nohtmlchk might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$nolayout might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$nolayoutchk might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$nosmilies might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$nosmilieschk might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$numcols might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newthread.php
+
+		-
+			message: '#^Variable \$password might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newthread.php
+
+		-
+			message: '#^Variable \$pchoices might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$poll might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$pollpreview might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$posticon1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$posticonlist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$question might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newthread.php
+
+		-
+			message: '#^Variable \$radio might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: newthread.php
+
+		-
+			message: '#^Variable \$remove might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newthread.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$subject might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: newthread.php
+
+		-
+			message: '#^Variable \$submit might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: newthread.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: newthread.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 20
+			path: newthread.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: newthread.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 19
+			path: newthread.php
+
+		-
+			message: '#^Variable \$tccell2ls might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: newthread.php
+
+		-
+			message: '#^Variable \$txta might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: newthread.php
+
+		-
+			message: '#^Variable \$userip might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: newthread.php
+
+		-
+			message: '#^Variable \$username might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: newthread.php
+
+		-
+			message: '#^Constant lasturl not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: online.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: online.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: online.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: online.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: online.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: online.php
+
+		-
+			message: '#^Variable \$ipban might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: online.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: online.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: online.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: online.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: online.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: online.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: online.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: online.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: online.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: online.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: online.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: online.php
+
+		-
+			message: '#^Variable \$tccell2s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: online.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 12
+			path: online.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: online.php
+
+		-
+			message: '#^Variable \$add might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postradar.php
+
+		-
+			message: '#^Variable \$addlist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: postradar.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: postradar.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: postradar.php
+
+		-
+			message: '#^Variable \$idlist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postradar.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: postradar.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: postradar.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postradar.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: postradar.php
+
+		-
+			message: '#^Variable \$rem might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postradar.php
+
+		-
+			message: '#^Variable \$remlist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: postradar.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: postradar.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: postradar.php
+
+		-
+			message: '#^Variable \$submit2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postradar.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: postradar.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: postradar.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: postradar.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: postradar.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: postradar.php
+
+		-
+			message: '#^Variable \$by might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$during might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$qstrings in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: postsbyforum.php
+
+		-
+			message: '#^Variable \$by might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$during might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$qstrings in empty\(\) always exists and is not falsy\.$#'
+			identifier: empty.variable
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: postsbythread.php
+
+		-
+			message: '#^Variable \$during might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$numdir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$tccell1ls might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$tccell2s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: postsbytime.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$forumlink might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$page might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$postperpage might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$ppp might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$tccell1ls might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$tccellhs might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: postsbyuser.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: private.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$idparam might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: private.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: private.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: private.php
+
+		-
+			message: '#^Variable \$page might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$ppp might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: private.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: private.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$statusicons might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: private.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: private.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$view might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: private.php
+
+		-
+			message: '#^Variable \$viewparam might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: private.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: profile.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: profile.php
+
+		-
+			message: '#^Variable \$fonthead might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: profile.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: profile.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: profile.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: profile.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 16
+			path: profile.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: profile.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: profile.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: profile.php
+
+		-
+			message: '#^Variable \$numdir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: profile.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 11
+			path: profile.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: profile.php
+
+		-
+			message: '#^Variable \$tableheadbg might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: profile.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: profile.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: profile.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: profile.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 21
+			path: profile.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: profile.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 20
+			path: profile.php
+
+		-
+			message: '#^Variable \$tccell2s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: profile.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: profile.php
+
+		-
+			message: '#^Variable \$tccellhs might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: profile.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: profile.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ranks.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ranks.php
+
+		-
+			message: '#^Variable \$ismod might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ranks.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ranks.php
+
+		-
+			message: '#^Variable \$radio might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: ranks.php
+
+		-
+			message: '#^Variable \$rank might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: ranks.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: ranks.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ranks.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: ranks.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: ranks.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 10
+			path: ranks.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ranks.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: ranks.php
+
+		-
+			message: '#^Variable \$tccell2ls might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ranks.php
+
+		-
+			message: '#^Variable \$tccell2s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ranks.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: ranks.php
+
+		-
+			message: '#^Variable \$total might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: ranks.php
+
+		-
+			message: '#^Variable \$user might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ranks.php
+
+		-
+			message: '#^Variable \$users might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: ranks.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: register.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: register.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: register.php
+
+		-
+			message: '#^Variable \$inpp might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: register.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: register.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: register.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: register.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: register.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: register.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: register.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: register.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: register.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: register.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: register.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: register.php
+
+		-
+			message: '#^Variable \$font might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: schemes/ccs.php
+
+		-
+			message: '#^Constant b not found\.$#'
+			identifier: constant.notFound
+			count: 9
+			path: schemes/dailycycle.php
+
+		-
+			message: '#^Constant g not found\.$#'
+			identifier: constant.notFound
+			count: 9
+			path: schemes/dailycycle.php
+
+		-
+			message: '#^Constant hours not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: schemes/dailycycle.php
+
+		-
+			message: '#^Constant minutes not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: schemes/dailycycle.php
+
+		-
+			message: '#^Constant r not found\.$#'
+			identifier: constant.notFound
+			count: 9
+			path: schemes/dailycycle.php
+
+		-
+			message: '#^Variable \$tzoff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: schemes/dailycycle.php
+
+		-
+			message: '#^Variable \$font might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: schemes/greennight.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: schemes/spec-subcon.php
+
+		-
+			message: '#^Variable \$font might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: schemes/spec-unfiction.php
+
+		-
+			message: '#^Variable \$font might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: schemes/ymar.php
+
+		-
+			message: '#^Constant text not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$action might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$inph might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$inpt might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 11
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$message might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$numcols might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$pollpreview might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$postnum might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$quotemsg might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$subject might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$submit might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$tagval might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 13
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$txta might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$user might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$userid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$userip might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: sendprivate.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$inps might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: shitbugs.php
+
+		-
+			message: '#^Variable \$tempout might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shitbugs.php
+
+		-
+			message: '#^Constant cat not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: shop.php
+
+		-
+			message: '#^Constant coins not found\.$#'
+			identifier: constant.notFound
+			count: 7
+			path: shop.php
+
+		-
+			message: '#^Constant e not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: shop.php
+
+		-
+			message: '#^Constant gcoins not found\.$#'
+			identifier: constant.notFound
+			count: 4
+			path: shop.php
+
+		-
+			message: '#^Constant id not found\.$#'
+			identifier: constant.notFound
+			count: 8
+			path: shop.php
+
+		-
+			message: '#^Constant name not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: shop.php
+
+		-
+			message: '#^Constant stype not found\.$#'
+			identifier: constant.notFound
+			count: 3
+			path: shop.php
+
+		-
+			message: '#^Variable \$action might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shop.php
+
+		-
+			message: '#^Variable \$cat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: shop.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shop.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shop.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shop.php
+
+		-
+			message: '#^Variable \$item might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shop.php
+
+		-
+			message: '#^Variable \$items might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shop.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shop.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: shop.php
+
+		-
+			message: '#^Variable \$shoplist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shop.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shop.php
+
+		-
+			message: '#^Variable \$stat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: shop.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: shop.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: shop.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: shop.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shop.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shop.php
+
+		-
+			message: '#^Variable \$tccell2r might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shop.php
+
+		-
+			message: '#^Variable \$tccell2s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shop.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: shop.php
+
+		-
+			message: '#^Variable \$tccellct might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shop.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: shop.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shoped.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shoped.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: shoped.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoped.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: shoped.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoped.php
+
+		-
+			message: '#^Variable \$stypes might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoped.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: shoped.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: shoped.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: shoped.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoped.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoped.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoped.php
+
+		-
+			message: '#^Variable \$tccell2r might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoped.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: shoped.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 41
+			path: shoped.php
+
+		-
+			message: '#^Variable \$tccellhl might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoped.php
+
+		-
+			message: '#^Variable \$tccellhr might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoped.php
+
+		-
+			message: '#^Constant GP not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Constant cat not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: shoph.php
+
+		-
+			message: '#^Constant coins not found\.$#'
+			identifier: constant.notFound
+			count: 7
+			path: shoph.php
+
+		-
+			message: '#^Constant e not found\.$#'
+			identifier: constant.notFound
+			count: 2
+			path: shoph.php
+
+		-
+			message: '#^Constant gcoins not found\.$#'
+			identifier: constant.notFound
+			count: 3
+			path: shoph.php
+
+		-
+			message: '#^Constant id not found\.$#'
+			identifier: constant.notFound
+			count: 8
+			path: shoph.php
+
+		-
+			message: '#^Constant name not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Constant posts not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Constant regdate not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Constant stype not found\.$#'
+			identifier: constant.notFound
+			count: 3
+			path: shoph.php
+
+		-
+			message: '#^Variable \$action might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Variable \$cat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: shoph.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shoph.php
+
+		-
+			message: '#^Variable \$item might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Variable \$items might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: shoph.php
+
+		-
+			message: '#^Variable \$shoplist might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shoph.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Variable \$stat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: shoph.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: shoph.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: shoph.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 9
+			path: shoph.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Variable \$tccell2r might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: shoph.php
+
+		-
+			message: '#^Variable \$tccell2s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: shoph.php
+
+		-
+			message: '#^Variable \$tccellct might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: shoph.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 7
+			path: shoph.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$id might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$quote might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: showprivate.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$last might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$max might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$r might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: sigsize.php
+
+		-
+			message: '#^Variable \$body might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smilies.php
+
+		-
+			message: '#^Variable \$css might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smilies.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smilies.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smilies.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smilies.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smilies.php
+
+		-
+			message: '#^Variable \$body might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smilies2.php
+
+		-
+			message: '#^Variable \$css might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smilies2.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smilies2.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smilies2.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 84
+			path: smilies2.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: stats-daily.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: stats-daily.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: stats-daily.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: stats-daily.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: stats-daily.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: stats-daily.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: stats-daily.php
+
+		-
+			message: '#^Variable \$tccell2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: stats-daily.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 10
+			path: stats-daily.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: stats-daily.php
+
+		-
+			message: '#^Variable \$dateformat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: stats.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: stats.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: stats.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: stats.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: stats.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: stats.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: stats.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: stats.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: stats.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: stats.php
+
+		-
+			message: '#^Variable \$tccell2ls might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: stats.php
+
+		-
+			message: '#^Variable \$tccellh might not be defined\.$#'
+			identifier: variable.undefined
+			count: 10
+			path: stats.php
+
+		-
+			message: '#^Constant HP not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: status.php
+
+		-
+			message: '#^Variable \$class might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: status.php
+
+		-
+			message: '#^Variable \$items might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: status.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: status.php
+
+		-
+			message: '#^Variable \$stat might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: status.php
+
+		-
+			message: '#^Constant forum not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$banned might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$boardname might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: thread.php
+
+		-
+			message: '#^Variable \$choices might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: thread.php
+
+		-
+			message: '#^Variable \$closedpic might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$fonttag might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$footer might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$forum might not be defined\.$#'
+			identifier: variable.undefined
+			count: 8
+			path: thread.php
+
+		-
+			message: '#^Variable \$forumid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: thread.php
+
+		-
+			message: '#^Variable \$header might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$header1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$header2 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$headlinks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$isadmin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$ismod might not be defined\.$#'
+			identifier: variable.undefined
+			count: 5
+			path: thread.php
+
+		-
+			message: '#^Variable \$log might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: thread.php
+
+		-
+			message: '#^Variable \$loguser might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: thread.php
+
+		-
+			message: '#^Variable \$loguserid might not be defined\.$#'
+			identifier: variable.undefined
+			count: 11
+			path: thread.php
+
+		-
+			message: '#^Variable \$newpollpic might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$newreplypic might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$newthreadpic might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$polledit might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$power might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: thread.php
+
+		-
+			message: '#^Variable \$smallfont might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: thread.php
+
+		-
+			message: '#^Variable \$sql might not be defined\.$#'
+			identifier: variable.undefined
+			count: 42
+			path: thread.php
+
+		-
+			message: '#^Variable \$startingtime might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$tblend might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: thread.php
+
+		-
+			message: '#^Variable \$tblstart might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: thread.php
+
+		-
+			message: '#^Variable \$tccell1 might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$tccell1l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$tccell1s might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$tccell2l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: thread.php
+
+		-
+			message: '#^Variable \$tccell2ls might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$tccellc might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$tccellcls might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Variable \$tlinks might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: thread.php
+
+		-
+			message: '#^Variable \$windowtitle might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: thread.php
+
+		-
+			message: '#^Constant num not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: tlayouts/compact.php
+
+		-
+			message: '#^Constant posts not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: tlayouts/compact.php
+
+		-
+			message: '#^Constant threadlink not found\.$#'
+			identifier: constant.notFound
+			count: 1
+			path: tlayouts/compact.php
+
+		-
+			message: '#^Variable \$threadlink might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: tlayouts/compact.php
+
+		-
+			message: '#^Variable \$threadlink might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: tlayouts/hydra.php
+
+		-
+			message: '#^Variable \$baroff might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: tlayouts/regular.php
+
+		-
+			message: '#^Variable \$baron might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: tlayouts/regular.php
+
+		-
+			message: '#^Variable \$bits might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: tlayouts/regular.php
+
+		-
+			message: '#^Variable \$l might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: tlayouts/regular.php
+
+		-
+			message: '#^Variable \$m might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: tlayouts/regular.php
+
+		-
+			message: '#^Variable \$sincelastpost might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: tlayouts/regular.php

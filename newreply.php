@@ -163,8 +163,9 @@ if (v($_POST['action']) == 'postreply') {
                 'pow' => $forum['minpower'],
             ]);
 
-			header("Location: thread.php?pid=$pid#$pid");
-			return;
+            header("Location: thread.php?pid=$pid#$pid");
+
+            return;
 
             // Previewing a post
         }

@@ -29,8 +29,9 @@ if ($expower && $_GET['banip'] && $_GET['valid'] == md5($_GET['banip'] . 'aglkdg
     $sql->query("INSERT INTO `ipbans` SET `ip` = '". $_GET['banip'] ."', `reason`='Abusive/unwelcome activity', `date` = '". ctime() ."', `banner` = '$loguserid'") or print mysql_error();
     xk_ircsend('1|'. xk(8) . $loguser['name'] . xk(7) .' added IP ban for '. xk(8) . $_GET['banip'] . xk(7) .'.');
 
-	header('Location: ?');
-	return;
+    header('Location: ?');
+
+    return;
 }
 
 echo "$header<br>";

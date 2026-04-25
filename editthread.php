@@ -36,14 +36,16 @@ if (substr($_GET['action'], 0, 1) == 'q') {
         case 'qunclose': $update = 'closed=0';
             break;
         default:
-			header("Location: thread.php?id={$id}");
-			return;
+            header("Location: thread.php?id={$id}");
+
+            return;
     }
 
     $sql->query("UPDATE threads SET {$update} WHERE id={$id}");
 
     header("Location: thread.php?id={$id}");
-	return;
+
+    return;
 } elseif ($_POST['action'] == 'trashthread') {
     $sql->query("UPDATE threads SET sticky=0, closed=1, forum=$trashid WHERE id='$id'");
     $numposts = $thread['replies'] + 1;

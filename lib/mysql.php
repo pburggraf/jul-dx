@@ -69,7 +69,7 @@ class mysql
         }
 
         $start = microtime(true);
-		$err = null;
+        $err = null;
         if ($res = mysql_query($query, $this->connection)) {
             ++self::$queries;
             if (!is_bool($res)) {
@@ -100,6 +100,7 @@ class mysql
     public function fetch($result, $flag = MYSQL_BOTH)
     {
         $start = microtime(true);
+        $res = null;
 
         if ($result && $res = mysql_fetch_array($result, $flag)) {
             ++self::$rowsf;
@@ -113,6 +114,7 @@ class mysql
     public function result($result, $row = 0, $col = '0')
     {
         $start = microtime(true);
+        $res = null;
 
         if ($result) {
             if (mysql_num_rows($result) < $row + 1) {
@@ -232,6 +234,7 @@ class mysql
         foreach (self::$debug_list as $i => $d) {
             $altcell = 'tccell' . (($i & 1) + 1);
             $cell = $$altcell;
+            $oldid = $oldid ?? null;
             if ($oldid && $oldid != $d[0]) {
                 $out .= "<tr>$tccellc colspan=5><img src='images/_.gif' height='4' width='1'></td></tr>";
             }
