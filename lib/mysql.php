@@ -110,7 +110,7 @@ class mysql
         return $res;
     }
 
-    public function result($result, $row = 0, $col = 0)
+    public function result($result, $row = 0, $col = '0')
     {
         $start = microtime(true);
 
@@ -135,7 +135,7 @@ class mysql
         return $res;
     }
 
-    public function resultq($query, $row = 0, $col = 0, $cache = false)
+    public function resultq($query, $row = 0, $col = '0', $cache = false)
     {
         $res = $this->query($query, $cache);
         $res = $this->result($res, $row, $col);

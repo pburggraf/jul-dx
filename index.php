@@ -76,7 +76,7 @@ require 'lib/layout.php';
     $onusers = $sql->query("SELECT id,name,powerlevel,lastactivity,sex,minipic,aka,birthday FROM users WHERE lastactivity > $onlinetime OR lastposttime > $onlinetime ORDER BY name");
     $numonline = mysql_num_rows($onusers);
 
-    $numguests = $sql->resultq("SELECT count(*) FROM guests WHERE date>$onlinetime", 0, 0);
+    $numguests = $sql->resultq("SELECT count(*) FROM guests WHERE date>$onlinetime");
     $guestcount = '';
     if ($numguests) {
         $guestcount = " | <nobr>$numguests guest".($numguests > 1 ? 's' : '');

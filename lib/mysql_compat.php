@@ -254,7 +254,7 @@ namespace {
             return mysqli_insert_id(Dshafik\MySQL::getConnection($link));
         }
 
-        function mysql_result($result, $row, $field = 0)
+        function mysql_result($result, $row, $field = '0')
         {
             if (!Dshafik\MySQL::checkValidResult($result, __FUNCTION__)) {
                 // @codeCoverageIgnoreStart
@@ -695,7 +695,7 @@ namespace Dshafik {
             return static::$last_connection;
         }
 
-        public static function mysqlFieldInfo(\mysqli_result $result, $field, $what)
+        public static function mysqlFieldInfo(?\mysqli_result $result, $field, $what)
         {
             try {
                 $field = mysqli_fetch_field_direct($result, $field);
