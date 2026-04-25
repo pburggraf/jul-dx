@@ -332,7 +332,7 @@ function readsmilies()
 {
     global $x_hacks;
     $fpnt = fopen('smilies.dat', 'r');
-    for ($i = 0; $smil[$i] = fgetcsv($fpnt, 300, ','); ++$i) {
+    for ($i = 0; $smil[$i] = fgetcsv($fpnt, 300, ',', '"', '\\'); ++$i) {
     }
     $r = fclose($fpnt);
 
@@ -342,7 +342,7 @@ function readsmilies()
 function numsmilies()
 {
     $fpnt = fopen('smilies.dat', 'r');
-    for ($i = 0; fgetcsv($fpnt, 300, ''); ++$i) {
+    for ($i = 0; fgetcsv($fpnt, 300, '', ',', '"', '\\'); ++$i) {
     }
     $r = fclose($fpnt);
 
@@ -582,13 +582,12 @@ function escape_codeblock($text)
     return "<blockquote class='code'><hr><pre><code>". str_replace($list, $list2, $text[0]) .'</code></pre><hr></blockquote>';
 }
 
-function doreplace2($msg, $options = null, $mood = 0)
+function doreplace2($msg, $options = null, $mood = '0')
 {
     // @TODO php7.4 or w/e null coalescing
     if ($options === null) {
         $options = '0|0';
     }
-    $mood = intval($mood);
 
     // options will contain smiliesoff|htmloff
     $options = explode('|', $options);
@@ -1079,7 +1078,7 @@ function fonlineusers($id)
         $sql->query("UPDATE guests SET lastforum=$id WHERE ip='$userip'");
     }
 
-    $forumname = @$sql->resultq("SELECT title FROM forums WHERE id=$id", 0, 0);
+    $forumname = @$sql->resultq("SELECT title FROM forums WHERE id=$id");
     $onlinetime = ctime() - 300;
     $onusers = $sql->query("SELECT id,name,lastactivity,minipic,lasturl,aka,sex,powerlevel,birthday FROM users WHERE lastactivity>$onlinetime AND lastforum=$id ORDER BY name");
 
@@ -1108,7 +1107,7 @@ function fonlineusers($id)
     $p = ($numon ? ':' : '.');
     $s = ($numon != 1 ? 's' : '');
     $guests = '';
-    $numguests = $sql->resultq("SELECT count(*) AS n FROM guests WHERE date>$onlinetime AND lastforum=$id", 0, 0);
+    $numguests = $sql->resultq("SELECT count(*) AS n FROM guests WHERE date>$onlinetime AND lastforum=$id");
     if ($numguests) {
         $guests = "| $numguests guest".($numguests > 1 ? 's' : '');
     }
@@ -1283,7 +1282,7 @@ function loadtlayout()
 {
     global $log,$loguser,$tlayout,$sql;
     $tlayout = (filter_int($loguser['layout']) ? $loguser['layout'] : 1);
-    $layoutfile = $sql->resultq("SELECT file FROM tlayouts WHERE id='$tlayout'", 0, 0);
+    $layoutfile = $sql->resultq("SELECT file FROM tlayouts WHERE id='$tlayout'");
     require "tlayouts/$layoutfile.php";
 }
 
@@ -1550,13 +1549,15 @@ function replytoolbar()
 
 function addslashes_array($data)
 {
-    if (is_array($data)) {
-        foreach ($data as $key => $value) {
-            $data[$key] = addslashes_array($value);
-        }
+	if (is_array($data)) {
+		foreach ($data as $key => $value) {
+			$data[$key] = addslashes_array($value);
+		}
 
-        return $data;
-    } elseif (is_null($data)) {
+		return $data;
+	}elseif (is_int($data)) {
+		return $data;
+	}elseif (is_null($data)) {
         return '';
     }
 

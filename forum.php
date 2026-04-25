@@ -104,7 +104,7 @@ if ($fav) {
 $windowtitle = "$boardname -- $forum[title]";
 require 'lib/layout.php';
 
-$hotcount = $sql->resultq('SELECT hotcount FROM misc', 0, 0);
+$hotcount = $sql->resultq('SELECT hotcount FROM misc');
 if ($hotcount <= 0) {
     $hotcount = 0xFFFF;
 }

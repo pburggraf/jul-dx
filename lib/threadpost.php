@@ -118,8 +118,8 @@ function setlayout($post)
         $post['headtext'] = doreplace($post['headtext'], $post['num'], ($post['date'] - $post['regdate']) / 86400, $post['name']);
         $post['signtext'] = doreplace($post['signtext'], $post['num'], ($post['date'] - $post['regdate']) / 86400, $post['name']);
     }
-    $post['headtext'] = doreplace2($post['headtext'], null, $post['moodid'] ?? 0);
-    $post['signtext'] = doreplace2($post['signtext'], null, $post['moodid'] ?? 0);
+    $post['headtext'] = doreplace2($post['headtext'], null, (string) ($post['moodid'] ?? '0'));
+    $post['signtext'] = doreplace2($post['signtext'], null, (string) ($post['moodid'] ?? '0'));
 
     //	$post['text']=doreplace2($post['text'], $post['options']);
     return $post;

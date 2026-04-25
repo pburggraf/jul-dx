@@ -74,7 +74,6 @@ if ($action == 'Register') {
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3);
         curl_setopt($ch, CURLOPT_TIMEOUT, 5);
         $file_contents = curl_exec($ch);
-        curl_close($ch);
 
         if (
             stristr($file_contents, 'proxy')

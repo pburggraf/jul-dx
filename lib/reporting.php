@@ -84,7 +84,6 @@ function xk_ircsend($str)
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 3); // <---- HERE
     curl_setopt($ch, CURLOPT_TIMEOUT, 5); // <---- HERE
     $file_contents = curl_exec($ch);
-    curl_close($ch);
 
     return true;
 }
@@ -106,7 +105,6 @@ function discord_send($url, $msg)
 
     $response = curl_exec($ch);
     // echo $response;
-    curl_close($ch);
 
     return true;
 }
@@ -116,7 +114,7 @@ function xk($n = -1)
     if ($n == -1) {
         $k = '';
     } else {
-        $k = str_pad($n, 2, 0, STR_PAD_LEFT);
+        $k = str_pad((string) $n, 2, '0', STR_PAD_LEFT);
     }
 
     return "\x03". $k;
