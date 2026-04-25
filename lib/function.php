@@ -952,7 +952,7 @@ function getnamecolor($sex, $powl, $prefix = true)
     }
 
     // RAINBOW MULTIPLIER
-    elseif ($x_hacks['rainbownames'] || $sex == 255) {
+    elseif (($x_hacks['rainbownames'] ?? false) || $sex == 255) {
         $stime = gettimeofday();
         $h = ($stime['usec'] % 600);
         if ($h < 100) {
@@ -1060,7 +1060,9 @@ function getnamecolor($sex, $powl, $prefix = true)
                 $namecolor .= $nmcol[2][3];
                 break; // Make it readable in case the user has a light theme
             default:
-                $namecolor .= $nmcol[$sex][$powl] ?? $nmcol[0][2];
+                $sexcolors = $nmcol[$sex] ?? null;
+                $defaultcolors = $nmcol[0] ?? [];
+                $namecolor .= (is_array($sexcolors) ? ($sexcolors[$powl] ?? null) : null) ?? $defaultcolors[$powl] ?? $defaultcolors[2] ?? '000000';
                 break;
         }
     }

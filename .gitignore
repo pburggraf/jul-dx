@@ -14,5 +14,6 @@ google*.html
 /.idea/
 /vendor/
 /.composer/
+.phpunit.cache/
 .php-cs-fixer.cache
 .ash_history

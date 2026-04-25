@@ -544,6 +544,16 @@ if ($log) {
 
 $header = makeheader($header1, $headlinks, $header2);
 
+$buildversion = 'unknown build';
+if (file_exists('version.txt')) {
+    $buildversion = trim((string) file_get_contents('version.txt'));
+} elseif (function_exists('shell_exec')) {
+    $gitversion = trim((string) shell_exec("git log --format='commit %h [%ad]' --date='short' -n 1 2>/dev/null"));
+    if ($gitversion !== '') {
+        $buildversion = $gitversion;
+    }
+}
+
 $footer = "	</textarea></form></embed></noembed></noscript></noembed></embed></table></table>
 <center>
 	$smallfont
@@ -555,7 +565,7 @@ $footer = "	</textarea></form></embed></noembed></noscript></noembed></embed></t
 			<img src=images/poweredbyacmlm.gif>
 		</td>
 		<td>
-			Acmlmboard - <a href='https://github.com/Xkeeper0/jul'>". (file_exists('version.txt') ? file_get_contents('version.txt') : shell_exec("git log --format='commit %h [%ad]' --date='short' -n 1")) .'</a>
+			Acmlmboard - <a href='https://github.com/Xkeeper0/jul'>". $buildversion .'</a>
 			<br>&copy;2000-'. date('Y') ." Acmlm, Xkeeper, et al. $ikachan_text
 			</font>
 		</td>
