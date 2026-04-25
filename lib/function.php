@@ -24,6 +24,7 @@ if ((int) date('Gi') < 1) {
 
 require 'lib/config.php';
 require 'lib/mysql.php';
+require_once 'lib/password.php';
 require 'lib/reporting.php';
 
 if (isset($board_timezone)) {
@@ -813,21 +814,25 @@ function checkuser($name, $pass)
     if (!$user) {
         return -1;
     }
-    if ($user['password'] !== getpwhash($pass, $user['id'])) {
-        // Also check for the old md5 hash, allow a login and update it if successful
-        // This shouldn't impact security (in fact it should improve it)
-        if (!($hacks['password_compatibility'] ?? null)) {
-            return -1;
+
+    if (password_matches($pass, (int) $user['id'], $user['password'])) {
+        if (password_needs_upgrade($user['password'])) {
+            $sql->query("UPDATE users SET `password` = '".getpwhash($pass, (int) $user['id'])."' WHERE `id` = '$user[id]'");
+            xk_ircsend('102|'.xk(3).'Password hash for '.xk(9).$name.xk(3).' (uid '.xk(9).$user['id'].xk(3).') has been upgraded.');
         }
-        if ($user['password'] === md5($pass)) { // Uncomment the lines below to update password hashes
-            $sql->query("UPDATE users SET `password` = '".getpwhash($pass, $user['id'])."' WHERE `id` = '$user[id]'");
-            xk_ircsend('102|'.xk(3).'Password hash for '.xk(9).$name.xk(3).' (uid '.xk(9).$user['id'].xk(3).') has been automatically updated.');
-        } else {
-            return -1;
-        }
+
+        return $user['id'];
     }
 
-    return $user['id'];
+    // Also check for the old md5 hash, allow a login and upgrade it if successful
+    if (($hacks['password_compatibility'] ?? null) && hash_equals($user['password'], md5($pass))) {
+        $sql->query("UPDATE users SET `password` = '".getpwhash($pass, (int) $user['id'])."' WHERE `id` = '$user[id]'");
+        xk_ircsend('102|'.xk(3).'Password hash for '.xk(9).$name.xk(3).' (uid '.xk(9).$user['id'].xk(3).') has been automatically updated.');
+
+        return $user['id'];
+    }
+
+    return -1;
 }
 
 function create_verification_hash($n, $pw)
@@ -1718,9 +1723,4 @@ function printtimedif($timestart)
         $sql->query("DELETE FROM `rendertimes` WHERE `time` < '". (ctime() - 86400 * 14) ."'");
     }
     */
-}
-
-function getpwhash($pass, $id)
-{
-    return sha1(md5($id) . $pass);
 }
