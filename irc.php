@@ -15,7 +15,7 @@ echo "$header<br>";
 
 echo "	$tblstart<tr>
 	$tccellh><b>Hold up, it's ". '$' ."YEAR.</b></td></tr>
-	<tr>$tccell1>Maybe you want to head straight for our <a href='/thread.php?id=17948'>Discord</a>? 
+	<tr>$tccell1>Maybe you want to head straight for our <a href='/thread.php?id=17948'>Discord</a>?
 	$tblend";
 
 echo "<br><br>$tblstart<tr>
@@ -51,7 +51,7 @@ if ($server) {
     }
 
     echo '
-	
+
 	<iframe src="https://kiwiirc.com/client/'. $servers[$server] .'/?nick='. $name .'|?#tcrf,#x" style="border:0;width:100%;height:500px;"></iframe>';
 } else {
     echo '&nbsp;<br>Please choose a server to connect to.<br>&nbsp;';
@@ -71,5 +71,3 @@ echo "$tblend
 		$footer";
 
 printtimedif($startingtime);
-?>
-

@@ -35,15 +35,16 @@ if (isset($_GET['u']) && $_GET['u']) {
 require 'lib/function.php';
 require 'lib/layout.php';
 
-if (false && $x_hacks['smallbrowse'] == 1) {
-    require 'mobile/index.php'; // alternate markup for mobile clients.
-} else {
+//if (false && $x_hacks['smallbrowse'] == 1) {
+//    require 'mobile/index.php'; // alternate markup for mobile clients.
+//} else {
     if (filter_string($_GET['action']) == 'markforumread' and $log) {
         $sql->query("DELETE FROM forumread WHERE user=$loguserid AND forum='$forumid'");
         $sql->query("DELETE FROM `threadsread` WHERE `uid` = '$loguserid' AND `tid` IN (SELECT `id` FROM `threads` WHERE `forum` = '$forumid')");
         $sql->query("INSERT INTO forumread (user,forum,readdate) VALUES ($loguserid,$forumid,".ctime().')');
 
-        return header('Location: index.php');
+		header('Location: index.php');
+		return;
     }
 
     if (filter_string($_GET['action']) == 'markallforumsread' and $log) {
@@ -51,7 +52,8 @@ if (false && $x_hacks['smallbrowse'] == 1) {
         $sql->query("DELETE FROM `threadsread` WHERE `uid` = '$loguserid'");
         $sql->query("INSERT INTO forumread (user,forum,readdate) SELECT $loguserid,id,".ctime().' FROM forums');
 
-        return header('Location: index.php');
+		header('Location: index.php');
+		return;
     }
 
     $postread = readpostread($loguserid);
@@ -359,4 +361,4 @@ if (false && $x_hacks['smallbrowse'] == 1) {
 		$footer";
 
     printtimedif($startingtime);
-}
+//}

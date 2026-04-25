@@ -12,7 +12,6 @@ function threadpost($post, $bg, $pthread = '')
 
     $linkclass = 'url'.$post['uid'];
     $userlink = getuserlink($post, ['id' => 'uid'], $linkclass);
-    unset($postuser);
 
     $set['userrank'] = getrank($post['useranks'], str_replace('<div', '<<z>idiot', $post['title'] ?? ''), $post['posts'], $post['powerlevel']);
     $set['userlink'] = "<a name={$p}></a>{$userlink}";

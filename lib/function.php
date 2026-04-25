@@ -57,9 +57,9 @@ $sql->connect($sqlhost, $sqluser, $sqlpass)
 			');
 $sql->selectdb($dbname) or exit('Another stupid MySQL error happened, panic<br><small>'. mysql_error() .'</small>');
 
-if (file_exists('lib/firewall.php') && !filter_bool($disable_firewall)) {
-    require 'lib/firewall.php';
-} else {
+//if (file_exists('lib/firewall.php') && !filter_bool($disable_firewall)) {
+//    require 'lib/firewall.php';
+//} else {
     // Bad Design Decisions 2001.
     // :(
     if (true) {	// simulateds magic quotes gpc. if you don't know what that is: congrats!
@@ -76,7 +76,7 @@ if (file_exists('lib/firewall.php') && !filter_bool($disable_firewall)) {
         }
         unset($supers);
     }
-}
+//}
 
 if (filter_int($die) || filter_int($_GET['sec'])) {
     if ($die) {
@@ -193,7 +193,8 @@ if ($loguser) {
     }
 
     if ($loguser['viewsig'] >= 3) {
-        return header('Location: /?sec=1');
+		header('Location: /?sec=1');
+		return;
     }
 } else {
     // Guest settings
@@ -1148,6 +1149,25 @@ function redirect($url, $msg, $delay = 1)
     return "Go back to <a href=$url>$msg</a>.";
 }
 
+function cu($a, $b)
+{
+	global $hacks;
+
+	$dif = $a - $b['posts'];
+	if ($dif < 0) {
+		$t = (!$hacks['noposts'] ? -$dif : '') .' behind';
+	} elseif ($dif > 0) {
+		$t = (!$hacks['noposts'] ? $dif : '') .' ahead of';
+	} else {
+		$t = ' tied with';
+	}
+
+	$namelink = getuserlink($b);
+	$t .= " {$namelink}" . (!$hacks['noposts'] ? " ($b[posts])" : '');
+
+	return "<nobr>{$t}</nobr>";
+}
+
 function postradar($userid)
 {
     global $sql, $loguser, $loguserid;
@@ -1160,25 +1180,6 @@ function postradar($userid)
     $postradar = $sql->query("SELECT posts,id,name,aka,sex,powerlevel,birthday FROM users,postradar WHERE postradar.user={$userid} AND users.id=postradar.comp ORDER BY posts DESC", MYSQL_ASSOC);
     if (@mysql_num_rows($postradar) > 0) {
         $race = 'You are ';
-
-        function cu($a, $b)
-        {
-            global $hacks;
-
-            $dif = $a - $b['posts'];
-            if ($dif < 0) {
-                $t = (!$hacks['noposts'] ? -$dif : '') .' behind';
-            } elseif ($dif > 0) {
-                $t = (!$hacks['noposts'] ? $dif : '') .' ahead of';
-            } else {
-                $t = ' tied with';
-            }
-
-            $namelink = getuserlink($b);
-            $t .= " {$namelink}" . (!$hacks['noposts'] ? " ($b[posts])" : '');
-
-            return "<nobr>{$t}</nobr>";
-        }
 
         // Save ourselves a query if we're viewing our own post radar
         // since we already fetch all user fields for $loguserid
@@ -1703,4 +1704,9 @@ function printtimedif($timestart)
         $sql->query("DELETE FROM `rendertimes` WHERE `time` < '". (ctime() - 86400 * 14) ."'");
     }
     */
+}
+
+function getpwhash($pass, $id)
+{
+	return sha1(md5($id) . $pass);
 }

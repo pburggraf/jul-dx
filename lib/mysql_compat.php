@@ -441,7 +441,8 @@ namespace {
                 // @codeCoverageIgnoreEnd
             }
 
-            return mysqli_free_result($result);
+			mysqli_free_result($result);
+			return;
         }
 
         function mysql_field_name($result, $field)
@@ -803,7 +804,7 @@ namespace Dshafik {
                 MYSQLI_TYPE_TINY => 'int',
                 MYSQLI_TYPE_SHORT => 'int',
                 MYSQLI_TYPE_INT24 => 'int',
-                MYSQLI_TYPE_CHAR => 'int',
+                //MYSQLI_TYPE_CHAR => 'int',
                 MYSQLI_TYPE_LONGLONG => 'int',
 
                 MYSQLI_TYPE_DECIMAL => 'real',

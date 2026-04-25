@@ -69,6 +69,7 @@ class mysql
         }
 
         $start = microtime(true);
+		$err = null;
         if ($res = mysql_query($query, $this->connection)) {
             ++self::$queries;
             if (!is_bool($res)) {
@@ -89,7 +90,7 @@ class mysql
 
         if (self::$debug_on) {
             $b = self::getbacktrace();
-            $tx = ((!$err) ? $query : "<span style=\"color:#FF0000;border-bottom:1px dotted red;\" title=\"$err\">$query</span>");
+            $tx = (($err) ? $query : "<span style=\"color:#FF0000;border-bottom:1px dotted red;\" title=\"$err\">$query</span>");
             self::$debug_list[] = [$this->id, $b['pfunc'], "$b[file]:$b[line]", $tx, sprintf('%01.6fs', $t)];
         }
 

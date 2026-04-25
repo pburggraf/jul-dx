@@ -31,7 +31,8 @@ if ($banorama && filter_string($_GET['banip']) && filter_string($_GET['valid']) 
     //		if ($_GET['uid']) mysql_query("UPDATE `users` SET `powerlevel` = -1, `title` = 'Banned; account hijacked. Contact admin via PM to change it.' WHERE `id` = '". $_GET['uid'] ."'") or print mysql_error();
     xk_ircsend('1|'. xk(8) . $loguser['name'] . xk(7) .' added IP ban for '. xk(8) . $_GET['banip'] . xk(7) .'.');
 
-    return header('Location: online.php?m=1');
+	header('Location: online.php?m=1');
+	return;
 }
 
 $sort = filter_bool($_GET['sort']);

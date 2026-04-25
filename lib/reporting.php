@@ -14,7 +14,7 @@ function report($type, $msg)
         return;
     }
 
-    discord_send($wh_url, $outdiscord);
+    discord_send($wh_url, $msg);
 }
 
 // general purpose report function, now with discord!

@@ -144,7 +144,7 @@ function place7sd($lights, $w)
 
 function placeshadow($lights, $w)
 {
-    global $im, $cl, $charwidth;
+    global $im, $shadow, $charwidth;
     $w *= $charwidth;
     for ($i = 0x01; $i < 0x80; $i <<= 1) {
         if ($lights & $i) {
