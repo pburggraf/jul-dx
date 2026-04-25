@@ -13,6 +13,7 @@
     },
     "minimum-stability": "dev",
 	"require": {
-		"ext-mysqli": "*"
+		"ext-mysqli": "*",
+		"php": "^8.5"
 	}
 }
